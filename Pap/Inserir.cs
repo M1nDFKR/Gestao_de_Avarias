@@ -57,8 +57,7 @@ namespace Pap
         // método para inserir responsavel
 
         public bool inserirResponsavel()
-        {
-            MySqlConnection MysqlConexaoBasedeDados = null;
+        { 
 
             try
             {
@@ -81,9 +80,14 @@ namespace Pap
             }
             finally
             {
-                if (MysqlConexaoBasedeDados != null && MysqlConexaoBasedeDados.State != ConnectionState.Closed)
+                using MySqlConnection ConexaoBasedeDados = null;
+                if (ConexaoBasedeDados != null)
                 {
-                    MysqlConexaoBasedeDados.Close();
+                    if (ConexaoBasedeDados.State != ConnectionState.Closed)
+                    {
+                        ConexaoBasedeDados.Close();
+                    }
+                    ConexaoBasedeDados.Dispose();
                 }
             }
         }

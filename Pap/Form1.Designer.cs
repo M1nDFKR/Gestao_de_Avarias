@@ -43,6 +43,7 @@
             btnNextPage = new Button();
             maskedTextNIF = new MaskedTextBox();
             maskedTextNIFEE = new MaskedTextBox();
+            btnBuscar = new Button();
             SuspendLayout();
             // 
             // NIF
@@ -192,11 +193,25 @@
             maskedTextNIFEE.Size = new Size(76, 23);
             maskedTextNIFEE.TabIndex = 4;
             // 
+            // btnBuscar
+            // 
+            btnBuscar.BackgroundImageLayout = ImageLayout.Center;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Arial Nova", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscar.Location = new Point(124, 473);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(409, 32);
+            btnBuscar.TabIndex = 10;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(574, 544);
+            Controls.Add(btnBuscar);
             Controls.Add(maskedTextNIFEE);
             Controls.Add(maskedTextNIF);
             Controls.Add(btnNextPage);
@@ -213,7 +228,7 @@
             Controls.Add(Nome);
             Controls.Add(NIF);
             Name = "Form1";
-            Text = "Utilizador";
+            Text = "Inserção de utilizador";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -235,5 +250,6 @@
         private Button btnNextPage;
         private MaskedTextBox maskedTextNIF;
         private MaskedTextBox maskedTextNIFEE;
+        private Button btnBuscar;
     }
 }
