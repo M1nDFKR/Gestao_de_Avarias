@@ -86,7 +86,22 @@ namespace Pap
 
         private void btnBuscar_Nome_Click(object sender, EventArgs e)
         {
+            try
+            {
+                BuscarNome buscarNome = new BuscarNome();
+                buscarNome.txt_buscar = txtBuscaNome.Text;
 
+                buscarNome.lst_dados = lstDados;
+
+                if (!buscarNome.BuscarNaBD())
+                {
+                    MessageBox.Show("Nenhum dado foi encontrado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao executar a busca:" + ex.Message);
+            }
         }
 
         private void btnPage_Click(object sender, EventArgs e)

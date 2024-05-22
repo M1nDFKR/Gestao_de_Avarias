@@ -44,7 +44,7 @@
             lstDados.Location = new Point(12, 66);
             lstDados.Name = "lstDados";
             lstDados.Size = new Size(1346, 671);
-            lstDados.TabIndex = 0;
+            lstDados.TabIndex = 7;
             lstDados.UseCompatibleStateImageBehavior = false;
             // 
             // btnBuscar_NIF
@@ -63,7 +63,7 @@
             txtBuscaNIF.MaxLength = 9;
             txtBuscaNIF.Name = "txtBuscaNIF";
             txtBuscaNIF.Size = new Size(179, 23);
-            txtBuscaNIF.TabIndex = 3;
+            txtBuscaNIF.TabIndex = 1;
             // 
             // NIFF_NIFEE_Processo
             // 
@@ -71,7 +71,7 @@
             NIFF_NIFEE_Processo.Location = new Point(12, 9);
             NIFF_NIFEE_Processo.Name = "NIFF_NIFEE_Processo";
             NIFF_NIFEE_Processo.Size = new Size(171, 15);
-            NIFF_NIFEE_Processo.TabIndex = 4;
+            NIFF_NIFEE_Processo.TabIndex = 0;
             NIFF_NIFEE_Processo.Text = "Buscar por NIF/NIFEE/Processo";
             // 
             // Nome_Email
@@ -80,7 +80,7 @@
             Nome_Email.Location = new Point(324, 9);
             Nome_Email.Name = "Nome_Email";
             Nome_Email.Size = new Size(195, 15);
-            Nome_Email.TabIndex = 7;
+            Nome_Email.TabIndex = 0;
             Nome_Email.Text = "Buscar por Nome/NomeEE/EmailEE";
             // 
             // txtBuscaNome
@@ -89,14 +89,14 @@
             txtBuscaNome.MaxLength = 255;
             txtBuscaNome.Name = "txtBuscaNome";
             txtBuscaNome.Size = new Size(179, 23);
-            txtBuscaNome.TabIndex = 6;
+            txtBuscaNome.TabIndex = 3;
             // 
             // btnBuscar_Nome
             // 
             btnBuscar_Nome.Location = new Point(509, 37);
             btnBuscar_Nome.Name = "btnBuscar_Nome";
             btnBuscar_Nome.Size = new Size(108, 23);
-            btnBuscar_Nome.TabIndex = 5;
+            btnBuscar_Nome.TabIndex = 4;
             btnBuscar_Nome.Text = "Buscar";
             btnBuscar_Nome.UseVisualStyleBackColor = true;
             btnBuscar_Nome.Click += btnBuscar_Nome_Click;
@@ -106,7 +106,7 @@
             btnPage.Location = new Point(1223, 36);
             btnPage.Name = "btnPage";
             btnPage.Size = new Size(135, 23);
-            btnPage.TabIndex = 8;
+            btnPage.TabIndex = 6;
             btnPage.Text = "Página de inserção";
             btnPage.UseVisualStyleBackColor = true;
             btnPage.Click += btnPage_Click;
@@ -116,7 +116,7 @@
             btnLimpar.Location = new Point(632, 38);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(84, 22);
-            btnLimpar.TabIndex = 9;
+            btnLimpar.TabIndex = 5;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
             btnLimpar.Click += btnLimpar_Click;
