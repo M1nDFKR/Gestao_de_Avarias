@@ -29,6 +29,8 @@ namespace Pap
             lstDados.Columns.Add("NIFEE", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("NomeEE", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("EmailEE", 40, HorizontalAlignment.Left);
+            lstDados.Columns.Add("Parentesco", 40, HorizontalAlignment.Left);
+            lstDados.Columns.Add("Tipo", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("NSA", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("TipoEquip", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("N-S", 40, HorizontalAlignment.Left);
