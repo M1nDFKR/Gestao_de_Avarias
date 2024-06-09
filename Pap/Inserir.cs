@@ -17,6 +17,8 @@ namespace Pap
         private string nifEE;
         private string nomeEE;
         private string emailEE;
+        private string parentesco;
+        private string tipo;
 
         public string NIF
         {
@@ -54,6 +56,17 @@ namespace Pap
             set { emailEE = value; }
         }
 
+        public string Parentesco
+        {
+            get { return parentesco; }
+            set { parentesco = value; }
+        }
+
+        public string Tipo
+        {
+            get { return tipo; }
+            set { tipo = value; }
+        }
         // método para inserir responsavel
 
         public bool inserirResponsavel()
@@ -64,8 +77,8 @@ namespace Pap
                 MySqlConnection ConexaoBasedeDados = new MySqlConnection(ConexaoBD.basededados);
                 ConexaoBasedeDados.Open();
 
-                string insert = $" insert into utilizador (nif,nome,processo,nifEE,nomeEE,emailEE) values " +
-                    $"('{NIF}','{Nome}','{Processo}','{NIFEE}','{NomeEE}','{EmailEE}')";
+                string insert = $" insert into utilizador (nif,nome,processo,nifEE,nomeEE,emailEE,parentesco,tipo) values " +
+                    $"('{NIF}','{Nome}','{Processo}','{NIFEE}','{NomeEE}','{EmailEE}','{Parentesco}','{Tipo}')";
 
                 MySqlCommand comandoSql = ConexaoBasedeDados.CreateCommand();
                 comandoSql.CommandText = insert;

@@ -1,4 +1,8 @@
+using System;
 using MySql.Data.MySqlClient;
+using System.ComponentModel;
+using System.Reflection;
+
 
 namespace Pap
 {
@@ -7,6 +11,31 @@ namespace Pap
         public Form1()
         {
             InitializeComponent();
+
+            cb_Tipo.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cb_Tipo.DisplayMember = "Description";
+            cb_Tipo.ValueMember = "Value";
+            cb_Tipo.DataSource = Enum.GetValues(typeof(tipo_Parentesco))
+                             .Cast<Enum>()
+                             .Select(e => e.GetEnumDescription())
+                             .ToList();
+
+            rb_Parentesco_Sim.CheckedChanged += new EventHandler(rb_Parentesco_Sim_CheckedChanged);
+            rb_Parentesco_Nao.CheckedChanged += new EventHandler(rb_Parentesco_Nao_CheckedChanged);
+
+        }
+
+        public enum tipo_Parentesco
+        {
+            [Description("Sem parentesco")]
+            Semparentesco,
+            [Description("Aluno")]
+            Aluno,
+            [Description("Professor")]
+            Professor,
+            [Description("Não Docente")]
+            NaoDocente
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -24,15 +53,29 @@ namespace Pap
                     return;
                 }
 
-                if (maskedTextNIF.Text == maskedTextNIFEE.Text)
+                if (rb_Nao.Checked == true)
                 {
-                    MessageBox.Show("O NIF e o NIFEE do responsável não podem ser iguais.");
-                    return;
+                    if (maskedTextNIF.Text == maskedTextNIFEE.Text)
+                    {
+                        MessageBox.Show("O NIF e o NIFEE do responsável não podem ser iguais.");
+                        return;
+                    }
                 }
 
-                if (!maskedTextNIF.Text.Equals("") && !textNome.Text.Equals("") && !textProcesso.Text.Equals("") && !maskedTextNIFEE.Text.Equals("") && !textNomeEE.Text.Equals(""))
+                bool encarregadoDeEducacao = rb_Sim.Checked || rb_Nao.Checked;
+
+                bool todosOsCamposPreenchidos = !maskedTextNIF.Text.Equals("") &&
+                                !textNome.Text.Equals("") &&
+                                !textProcesso.Text.Equals("") &&
+                                !maskedTextNIFEE.Text.Equals("") &&
+                                !textNomeEE.Text.Equals("");
+
+                bool parentescoSelecionado = rb_Parentesco_Sim.Checked || rb_Parentesco_Nao.Checked;
+
+                if (todosOsCamposPreenchidos && parentescoSelecionado && encarregadoDeEducacao)
                 {
                     Inserir inResponsavel = new Inserir();
+
                     inResponsavel.NIF = maskedTextNIF.Text;
                     inResponsavel.Nome = textNome.Text;
 
@@ -51,9 +94,22 @@ namespace Pap
                     inResponsavel.NomeEE = textNomeEE.Text;
                     inResponsavel.EmailEE = textEmailEE.Text;
 
+                    if (rb_Parentesco_Sim.Checked)
+                    {
+                        inResponsavel.Parentesco = "Sim";
+                    }
+                    else if (rb_Parentesco_Nao.Checked)
+                    {
+                        inResponsavel.Parentesco = "Não";
+                    }
+
+                    inResponsavel.Tipo = cb_Tipo.SelectedItem.ToString();
+
                     if (inResponsavel.inserirResponsavel())
                     {
                         MessageBox.Show($" O(A) utilizador(a) {inResponsavel.Nome} responsável pela avaria foi registrada com sucesso.");
+                        rb_Sim.Checked = false;
+                        rb_Nao.Checked = false;
                         maskedTextNIF.Clear();
                         textNome.Clear();
                         textProcesso.Clear();
@@ -61,6 +117,10 @@ namespace Pap
                         textNomeEE.Clear();
                         textEmailEE.Clear();
                         maskedTextNIF.Focus();
+                        rb_Parentesco_Sim.Checked = false;
+                        rb_Parentesco_Nao.Checked = false;
+                        cb_Tipo.Enabled = true;
+                        cb_Tipo.SelectedIndex = 0;
                     }
                     else
                     {
@@ -70,6 +130,8 @@ namespace Pap
                 else
                 {
                     MessageBox.Show(" Preencher todos os campos antes de inserir.");
+                    rb_Sim.Checked = false;
+                    rb_Nao.Checked = false;
                     maskedTextNIF.Clear();
                     textNome.Clear();
                     textProcesso.Clear();
@@ -77,7 +139,11 @@ namespace Pap
                     textNomeEE.Clear();
                     textEmailEE.Clear();
                     maskedTextNIF.Focus();
+                    rb_Parentesco_Sim.Checked = false;
+                    rb_Parentesco_Nao.Checked = false;
+                    cb_Tipo.SelectedIndex = 0;
                 }
+                //Depois adicionar aqui (Que depois da inserção correta ir para a queixa termina o utilizador inserido)
             }
             catch (Exception ex)
             {
@@ -85,8 +151,27 @@ namespace Pap
             }
         }
 
+        private void rb_Parentesco_Sim_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_Parentesco_Sim.Checked)
+            {
+                cb_Tipo.Enabled = true;
+            }
+        }
+
+        private void rb_Parentesco_Nao_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_Parentesco_Nao.Checked)
+            {
+                cb_Tipo.SelectedIndex = 0;
+                cb_Tipo.Enabled = false;
+            }
+        }
+
         private void btnLimpar_Click(object sender, EventArgs e)
         {
+            rb_Sim.Checked = false;
+            rb_Nao.Checked = false;
             maskedTextNIF.Clear();
             textNome.Clear();
             textProcesso.Clear();
@@ -94,6 +179,10 @@ namespace Pap
             textNomeEE.Clear();
             textEmailEE.Clear();
             maskedTextNIF.Focus();
+            rb_Parentesco_Sim.Checked = false;
+            rb_Parentesco_Nao.Checked = false;
+            cb_Tipo.Enabled = true;
+            cb_Tipo.SelectedIndex = 0;
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)
@@ -139,5 +228,13 @@ namespace Pap
         }
 
     }
-    
+    public static class EnumExtensions
+    {
+        public static string GetEnumDescription(this Enum value)
+        {
+            var field = value.GetType().GetField(value.ToString());
+            var attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute));
+            return attribute == null ? value.ToString() : attribute.Description;
+        }
+    }
 }
