@@ -67,7 +67,6 @@ namespace Pap
             get { return tipo; }
             set { tipo = value; }
         }
-        // método para inserir responsavel
 
         public bool inserirResponsavel()
         { 
