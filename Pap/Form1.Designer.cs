@@ -54,15 +54,19 @@
             label2 = new Label();
             cb_Tipo = new ComboBox();
             label3 = new Label();
+            panel1 = new Panel();
+            button3 = new Button();
+            button4 = new Button();
             painel_de_EE.SuspendLayout();
             painel_Parentesco.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // NIF
             // 
             NIF.AutoSize = true;
             NIF.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            NIF.Location = new Point(26, 90);
+            NIF.Location = new Point(33, 175);
             NIF.Name = "NIF";
             NIF.Size = new Size(35, 14);
             NIF.TabIndex = 0;
@@ -70,7 +74,7 @@
             // 
             // textNome
             // 
-            textNome.Location = new Point(124, 124);
+            textNome.Location = new Point(127, 205);
             textNome.MaxLength = 255;
             textNome.Name = "textNome";
             textNome.Size = new Size(331, 23);
@@ -80,7 +84,7 @@
             // 
             Nome.AutoSize = true;
             Nome.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            Nome.Location = new Point(26, 127);
+            Nome.Location = new Point(29, 208);
             Nome.Name = "Nome";
             Nome.Size = new Size(42, 14);
             Nome.TabIndex = 0;
@@ -90,7 +94,7 @@
             // 
             Processo.AutoSize = true;
             Processo.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            Processo.Location = new Point(26, 165);
+            Processo.Location = new Point(29, 246);
             Processo.Name = "Processo";
             Processo.Size = new Size(70, 14);
             Processo.TabIndex = 0;
@@ -98,7 +102,7 @@
             // 
             // textProcesso
             // 
-            textProcesso.Location = new Point(124, 162);
+            textProcesso.Location = new Point(127, 243);
             textProcesso.MaxLength = 5;
             textProcesso.Name = "textProcesso";
             textProcesso.Size = new Size(76, 23);
@@ -108,7 +112,7 @@
             // 
             NIFEE.AutoSize = true;
             NIFEE.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            NIFEE.Location = new Point(26, 204);
+            NIFEE.Location = new Point(29, 285);
             NIFEE.Name = "NIFEE";
             NIFEE.Size = new Size(49, 14);
             NIFEE.TabIndex = 0;
@@ -118,7 +122,7 @@
             // 
             NomeEE.AutoSize = true;
             NomeEE.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            NomeEE.Location = new Point(26, 243);
+            NomeEE.Location = new Point(29, 324);
             NomeEE.Name = "NomeEE";
             NomeEE.Size = new Size(56, 14);
             NomeEE.TabIndex = 0;
@@ -126,7 +130,7 @@
             // 
             // textNomeEE
             // 
-            textNomeEE.Location = new Point(124, 240);
+            textNomeEE.Location = new Point(127, 321);
             textNomeEE.MaxLength = 255;
             textNomeEE.Name = "textNomeEE";
             textNomeEE.Size = new Size(331, 23);
@@ -136,7 +140,7 @@
             // 
             EmailEE.AutoSize = true;
             EmailEE.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            EmailEE.Location = new Point(26, 284);
+            EmailEE.Location = new Point(29, 367);
             EmailEE.Name = "EmailEE";
             EmailEE.Size = new Size(63, 14);
             EmailEE.TabIndex = 0;
@@ -144,7 +148,7 @@
             // 
             // textEmailEE
             // 
-            textEmailEE.Location = new Point(124, 281);
+            textEmailEE.Location = new Point(127, 364);
             textEmailEE.MaxLength = 255;
             textEmailEE.Name = "textEmailEE";
             textEmailEE.Size = new Size(331, 23);
@@ -152,46 +156,49 @@
             // 
             // btnInserir
             // 
+            btnInserir.BackColor = Color.RoyalBlue;
             btnInserir.BackgroundImageLayout = ImageLayout.Center;
             btnInserir.FlatStyle = FlatStyle.Flat;
-            btnInserir.Font = new Font("Arial Nova", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInserir.Location = new Point(123, 414);
+            btnInserir.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInserir.Location = new Point(401, 525);
             btnInserir.Name = "btnInserir";
-            btnInserir.Size = new Size(122, 32);
+            btnInserir.Size = new Size(137, 32);
             btnInserir.TabIndex = 10;
             btnInserir.Text = "Inserir";
-            btnInserir.UseVisualStyleBackColor = true;
+            btnInserir.UseVisualStyleBackColor = false;
             btnInserir.Click += btnInserir_Click;
             // 
             // btnLimpar
             // 
+            btnLimpar.BackColor = Color.RoyalBlue;
             btnLimpar.BackgroundImageLayout = ImageLayout.Center;
             btnLimpar.FlatStyle = FlatStyle.Flat;
-            btnLimpar.Font = new Font("Arial Nova", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLimpar.Location = new Point(251, 414);
+            btnLimpar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpar.Location = new Point(587, 525);
             btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(122, 32);
+            btnLimpar.Size = new Size(130, 32);
             btnLimpar.TabIndex = 11;
             btnLimpar.Text = "Limpar";
-            btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.UseVisualStyleBackColor = false;
             btnLimpar.Click += btnLimpar_Click;
             // 
             // btnNextPage
             // 
+            btnNextPage.BackColor = Color.RoyalBlue;
             btnNextPage.BackgroundImageLayout = ImageLayout.Center;
             btnNextPage.FlatStyle = FlatStyle.Flat;
-            btnNextPage.Font = new Font("Arial Nova", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNextPage.Location = new Point(379, 414);
+            btnNextPage.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNextPage.Location = new Point(684, 12);
             btnNextPage.Name = "btnNextPage";
-            btnNextPage.Size = new Size(153, 32);
+            btnNextPage.Size = new Size(95, 32);
             btnNextPage.TabIndex = 12;
-            btnNextPage.Text = "Página de Queixa";
-            btnNextPage.UseVisualStyleBackColor = true;
+            btnNextPage.Text = " Queixa";
+            btnNextPage.UseVisualStyleBackColor = false;
             btnNextPage.Click += btnNextPage_Click;
             // 
             // maskedTextNIF
             // 
-            maskedTextNIF.Location = new Point(124, 86);
+            maskedTextNIF.Location = new Point(127, 171);
             maskedTextNIF.Mask = "000000000";
             maskedTextNIF.Name = "maskedTextNIF";
             maskedTextNIF.Size = new Size(76, 23);
@@ -199,7 +206,7 @@
             // 
             // maskedTextNIFEE
             // 
-            maskedTextNIFEE.Location = new Point(124, 200);
+            maskedTextNIFEE.Location = new Point(127, 281);
             maskedTextNIFEE.Mask = "000000000";
             maskedTextNIFEE.Name = "maskedTextNIFEE";
             maskedTextNIFEE.Size = new Size(76, 23);
@@ -207,15 +214,16 @@
             // 
             // btnBuscar
             // 
+            btnBuscar.BackColor = Color.RoyalBlue;
             btnBuscar.BackgroundImageLayout = ImageLayout.Center;
             btnBuscar.FlatStyle = FlatStyle.Flat;
-            btnBuscar.Font = new Font("Arial Nova", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(123, 452);
+            btnBuscar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscar.Location = new Point(362, 563);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(409, 32);
             btnBuscar.TabIndex = 13;
             btnBuscar.Text = "Página de Busca";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // painel_de_EE
@@ -223,7 +231,7 @@
             painel_de_EE.Controls.Add(rb_Nao);
             painel_de_EE.Controls.Add(rb_Sim);
             painel_de_EE.Controls.Add(label1);
-            painel_de_EE.Location = new Point(124, 12);
+            painel_de_EE.Location = new Point(33, 86);
             painel_de_EE.Name = "painel_de_EE";
             painel_de_EE.Size = new Size(280, 68);
             painel_de_EE.TabIndex = 1;
@@ -263,7 +271,7 @@
             // 
             painel_Parentesco.Controls.Add(rb_Parentesco_Nao);
             painel_Parentesco.Controls.Add(rb_Parentesco_Sim);
-            painel_Parentesco.Location = new Point(124, 310);
+            painel_Parentesco.Location = new Point(124, 405);
             painel_Parentesco.Name = "painel_Parentesco";
             painel_Parentesco.Size = new Size(280, 41);
             painel_Parentesco.TabIndex = 8;
@@ -294,7 +302,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            label2.Location = new Point(26, 322);
+            label2.Location = new Point(26, 417);
             label2.Name = "label2";
             label2.Size = new Size(84, 14);
             label2.TabIndex = 0;
@@ -303,7 +311,7 @@
             // cb_Tipo
             // 
             cb_Tipo.FormattingEnabled = true;
-            cb_Tipo.Location = new Point(124, 363);
+            cb_Tipo.Location = new Point(124, 469);
             cb_Tipo.Name = "cb_Tipo";
             cb_Tipo.Size = new Size(166, 23);
             cb_Tipo.TabIndex = 9;
@@ -312,26 +320,61 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            label3.Location = new Point(26, 367);
+            label3.Location = new Point(26, 473);
             label3.Name = "label3";
             label3.Size = new Size(42, 14);
             label3.TabIndex = 0;
             label3.Text = "Tipo:";
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(btnNextPage);
+            panel1.Location = new Point(1, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1079, 55);
+            panel1.TabIndex = 14;
+            // 
+            // button3
+            // 
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Calisto MT", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(785, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(82, 32);
+            button3.TabIndex = 1;
+            button3.Text = "???";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Calisto MT", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Location = new Point(873, 13);
+            button4.Name = "button4";
+            button4.Size = new Size(82, 31);
+            button4.TabIndex = 2;
+            button4.Text = "???";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(638, 588);
+            ClientSize = new Size(1080, 607);
+            Controls.Add(painel_de_EE);
+            Controls.Add(panel1);
             Controls.Add(label3);
             Controls.Add(cb_Tipo);
             Controls.Add(label2);
             Controls.Add(painel_Parentesco);
-            Controls.Add(painel_de_EE);
             Controls.Add(btnBuscar);
             Controls.Add(maskedTextNIFEE);
             Controls.Add(maskedTextNIF);
-            Controls.Add(btnNextPage);
             Controls.Add(btnLimpar);
             Controls.Add(btnInserir);
             Controls.Add(textEmailEE);
@@ -350,6 +393,7 @@
             painel_de_EE.PerformLayout();
             painel_Parentesco.ResumeLayout(false);
             painel_Parentesco.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -382,5 +426,9 @@
         private RadioButton rb_Parentesco_Sim;
         private ComboBox cb_Tipo;
         private Label label3;
+        private Panel panel1;
+        private Button button2;
+        private Button button4;
+        private Button button3;
     }
 }
