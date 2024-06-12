@@ -13,9 +13,18 @@ namespace Pap
 {
     public partial class QueixaForm : Form
     {
-        public QueixaForm()
+
+        private string nif;
+        private string nome;
+
+        public QueixaForm(string nif = "", string nome = "")
         {
             InitializeComponent();
+            this.nif = nif;
+            this.nome = nome;
+
+            textNIF.Text = this.nif;
+            textNome.Text = this.nome;
         }
 
         private void QueixaForm_Load(object sender, EventArgs e)

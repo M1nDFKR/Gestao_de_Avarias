@@ -121,6 +121,11 @@ namespace Pap
                         rb_Parentesco_Nao.Checked = false;
                         cb_Tipo.Enabled = true;
                         cb_Tipo.SelectedIndex = 0;
+
+                        // Passando NIF e Nome para o QueixaForm
+                        QueixaForm queixaForm = new QueixaForm(inResponsavel.NIF, inResponsavel.Nome);
+                        queixaForm.Show();
+                        this.Hide();
                     }
                     else
                     {
@@ -189,7 +194,12 @@ namespace Pap
         {
             try
             {
-                if (maskedTextNIF.Text.Equals("") && textNome.Text.Equals("") && textProcesso.Text.Equals("") && maskedTextNIFEE.Text.Equals("") && textNomeEE.Text.Equals("") && textEmailEE.Text.Equals(""))
+                if (string.IsNullOrWhiteSpace(maskedTextNIF.Text) &&
+                    string.IsNullOrWhiteSpace(textNome.Text) &&
+                    string.IsNullOrWhiteSpace(textProcesso.Text) &&
+                    string.IsNullOrWhiteSpace(maskedTextNIFEE.Text) &&
+                    string.IsNullOrWhiteSpace(textNomeEE.Text) &&
+                    string.IsNullOrWhiteSpace(textEmailEE.Text))
                 {
                     QueixaForm queixaForm = new QueixaForm();
                     queixaForm.Show();

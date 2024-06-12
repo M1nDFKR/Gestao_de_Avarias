@@ -185,7 +185,7 @@
             btnNextPage.Name = "btnNextPage";
             btnNextPage.Size = new Size(153, 32);
             btnNextPage.TabIndex = 12;
-            btnNextPage.Text = "Próxima página";
+            btnNextPage.Text = "Página de Queixa";
             btnNextPage.UseVisualStyleBackColor = true;
             btnNextPage.Click += btnNextPage_Click;
             // 
@@ -214,7 +214,7 @@
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(409, 32);
             btnBuscar.TabIndex = 13;
-            btnBuscar.Text = "Buscar";
+            btnBuscar.Text = "Página de Busca";
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
             // 
