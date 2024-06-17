@@ -33,6 +33,12 @@ namespace Pap
             cb_listaClientes.Enabled = string.IsNullOrEmpty(nif) && string.IsNullOrEmpty(nome);
 
             cb_listaClientes.SelectedIndexChanged += new EventHandler(cb_listaClientes_SelectedIndexChanged);
+
+            richTextDecisao.ScrollBars = RichTextBoxScrollBars.Vertical;
+            richTextDecisao.WordWrap = true;
+
+            richTextDescricao.ScrollBars = RichTextBoxScrollBars.Vertical;
+            richTextDescricao.WordWrap = true;
         }
 
 
@@ -92,20 +98,43 @@ namespace Pap
             textNIF.Clear();
             cb_listaClientes.Enabled = true;
             cb_listaClientes.SelectedIndex = -1;
+            textTipoEquip.Clear();
+            textN_S.Clear();
+            richTextDescricao.Clear();
+            richTextDecisao.Clear();
         }
 
         private void btn_Inserir_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
-                InserirQueixa inserirQueixa = new InserirQueixa();
+                //Arrumar isso amanhã
+                if (!string.IsNullOrWhiteSpace(textNIF.Text) &&
+                    !string.IsNullOrWhiteSpace(textTipoEquip.Text) &&
+                    !string.IsNullOrWhiteSpace(textN_S.Text) &&
+                    !string.IsNullOrWhiteSpace(richTextDescricao.Text) &&
+                    !string.IsNullOrWhiteSpace(richTextDecisao.Text))
+                {
 
-                //Verificar se os campos estão preenchidos
+                    InserirQueixa inserirQueixa = new InserirQueixa();
 
-                inserirQueixa.NIFUtilizador = textNIF.Text;
+                    inserirQueixa.NIFUtilizador = textNIF.Text;
+                    inserirQueixa.TipoEquip = textTipoEquip.Text;
+                    inserirQueixa.NS = textN_S.Text;
+                    inserirQueixa.DataQueixa = dateQueixa.Value;
+                    inserirQueixa.Descricao = richTextDescricao.Text;
+                    inserirQueixa.Decisao = richTextDecisao.Text;
 
-
-            }*/
+                }
+                else
+                {
+                    MessageBox.Show(" Preencher todos os campos antes de inserir.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(" Erro ao resgista Queixa da avaria: " + ex.Message);
+                }
+            }
         }
     }
 }

@@ -32,10 +32,10 @@
             textNIF = new TextBox();
             Nome = new Label();
             NIF = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            ContinuarQueixa = new Label();
+            EscolherCliente = new Label();
             cb_listaClientes = new ComboBox();
-            label5 = new Label();
+            Clientes = new Label();
             btn_Limpar = new Button();
             btn_Inserir = new Button();
             TipoEquip = new Label();
@@ -43,8 +43,11 @@
             DtQueixa = new Label();
             Descricao = new Label();
             Decisao = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            textTipoEquip = new TextBox();
+            textN_S = new TextBox();
+            dateQueixa = new DateTimePicker();
+            richTextDescricao = new RichTextBox();
+            richTextDecisao = new RichTextBox();
             SuspendLayout();
             // 
             // textNome
@@ -81,25 +84,25 @@
             NIF.TabIndex = 2;
             NIF.Text = "NIF:";
             // 
-            // label3
+            // ContinuarQueixa
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(12, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(242, 23);
-            label3.TabIndex = 3;
-            label3.Text = "Continuar Quiexa do Cliente.:";
+            ContinuarQueixa.AutoSize = true;
+            ContinuarQueixa.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ContinuarQueixa.Location = new Point(12, 9);
+            ContinuarQueixa.Name = "ContinuarQueixa";
+            ContinuarQueixa.Size = new Size(242, 23);
+            ContinuarQueixa.TabIndex = 3;
+            ContinuarQueixa.Text = "Continuar Quiexa do Cliente.:";
             // 
-            // label4
+            // EscolherCliente
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 84);
-            label4.Name = "label4";
-            label4.Size = new Size(291, 23);
-            label4.TabIndex = 3;
-            label4.Text = "Inserir Queixa do cliente desejado.:";
+            EscolherCliente.AutoSize = true;
+            EscolherCliente.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EscolherCliente.Location = new Point(12, 84);
+            EscolherCliente.Name = "EscolherCliente";
+            EscolherCliente.Size = new Size(291, 23);
+            EscolherCliente.TabIndex = 3;
+            EscolherCliente.Text = "Inserir Queixa do cliente desejado.:";
             // 
             // cb_listaClientes
             // 
@@ -110,18 +113,18 @@
             cb_listaClientes.Size = new Size(301, 23);
             cb_listaClientes.TabIndex = 4;
             // 
-            // label5
+            // Clientes
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(21, 130);
-            label5.Name = "label5";
-            label5.Size = new Size(52, 15);
-            label5.TabIndex = 5;
-            label5.Text = "Clientes:";
+            Clientes.AutoSize = true;
+            Clientes.Location = new Point(21, 130);
+            Clientes.Name = "Clientes";
+            Clientes.Size = new Size(52, 15);
+            Clientes.TabIndex = 5;
+            Clientes.Text = "Clientes:";
             // 
             // btn_Limpar
             // 
-            btn_Limpar.Location = new Point(284, 466);
+            btn_Limpar.Location = new Point(284, 492);
             btn_Limpar.Name = "btn_Limpar";
             btn_Limpar.Size = new Size(179, 34);
             btn_Limpar.TabIndex = 6;
@@ -131,7 +134,7 @@
             // 
             // btn_Inserir
             // 
-            btn_Inserir.Location = new Point(99, 466);
+            btn_Inserir.Location = new Point(99, 492);
             btn_Inserir.Name = "btn_Inserir";
             btn_Inserir.Size = new Size(168, 34);
             btn_Inserir.TabIndex = 7;
@@ -169,7 +172,7 @@
             // Descricao
             // 
             Descricao.AutoSize = true;
-            Descricao.Location = new Point(21, 303);
+            Descricao.Location = new Point(21, 300);
             Descricao.Name = "Descricao";
             Descricao.Size = new Size(61, 15);
             Descricao.TabIndex = 11;
@@ -178,35 +181,61 @@
             // Decisao
             // 
             Decisao.AutoSize = true;
-            Decisao.Location = new Point(21, 348);
+            Decisao.Location = new Point(21, 388);
             Decisao.Name = "Decisao";
             Decisao.Size = new Size(51, 15);
             Decisao.TabIndex = 12;
             Decisao.Text = "Decisão:";
             // 
-            // textBox1
+            // textTipoEquip
             // 
-            textBox1.Location = new Point(172, 167);
-            textBox1.MaxLength = 255;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(301, 23);
-            textBox1.TabIndex = 13;
+            textTipoEquip.Location = new Point(172, 167);
+            textTipoEquip.MaxLength = 255;
+            textTipoEquip.Name = "textTipoEquip";
+            textTipoEquip.Size = new Size(301, 23);
+            textTipoEquip.TabIndex = 13;
             // 
-            // textBox2
+            // textN_S
             // 
-            textBox2.Location = new Point(172, 205);
-            textBox2.MaxLength = 255;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(301, 23);
-            textBox2.TabIndex = 14;
+            textN_S.Location = new Point(172, 205);
+            textN_S.MaxLength = 255;
+            textN_S.Name = "textN_S";
+            textN_S.Size = new Size(301, 23);
+            textN_S.TabIndex = 14;
+            // 
+            // dateQueixa
+            // 
+            dateQueixa.Location = new Point(172, 250);
+            dateQueixa.Name = "dateQueixa";
+            dateQueixa.Size = new Size(176, 23);
+            dateQueixa.TabIndex = 15;
+            // 
+            // richTextDescricao
+            // 
+            richTextDescricao.Location = new Point(171, 300);
+            richTextDescricao.Name = "richTextDescricao";
+            richTextDescricao.Size = new Size(302, 79);
+            richTextDescricao.TabIndex = 16;
+            richTextDescricao.Text = "";
+            // 
+            // richTextDecisao
+            // 
+            richTextDecisao.Location = new Point(171, 388);
+            richTextDecisao.Name = "richTextDecisao";
+            richTextDecisao.Size = new Size(302, 85);
+            richTextDecisao.TabIndex = 17;
+            richTextDecisao.Text = "";
             // 
             // QueixaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(685, 538);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            ClientSize = new Size(802, 564);
+            Controls.Add(richTextDecisao);
+            Controls.Add(richTextDescricao);
+            Controls.Add(dateQueixa);
+            Controls.Add(textN_S);
+            Controls.Add(textTipoEquip);
             Controls.Add(Decisao);
             Controls.Add(Descricao);
             Controls.Add(DtQueixa);
@@ -214,10 +243,10 @@
             Controls.Add(TipoEquip);
             Controls.Add(btn_Inserir);
             Controls.Add(btn_Limpar);
-            Controls.Add(label5);
+            Controls.Add(Clientes);
             Controls.Add(cb_listaClientes);
-            Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(EscolherCliente);
+            Controls.Add(ContinuarQueixa);
             Controls.Add(NIF);
             Controls.Add(Nome);
             Controls.Add(textNIF);
@@ -235,10 +264,10 @@
         private TextBox textNIF;
         private Label Nome;
         private Label NIF;
-        private Label label3;
-        private Label label4;
+        private Label ContinuarQueixa;
+        private Label EscolherCliente;
         private ComboBox cb_listaClientes;
-        private Label label5;
+        private Label Clientes;
         private Button btn_Limpar;
         private Button btn_Inserir;
         private Label TipoEquip;
@@ -246,7 +275,10 @@
         private Label DtQueixa;
         private Label Descricao;
         private Label Decisao;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textTipoEquip;
+        private TextBox textN_S;
+        private DateTimePicker dateQueixa;
+        private RichTextBox richTextDescricao;
+        private RichTextBox richTextDecisao;
     }
 }
