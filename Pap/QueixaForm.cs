@@ -71,7 +71,7 @@ namespace Pap
             if (cb_listaClientes.SelectedIndex == 0)
             {
                 MessageBox.Show("Este item não pode ser selecionado.");
-                
+
                 cb_listaClientes.SelectedIndex = 0;
                 return;
             }
@@ -92,6 +92,20 @@ namespace Pap
             textNIF.Clear();
             cb_listaClientes.Enabled = true;
             cb_listaClientes.SelectedIndex = -1;
+        }
+
+        private void btn_Inserir_Click(object sender, EventArgs e)
+        {
+            /*try
+            {
+                InserirQueixa inserirQueixa = new InserirQueixa();
+
+                //Verificar se os campos estão preenchidos
+
+                inserirQueixa.NIFUtilizador = textNIF.Text;
+
+
+            }*/
         }
     }
 }
