@@ -25,7 +25,16 @@ namespace Pap
 
             textNIF.Text = this.nif;
             textNome.Text = this.nome;
+
+            cb_listaClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cb_listaClientes.SelectedIndex = 0;
+
+            cb_listaClientes.Enabled = string.IsNullOrEmpty(nif) && string.IsNullOrEmpty(nome);
+
+            cb_listaClientes.SelectedIndexChanged += new EventHandler(cb_listaClientes_SelectedIndexChanged);
         }
+
 
         private void QueixaForm_Load(object sender, EventArgs e)
         {
@@ -55,6 +64,34 @@ namespace Pap
             {
                 MessageBox.Show("Erro ao carregar clientes: " + ex.Message);
             }
+        }
+
+        private void cb_listaClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_listaClientes.SelectedIndex == 0)
+            {
+                MessageBox.Show("Este item não pode ser selecionado.");
+                
+                cb_listaClientes.SelectedIndex = 0;
+                return;
+            }
+
+            if (cb_listaClientes.SelectedIndex != -1)
+            {
+                string selectedItem = cb_listaClientes.SelectedItem.ToString();
+                string[] parts = selectedItem.Split('-');
+
+                textNIF.Text = parts[0].Trim();
+                textNome.Text = parts[1].Trim();
+            }
+        }
+
+        private void btn_Limpar_Click(object sender, EventArgs e)
+        {
+            textNome.Clear();
+            textNIF.Clear();
+            cb_listaClientes.Enabled = true;
+            cb_listaClientes.SelectedIndex = -1;
         }
     }
 }

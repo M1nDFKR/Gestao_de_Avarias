@@ -36,6 +36,7 @@
             label4 = new Label();
             cb_listaClientes = new ComboBox();
             label5 = new Label();
+            btn_Limpar = new Button();
             SuspendLayout();
             // 
             // textNome
@@ -95,6 +96,7 @@
             // cb_listaClientes
             // 
             cb_listaClientes.FormattingEnabled = true;
+            cb_listaClientes.Items.AddRange(new object[] { "Selecione um Cliente" });
             cb_listaClientes.Location = new Point(99, 127);
             cb_listaClientes.Name = "cb_listaClientes";
             cb_listaClientes.Size = new Size(364, 23);
@@ -109,11 +111,22 @@
             label5.TabIndex = 5;
             label5.Text = "Clientes:";
             // 
+            // btn_Limpar
+            // 
+            btn_Limpar.Location = new Point(284, 408);
+            btn_Limpar.Name = "btn_Limpar";
+            btn_Limpar.Size = new Size(179, 34);
+            btn_Limpar.TabIndex = 6;
+            btn_Limpar.Text = "Limpar";
+            btn_Limpar.UseVisualStyleBackColor = true;
+            btn_Limpar.Click += btn_Limpar_Click;
+            // 
             // QueixaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(685, 538);
+            Controls.Add(btn_Limpar);
             Controls.Add(label5);
             Controls.Add(cb_listaClientes);
             Controls.Add(label4);
@@ -139,5 +152,6 @@
         private Label label4;
         private ComboBox cb_listaClientes;
         private Label label5;
+        private Button btn_Limpar;
     }
 }
