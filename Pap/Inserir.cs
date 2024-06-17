@@ -19,6 +19,7 @@ namespace Pap
         private string emailEE;
         private string parentesco;
         private string tipo;
+        private DateTime dataInsercao;
 
         public string NIF
         {
@@ -68,6 +69,12 @@ namespace Pap
             set { tipo = value; }
         }
 
+        public DateTime DataInsercao
+        {
+            get { return dataInsercao; }
+            set { dataInsercao = value; }
+        }
+
         public bool inserirResponsavel()
         { 
 
@@ -76,8 +83,8 @@ namespace Pap
                 MySqlConnection ConexaoBasedeDados = new MySqlConnection(ConexaoBD.basededados);
                 ConexaoBasedeDados.Open();
 
-                string insert = $" insert into utilizador (nif,nome,processo,nifEE,nomeEE,emailEE,parentesco,tipo) values " +
-                    $"('{NIF}','{Nome}','{Processo}','{NIFEE}','{NomeEE}','{EmailEE}','{Parentesco}','{Tipo}')";
+                string insert = $" insert into utilizador (nif,nome,processo,nifEE,nomeEE,emailEE,parentesco,tipo,dataInsercao) values " +
+                    $"('{NIF}','{Nome}','{Processo}','{NIFEE}','{NomeEE}','{EmailEE}','{Parentesco}','{Tipo}','{DataInsercao.ToString("yyyy-MM-dd")}')";
 
                 MySqlCommand comandoSql = ConexaoBasedeDados.CreateCommand();
                 comandoSql.CommandText = insert;

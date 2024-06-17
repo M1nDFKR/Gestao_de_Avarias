@@ -32,7 +32,7 @@ namespace Pap
             try
             {
                 string connectionString = ConexaoBD.basededados;
-                string query = "SELECT NIF, Nome FROM Utilizador ORDER BY NIF DESC LIMIT 5";
+                string query = "SELECT NIF, Nome FROM Utilizador ORDER BY DataInsercao DESC LIMIT 8";
 
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {

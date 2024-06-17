@@ -69,7 +69,7 @@ namespace Pap
                         comandoSql.Parameters.AddWithValue("@NIFUtilizador", NIFUtilizador);
                         comandoSql.Parameters.AddWithValue("@TipoEquip", string.IsNullOrEmpty(TipoEquip) ? (object)DBNull.Value : TipoEquip);
                         comandoSql.Parameters.AddWithValue("@NS", NS);
-                        comandoSql.Parameters.AddWithValue("@DataQueixa", DataQueixa);
+                        comandoSql.Parameters.AddWithValue("@DataQueixa", DataQueixa.Date);
                         comandoSql.Parameters.AddWithValue("@Descricao", Descricao);
                         comandoSql.Parameters.AddWithValue("@Decisao", string.IsNullOrEmpty(Decisao) ? (object)DBNull.Value : Decisao);
 

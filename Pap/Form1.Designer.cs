@@ -55,8 +55,8 @@
             cb_Tipo = new ComboBox();
             label3 = new Label();
             panel1 = new Panel();
-            button3 = new Button();
             button4 = new Button();
+            button3 = new Button();
             painel_de_EE.SuspendLayout();
             painel_Parentesco.SuspendLayout();
             panel1.SuspendLayout();
@@ -311,7 +311,7 @@
             // cb_Tipo
             // 
             cb_Tipo.FormattingEnabled = true;
-            cb_Tipo.Location = new Point(124, 469);
+            cb_Tipo.Location = new Point(127, 469);
             cb_Tipo.Name = "cb_Tipo";
             cb_Tipo.Size = new Size(166, 23);
             cb_Tipo.TabIndex = 9;
@@ -320,7 +320,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            label3.Location = new Point(26, 473);
+            label3.Location = new Point(33, 473);
             label3.Name = "label3";
             label3.Size = new Size(42, 14);
             label3.TabIndex = 0;
@@ -338,21 +338,10 @@
             panel1.Size = new Size(1079, 55);
             panel1.TabIndex = 14;
             // 
-            // button3
-            // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Calisto MT", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(785, 12);
-            button3.Name = "button3";
-            button3.Size = new Size(82, 32);
-            button3.TabIndex = 1;
-            button3.Text = "???";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // button4
             // 
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Calisto MT", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Location = new Point(873, 13);
             button4.Name = "button4";
             button4.Size = new Size(82, 31);
@@ -360,6 +349,17 @@
             button4.Text = "???";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
+            // 
+            // button3
+            // 
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(785, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(82, 32);
+            button3.TabIndex = 1;
+            button3.Text = "???";
+            button3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

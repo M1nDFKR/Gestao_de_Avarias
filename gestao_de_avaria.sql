@@ -224,6 +224,7 @@ CREATE TABLE `utilizador` (
   `EmailEE` varchar(255) DEFAULT NULL,
   `Parentesco` enum('Sim','Não') NOT NULL,
   `Tipo` varchar(50) NOT NULL,
+  `DataInsercao` date NOT NULL,
   PRIMARY KEY (`NIF`),
   KEY `idx_nif` (`NIF`),
   KEY `idx_nifee` (`NIFEE`)
@@ -248,4 +249,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-09 17:55:20
+-- Dump completed on 2024-06-17 16:33:52

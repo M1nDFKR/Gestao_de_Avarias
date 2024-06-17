@@ -2,6 +2,7 @@ using System;
 using MySql.Data.MySqlClient;
 using System.ComponentModel;
 using System.Reflection;
+using System.Globalization;
 
 
 namespace Pap
@@ -62,6 +63,15 @@ namespace Pap
                     }
                 }
 
+                if (rb_Sim.Checked == true)
+                {
+                    if (maskedTextNIF.Text != maskedTextNIFEE.Text)
+                    {
+                        MessageBox.Show("O NIF e o NIFEE do responsável têm de ser iguais.");
+                        return;
+                    }
+                }
+
                 bool encarregadoDeEducacao = rb_Sim.Checked || rb_Nao.Checked;
 
                 bool todosOsCamposPreenchidos = !maskedTextNIF.Text.Equals("") &&
@@ -104,6 +114,21 @@ namespace Pap
                     }
 
                     inResponsavel.Tipo = cb_Tipo.SelectedItem.ToString();
+
+                    DateTime dataAtual = DateTime.Now.Date;
+                    CultureInfo culture = CultureInfo.InvariantCulture;
+                    string dataFormatoMySQL = dataAtual.ToString("yyyy-MM-dd", culture);
+
+                    if (DateTime.TryParseExact(dataFormatoMySQL, "yyyy-MM-dd", culture, DateTimeStyles.None, out DateTime dataInsercao))
+                    {
+                        inResponsavel.DataInsercao = dataInsercao;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao converter data.");
+                    }
+
+
 
                     if (inResponsavel.inserirResponsavel())
                     {
@@ -148,7 +173,6 @@ namespace Pap
                     rb_Parentesco_Nao.Checked = false;
                     cb_Tipo.SelectedIndex = 0;
                 }
-                //Depois adicionar aqui (Que depois da inserção correta ir para a queixa termina o utilizador inserido)
             }
             catch (Exception ex)
             {
