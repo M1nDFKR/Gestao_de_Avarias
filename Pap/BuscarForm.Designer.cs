@@ -56,7 +56,7 @@
             // 
             btnBuscar_NIF.BackColor = Color.RoyalBlue;
             btnBuscar_NIF.FlatStyle = FlatStyle.Flat;
-            btnBuscar_NIF.Font = new Font("Calibri", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBuscar_NIF.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar_NIF.ForeColor = Color.White;
             btnBuscar_NIF.Location = new Point(197, 98);
             btnBuscar_NIF.Name = "btnBuscar_NIF";
@@ -77,20 +77,22 @@
             // NIFF_NIFEE_Processo
             // 
             NIFF_NIFEE_Processo.AutoSize = true;
+            NIFF_NIFEE_Processo.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             NIFF_NIFEE_Processo.Location = new Point(12, 78);
             NIFF_NIFEE_Processo.Name = "NIFF_NIFEE_Processo";
-            NIFF_NIFEE_Processo.Size = new Size(171, 15);
+            NIFF_NIFEE_Processo.Size = new Size(217, 15);
             NIFF_NIFEE_Processo.TabIndex = 0;
-            NIFF_NIFEE_Processo.Text = "Buscar por NIF/NIFEE/Processo";
+            NIFF_NIFEE_Processo.Text = "Buscar por NIF/NIFEE/Processo:";
             // 
             // Nome_Email
             // 
             Nome_Email.AutoSize = true;
+            Nome_Email.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Nome_Email.Location = new Point(324, 78);
             Nome_Email.Name = "Nome_Email";
-            Nome_Email.Size = new Size(195, 15);
+            Nome_Email.Size = new Size(224, 15);
             Nome_Email.TabIndex = 0;
-            Nome_Email.Text = "Buscar por Nome/NomeEE/EmailEE";
+            Nome_Email.Text = "Buscar por Nome/NomeEE/EmailEE:";
             // 
             // txtBuscaNome
             // 
@@ -104,7 +106,7 @@
             // 
             btnBuscar_Nome.BackColor = Color.RoyalBlue;
             btnBuscar_Nome.FlatStyle = FlatStyle.Flat;
-            btnBuscar_Nome.Font = new Font("Calibri", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBuscar_Nome.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar_Nome.ForeColor = SystemColors.Control;
             btnBuscar_Nome.Location = new Point(509, 96);
             btnBuscar_Nome.Name = "btnBuscar_Nome";
@@ -130,7 +132,7 @@
             // 
             btnLimpar.BackColor = Color.RoyalBlue;
             btnLimpar.FlatStyle = FlatStyle.Flat;
-            btnLimpar.Font = new Font("Calibri", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLimpar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLimpar.ForeColor = SystemColors.Control;
             btnLimpar.Location = new Point(623, 96);
             btnLimpar.Name = "btnLimpar";
@@ -182,7 +184,7 @@
             btnNextPage.BackColor = Color.RoyalBlue;
             btnNextPage.BackgroundImageLayout = ImageLayout.Center;
             btnNextPage.FlatStyle = FlatStyle.Flat;
-            btnNextPage.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNextPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNextPage.Location = new Point(632, 13);
             btnNextPage.Name = "btnNextPage";
             btnNextPage.Size = new Size(95, 32);

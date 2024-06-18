@@ -136,5 +136,10 @@ namespace Pap
                 MessageBox.Show(" Erro ao resgista Queixa da avaria: " + ex.Message);
             }
         }
+
+        private void textNIF_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

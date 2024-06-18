@@ -57,6 +57,7 @@
             button1 = new Button();
             btnPage = new Button();
             btnNextPage = new Button();
+            textBox2 = new TextBox();
             painel_de_EE.SuspendLayout();
             painel_Parentesco.SuspendLayout();
             panel1.SuspendLayout();
@@ -65,16 +66,16 @@
             // NIF
             // 
             NIF.AutoSize = true;
-            NIF.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            NIF.Location = new Point(33, 175);
+            NIF.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NIF.Location = new Point(55, 227);
             NIF.Name = "NIF";
-            NIF.Size = new Size(35, 14);
+            NIF.Size = new Size(35, 15);
             NIF.TabIndex = 0;
             NIF.Text = "NIF:";
             // 
             // textNome
             // 
-            textNome.Location = new Point(127, 205);
+            textNome.Location = new Point(149, 257);
             textNome.MaxLength = 255;
             textNome.Name = "textNome";
             textNome.Size = new Size(331, 23);
@@ -83,26 +84,26 @@
             // Nome
             // 
             Nome.AutoSize = true;
-            Nome.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            Nome.Location = new Point(29, 208);
+            Nome.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Nome.Location = new Point(51, 260);
             Nome.Name = "Nome";
-            Nome.Size = new Size(42, 14);
+            Nome.Size = new Size(42, 15);
             Nome.TabIndex = 0;
             Nome.Text = "Nome:";
             // 
             // Processo
             // 
             Processo.AutoSize = true;
-            Processo.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            Processo.Location = new Point(29, 246);
+            Processo.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Processo.Location = new Point(51, 298);
             Processo.Name = "Processo";
-            Processo.Size = new Size(70, 14);
+            Processo.Size = new Size(70, 15);
             Processo.TabIndex = 0;
             Processo.Text = "Processo:";
             // 
             // textProcesso
             // 
-            textProcesso.Location = new Point(127, 243);
+            textProcesso.Location = new Point(149, 295);
             textProcesso.MaxLength = 5;
             textProcesso.Name = "textProcesso";
             textProcesso.Size = new Size(76, 23);
@@ -111,26 +112,26 @@
             // NIFEE
             // 
             NIFEE.AutoSize = true;
-            NIFEE.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            NIFEE.Location = new Point(29, 285);
+            NIFEE.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NIFEE.Location = new Point(51, 337);
             NIFEE.Name = "NIFEE";
-            NIFEE.Size = new Size(49, 14);
+            NIFEE.Size = new Size(56, 15);
             NIFEE.TabIndex = 0;
-            NIFEE.Text = "NIFEE:";
+            NIFEE.Text = "NIF EE:";
             // 
             // NomeEE
             // 
             NomeEE.AutoSize = true;
-            NomeEE.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            NomeEE.Location = new Point(29, 324);
+            NomeEE.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NomeEE.Location = new Point(51, 376);
             NomeEE.Name = "NomeEE";
-            NomeEE.Size = new Size(56, 14);
+            NomeEE.Size = new Size(63, 15);
             NomeEE.TabIndex = 0;
-            NomeEE.Text = "NomeEE:";
+            NomeEE.Text = "Nome EE:";
             // 
             // textNomeEE
             // 
-            textNomeEE.Location = new Point(127, 321);
+            textNomeEE.Location = new Point(149, 373);
             textNomeEE.MaxLength = 255;
             textNomeEE.Name = "textNomeEE";
             textNomeEE.Size = new Size(331, 23);
@@ -139,16 +140,16 @@
             // EmailEE
             // 
             EmailEE.AutoSize = true;
-            EmailEE.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            EmailEE.Location = new Point(29, 367);
+            EmailEE.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EmailEE.Location = new Point(51, 419);
             EmailEE.Name = "EmailEE";
-            EmailEE.Size = new Size(63, 14);
+            EmailEE.Size = new Size(63, 15);
             EmailEE.TabIndex = 0;
             EmailEE.Text = "EmailEE:";
             // 
             // textEmailEE
             // 
-            textEmailEE.Location = new Point(127, 364);
+            textEmailEE.Location = new Point(149, 416);
             textEmailEE.MaxLength = 255;
             textEmailEE.Name = "textEmailEE";
             textEmailEE.Size = new Size(331, 23);
@@ -160,7 +161,8 @@
             btnInserir.BackgroundImageLayout = ImageLayout.Center;
             btnInserir.FlatStyle = FlatStyle.Flat;
             btnInserir.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInserir.Location = new Point(387, 525);
+            btnInserir.ForeColor = Color.White;
+            btnInserir.Location = new Point(408, 563);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(137, 32);
             btnInserir.TabIndex = 10;
@@ -174,7 +176,8 @@
             btnLimpar.BackgroundImageLayout = ImageLayout.Center;
             btnLimpar.FlatStyle = FlatStyle.Flat;
             btnLimpar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLimpar.Location = new Point(587, 525);
+            btnLimpar.ForeColor = Color.White;
+            btnLimpar.Location = new Point(580, 563);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(130, 32);
             btnLimpar.TabIndex = 11;
@@ -184,7 +187,7 @@
             // 
             // maskedTextNIF
             // 
-            maskedTextNIF.Location = new Point(127, 171);
+            maskedTextNIF.Location = new Point(149, 223);
             maskedTextNIF.Mask = "000000000";
             maskedTextNIF.Name = "maskedTextNIF";
             maskedTextNIF.Size = new Size(76, 23);
@@ -192,7 +195,7 @@
             // 
             // maskedTextNIFEE
             // 
-            maskedTextNIFEE.Location = new Point(127, 281);
+            maskedTextNIFEE.Location = new Point(149, 333);
             maskedTextNIFEE.Mask = "000000000";
             maskedTextNIFEE.Name = "maskedTextNIFEE";
             maskedTextNIFEE.Size = new Size(76, 23);
@@ -203,7 +206,7 @@
             painel_de_EE.Controls.Add(rb_Nao);
             painel_de_EE.Controls.Add(rb_Sim);
             painel_de_EE.Controls.Add(label1);
-            painel_de_EE.Location = new Point(33, 86);
+            painel_de_EE.Location = new Point(55, 138);
             painel_de_EE.Name = "painel_de_EE";
             painel_de_EE.Size = new Size(280, 68);
             painel_de_EE.TabIndex = 1;
@@ -243,7 +246,7 @@
             // 
             painel_Parentesco.Controls.Add(rb_Parentesco_Nao);
             painel_Parentesco.Controls.Add(rb_Parentesco_Sim);
-            painel_Parentesco.Location = new Point(124, 405);
+            painel_Parentesco.Location = new Point(149, 457);
             painel_Parentesco.Name = "painel_Parentesco";
             painel_Parentesco.Size = new Size(280, 41);
             painel_Parentesco.TabIndex = 8;
@@ -273,17 +276,17 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            label2.Location = new Point(26, 417);
+            label2.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(48, 469);
             label2.Name = "label2";
-            label2.Size = new Size(84, 14);
+            label2.Size = new Size(84, 15);
             label2.TabIndex = 0;
             label2.Text = "Parentesco:";
             // 
             // cb_Tipo
             // 
             cb_Tipo.FormattingEnabled = true;
-            cb_Tipo.Location = new Point(127, 469);
+            cb_Tipo.Location = new Point(149, 521);
             cb_Tipo.Name = "cb_Tipo";
             cb_Tipo.Size = new Size(166, 23);
             cb_Tipo.TabIndex = 9;
@@ -291,10 +294,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Consolas", 9F, FontStyle.Bold);
-            label3.Location = new Point(33, 473);
+            label3.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(55, 525);
             label3.Name = "label3";
-            label3.Size = new Size(42, 14);
+            label3.Size = new Size(42, 15);
             label3.TabIndex = 0;
             label3.Text = "Tipo:";
             // 
@@ -351,7 +354,7 @@
             btnNextPage.BackColor = Color.RoyalBlue;
             btnNextPage.BackgroundImageLayout = ImageLayout.Center;
             btnNextPage.FlatStyle = FlatStyle.Flat;
-            btnNextPage.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNextPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNextPage.Location = new Point(632, 13);
             btnNextPage.Name = "btnNextPage";
             btnNextPage.Size = new Size(95, 32);
@@ -359,11 +362,23 @@
             btnNextPage.Text = " Queixa";
             btnNextPage.UseVisualStyleBackColor = false;
             // 
+            // textBox2
+            // 
+            textBox2.BackColor = SystemColors.Control;
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Calisto MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox2.Location = new Point(12, 78);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(358, 32);
+            textBox2.TabIndex = 21;
+            textBox2.Text = "Inserção de cliente";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1080, 607);
+            Controls.Add(textBox2);
             Controls.Add(panel1);
             Controls.Add(painel_de_EE);
             Controls.Add(label3);
@@ -430,5 +445,6 @@
         private Button button1;
         private Button btnPage;
         private Button btnNextPage;
+        private TextBox textBox2;
     }
 }
