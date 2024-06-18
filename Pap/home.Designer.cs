@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            button1 = new Button();
-            button4 = new Button();
-            btnNextPage = new Button();
             pictureBox1 = new PictureBox();
             dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
             textBox2 = new TextBox();
             painel_de_EE = new Panel();
             rb_Nao = new RadioButton();
@@ -60,62 +55,17 @@
             btnLimpar = new Button();
             textBoxPesquisa = new TextBox();
             textBox3 = new TextBox();
-            panel1.SuspendLayout();
+            panel1 = new Panel();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            btnPage = new Button();
+            btnNextPage = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             painel_de_EE.SuspendLayout();
             painel_Parentesco.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.RoyalBlue;
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(btnNextPage);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1079, 55);
-            panel1.TabIndex = 15;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.RoyalBlue;
-            button1.BackgroundImageLayout = ImageLayout.Center;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(785, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(156, 32);
-            button1.TabIndex = 14;
-            button1.Text = "Página de Busca";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(947, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(82, 31);
-            button4.TabIndex = 2;
-            button4.Text = "???";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // btnNextPage
-            // 
-            btnNextPage.BackColor = Color.RoyalBlue;
-            btnNextPage.BackgroundImageLayout = ImageLayout.Center;
-            btnNextPage.FlatStyle = FlatStyle.Flat;
-            btnNextPage.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNextPage.Location = new Point(684, 12);
-            btnNextPage.Name = "btnNextPage";
-            btnNextPage.Size = new Size(95, 32);
-            btnNextPage.TabIndex = 12;
-            btnNextPage.Text = " Queixa";
-            btnNextPage.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -136,18 +86,6 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(601, 373);
             dataGridView1.TabIndex = 17;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.RoyalBlue;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Calisto MT", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(12, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(251, 35);
-            textBox1.TabIndex = 15;
-            textBox1.Text = "Gestão de avarias";
-            textBox1.TextChanged += this.textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -268,9 +206,9 @@
             NIFEE.Font = new Font("Consolas", 9F, FontStyle.Bold);
             NIFEE.Location = new Point(37, 331);
             NIFEE.Name = "NIFEE";
-            NIFEE.Size = new Size(49, 14);
+            NIFEE.Size = new Size(56, 14);
             NIFEE.TabIndex = 26;
-            NIFEE.Text = "NIFEE:";
+            NIFEE.Text = "NIF EE:";
             // 
             // textNomeEE
             // 
@@ -286,9 +224,9 @@
             EmailEE.Font = new Font("Consolas", 9F, FontStyle.Bold);
             EmailEE.Location = new Point(37, 361);
             EmailEE.Name = "EmailEE";
-            EmailEE.Size = new Size(63, 14);
+            EmailEE.Size = new Size(70, 14);
             EmailEE.TabIndex = 28;
-            EmailEE.Text = "EmailEE:";
+            EmailEE.Text = "Email EE:";
             // 
             // textEmailEE
             // 
@@ -361,9 +299,10 @@
             // 
             btnInserir.BackColor = Color.RoyalBlue;
             btnInserir.BackgroundImageLayout = ImageLayout.Center;
-            btnInserir.FlatStyle = FlatStyle.Flat;
+            btnInserir.FlatStyle = FlatStyle.Popup;
             btnInserir.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInserir.Location = new Point(37, 544);
+            btnInserir.ForeColor = Color.White;
+            btnInserir.Location = new Point(136, 544);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(137, 32);
             btnInserir.TabIndex = 34;
@@ -374,11 +313,12 @@
             // 
             btnLimpar.BackColor = Color.RoyalBlue;
             btnLimpar.BackgroundImageLayout = ImageLayout.Center;
-            btnLimpar.FlatStyle = FlatStyle.Flat;
+            btnLimpar.FlatStyle = FlatStyle.Popup;
             btnLimpar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLimpar.Location = new Point(207, 544);
+            btnLimpar.ForeColor = Color.White;
+            btnLimpar.Location = new Point(301, 544);
             btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(130, 32);
+            btnLimpar.Size = new Size(137, 32);
             btnLimpar.TabIndex = 35;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = false;
@@ -402,11 +342,73 @@
             textBox3.Size = new Size(506, 23);
             textBox3.TabIndex = 37;
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnPage);
+            panel1.Controls.Add(btnNextPage);
+            panel1.Location = new Point(0, -2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1077, 57);
+            panel1.TabIndex = 38;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.RoyalBlue;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Calisto MT", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(12, 12);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(251, 35);
+            textBox1.TabIndex = 15;
+            textBox1.Text = "Gestão de avarias";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.RoyalBlue;
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(733, 13);
+            button1.Name = "button1";
+            button1.Size = new Size(156, 32);
+            button1.TabIndex = 14;
+            button1.Text = "Página de Busca";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // btnPage
+            // 
+            btnPage.FlatStyle = FlatStyle.Flat;
+            btnPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPage.Location = new Point(895, 13);
+            btnPage.Name = "btnPage";
+            btnPage.Size = new Size(176, 32);
+            btnPage.TabIndex = 6;
+            btnPage.Text = "Página de inserção";
+            btnPage.UseVisualStyleBackColor = true;
+            // 
+            // btnNextPage
+            // 
+            btnNextPage.BackColor = Color.RoyalBlue;
+            btnNextPage.BackgroundImageLayout = ImageLayout.Center;
+            btnNextPage.FlatStyle = FlatStyle.Flat;
+            btnNextPage.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNextPage.Location = new Point(632, 13);
+            btnNextPage.Name = "btnNextPage";
+            btnNextPage.Size = new Size(95, 32);
+            btnNextPage.TabIndex = 12;
+            btnNextPage.Text = " Queixa";
+            btnNextPage.UseVisualStyleBackColor = false;
+            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1076, 646);
+            Controls.Add(panel1);
             Controls.Add(textBox3);
             Controls.Add(textBoxPesquisa);
             Controls.Add(btnLimpar);
@@ -429,30 +431,23 @@
             Controls.Add(textBox2);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox1);
-            Controls.Add(panel1);
             Name = "home";
             Text = "Gestão de avarias - Home";
             WindowState = FormWindowState.Maximized;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             painel_de_EE.ResumeLayout(false);
             painel_de_EE.PerformLayout();
             painel_Parentesco.ResumeLayout(false);
             painel_Parentesco.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private Button button1;
-        private Button button4;
-        private Button btnNextPage;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
         private DataGridView dataGridView1;
         private TextBox textBox2;
         private Panel painel_de_EE;
@@ -479,5 +474,10 @@
         private Button btnLimpar;
         private TextBox textBoxPesquisa;
         private TextBox textBox3;
+        private Panel panel1;
+        private TextBox textBox1;
+        private Button button1;
+        private Button btnPage;
+        private Button btnNextPage;
     }
 }
