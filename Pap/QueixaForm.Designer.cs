@@ -48,11 +48,17 @@
             dateQueixa = new DateTimePicker();
             richTextDescricao = new RichTextBox();
             richTextDecisao = new RichTextBox();
+            panel1 = new Panel();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            button4 = new Button();
+            btnNextPage = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // textNome
             // 
-            textNome.Location = new Point(99, 37);
+            textNome.Location = new Point(61, 136);
             textNome.Name = "textNome";
             textNome.ReadOnly = true;
             textNome.Size = new Size(136, 23);
@@ -60,7 +66,7 @@
             // 
             // textNIF
             // 
-            textNIF.Location = new Point(327, 37);
+            textNIF.Location = new Point(291, 136);
             textNIF.Name = "textNIF";
             textNIF.ReadOnly = true;
             textNIF.Size = new Size(136, 23);
@@ -69,7 +75,7 @@
             // Nome
             // 
             Nome.AutoSize = true;
-            Nome.Location = new Point(16, 40);
+            Nome.Location = new Point(12, 139);
             Nome.Name = "Nome";
             Nome.Size = new Size(43, 15);
             Nome.TabIndex = 2;
@@ -78,7 +84,7 @@
             // NIF
             // 
             NIF.AutoSize = true;
-            NIF.Location = new Point(274, 40);
+            NIF.Location = new Point(257, 139);
             NIF.Name = "NIF";
             NIF.Size = new Size(28, 15);
             NIF.TabIndex = 2;
@@ -88,7 +94,7 @@
             // 
             ContinuarQueixa.AutoSize = true;
             ContinuarQueixa.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ContinuarQueixa.Location = new Point(12, 9);
+            ContinuarQueixa.Location = new Point(16, 100);
             ContinuarQueixa.Name = "ContinuarQueixa";
             ContinuarQueixa.Size = new Size(242, 23);
             ContinuarQueixa.TabIndex = 3;
@@ -98,7 +104,7 @@
             // 
             EscolherCliente.AutoSize = true;
             EscolherCliente.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            EscolherCliente.Location = new Point(12, 84);
+            EscolherCliente.Location = new Point(16, 184);
             EscolherCliente.Name = "EscolherCliente";
             EscolherCliente.Size = new Size(291, 23);
             EscolherCliente.TabIndex = 3;
@@ -108,7 +114,7 @@
             // 
             cb_listaClientes.FormattingEnabled = true;
             cb_listaClientes.Items.AddRange(new object[] { "Selecione um Cliente" });
-            cb_listaClientes.Location = new Point(172, 122);
+            cb_listaClientes.Location = new Point(141, 222);
             cb_listaClientes.Name = "cb_listaClientes";
             cb_listaClientes.Size = new Size(301, 23);
             cb_listaClientes.TabIndex = 4;
@@ -116,7 +122,7 @@
             // Clientes
             // 
             Clientes.AutoSize = true;
-            Clientes.Location = new Point(21, 130);
+            Clientes.Location = new Point(12, 225);
             Clientes.Name = "Clientes";
             Clientes.Size = new Size(52, 15);
             Clientes.TabIndex = 5;
@@ -124,9 +130,9 @@
             // 
             // btn_Limpar
             // 
-            btn_Limpar.Location = new Point(284, 492);
+            btn_Limpar.Location = new Point(599, 596);
             btn_Limpar.Name = "btn_Limpar";
-            btn_Limpar.Size = new Size(179, 34);
+            btn_Limpar.Size = new Size(168, 34);
             btn_Limpar.TabIndex = 6;
             btn_Limpar.Text = "Limpar";
             btn_Limpar.UseVisualStyleBackColor = true;
@@ -134,7 +140,7 @@
             // 
             // btn_Inserir
             // 
-            btn_Inserir.Location = new Point(99, 492);
+            btn_Inserir.Location = new Point(379, 596);
             btn_Inserir.Name = "btn_Inserir";
             btn_Inserir.Size = new Size(168, 34);
             btn_Inserir.TabIndex = 7;
@@ -145,7 +151,7 @@
             // TipoEquip
             // 
             TipoEquip.AutoSize = true;
-            TipoEquip.Location = new Point(21, 170);
+            TipoEquip.Location = new Point(12, 261);
             TipoEquip.Name = "TipoEquip";
             TipoEquip.Size = new Size(123, 15);
             TipoEquip.TabIndex = 8;
@@ -154,7 +160,7 @@
             // N_S
             // 
             N_S.AutoSize = true;
-            N_S.Location = new Point(21, 213);
+            N_S.Location = new Point(12, 298);
             N_S.Name = "N_S";
             N_S.Size = new Size(30, 15);
             N_S.TabIndex = 9;
@@ -163,7 +169,7 @@
             // DtQueixa
             // 
             DtQueixa.AutoSize = true;
-            DtQueixa.Location = new Point(21, 256);
+            DtQueixa.Location = new Point(12, 333);
             DtQueixa.Name = "DtQueixa";
             DtQueixa.Size = new Size(90, 15);
             DtQueixa.TabIndex = 10;
@@ -172,7 +178,7 @@
             // Descricao
             // 
             Descricao.AutoSize = true;
-            Descricao.Location = new Point(21, 300);
+            Descricao.Location = new Point(12, 370);
             Descricao.Name = "Descricao";
             Descricao.Size = new Size(61, 15);
             Descricao.TabIndex = 11;
@@ -181,7 +187,7 @@
             // Decisao
             // 
             Decisao.AutoSize = true;
-            Decisao.Location = new Point(21, 388);
+            Decisao.Location = new Point(16, 462);
             Decisao.Name = "Decisao";
             Decisao.Size = new Size(51, 15);
             Decisao.TabIndex = 12;
@@ -189,7 +195,7 @@
             // 
             // textTipoEquip
             // 
-            textTipoEquip.Location = new Point(172, 167);
+            textTipoEquip.Location = new Point(141, 258);
             textTipoEquip.MaxLength = 255;
             textTipoEquip.Name = "textTipoEquip";
             textTipoEquip.Size = new Size(301, 23);
@@ -197,7 +203,7 @@
             // 
             // textN_S
             // 
-            textN_S.Location = new Point(172, 205);
+            textN_S.Location = new Point(141, 290);
             textN_S.MaxLength = 255;
             textN_S.Name = "textN_S";
             textN_S.Size = new Size(301, 23);
@@ -205,32 +211,94 @@
             // 
             // dateQueixa
             // 
-            dateQueixa.Location = new Point(172, 250);
+            dateQueixa.Location = new Point(141, 333);
             dateQueixa.Name = "dateQueixa";
             dateQueixa.Size = new Size(176, 23);
             dateQueixa.TabIndex = 15;
             // 
             // richTextDescricao
             // 
-            richTextDescricao.Location = new Point(171, 300);
+            richTextDescricao.Location = new Point(79, 370);
             richTextDescricao.Name = "richTextDescricao";
-            richTextDescricao.Size = new Size(302, 79);
+            richTextDescricao.Size = new Size(698, 86);
             richTextDescricao.TabIndex = 16;
             richTextDescricao.Text = "";
             // 
             // richTextDecisao
             // 
-            richTextDecisao.Location = new Point(171, 388);
+            richTextDecisao.Location = new Point(79, 462);
             richTextDecisao.Name = "richTextDecisao";
-            richTextDecisao.Size = new Size(302, 85);
+            richTextDecisao.Size = new Size(698, 85);
             richTextDecisao.TabIndex = 17;
             richTextDecisao.Text = "";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(btnNextPage);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1082, 57);
+            panel1.TabIndex = 18;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.RoyalBlue;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Calisto MT", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(12, 12);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(251, 35);
+            textBox1.TabIndex = 15;
+            textBox1.Text = "Gestão de avarias";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.RoyalBlue;
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(785, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(156, 32);
+            button1.TabIndex = 14;
+            button1.Text = "Página de Busca";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Location = new Point(947, 12);
+            button4.Name = "button4";
+            button4.Size = new Size(82, 31);
+            button4.TabIndex = 2;
+            button4.Text = "???";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // btnNextPage
+            // 
+            btnNextPage.BackColor = Color.RoyalBlue;
+            btnNextPage.BackgroundImageLayout = ImageLayout.Center;
+            btnNextPage.FlatStyle = FlatStyle.Flat;
+            btnNextPage.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNextPage.Location = new Point(684, 12);
+            btnNextPage.Name = "btnNextPage";
+            btnNextPage.Size = new Size(95, 32);
+            btnNextPage.TabIndex = 12;
+            btnNextPage.Text = " Queixa";
+            btnNextPage.UseVisualStyleBackColor = false;
             // 
             // QueixaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(802, 564);
+            ClientSize = new Size(1084, 638);
+            Controls.Add(panel1);
             Controls.Add(richTextDecisao);
             Controls.Add(richTextDescricao);
             Controls.Add(dateQueixa);
@@ -254,6 +322,8 @@
             Name = "QueixaForm";
             Text = "Formulário de Queixa";
             Load += QueixaForm_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -280,5 +350,10 @@
         private DateTimePicker dateQueixa;
         private RichTextBox richTextDescricao;
         private RichTextBox richTextDecisao;
+        private Panel panel1;
+        private TextBox textBox1;
+        private Button button1;
+        private Button button4;
+        private Button btnNextPage;
     }
 }
