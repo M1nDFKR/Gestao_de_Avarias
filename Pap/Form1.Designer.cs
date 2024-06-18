@@ -43,7 +43,6 @@
             btnNextPage = new Button();
             maskedTextNIF = new MaskedTextBox();
             maskedTextNIFEE = new MaskedTextBox();
-            btnBuscar = new Button();
             painel_de_EE = new Panel();
             rb_Nao = new RadioButton();
             rb_Sim = new RadioButton();
@@ -56,7 +55,7 @@
             label3 = new Label();
             panel1 = new Panel();
             button4 = new Button();
-            button3 = new Button();
+            btnBuscar = new Button();
             painel_de_EE.SuspendLayout();
             painel_Parentesco.SuspendLayout();
             panel1.SuspendLayout();
@@ -160,7 +159,7 @@
             btnInserir.BackgroundImageLayout = ImageLayout.Center;
             btnInserir.FlatStyle = FlatStyle.Flat;
             btnInserir.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInserir.Location = new Point(401, 525);
+            btnInserir.Location = new Point(387, 525);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(137, 32);
             btnInserir.TabIndex = 10;
@@ -211,20 +210,6 @@
             maskedTextNIFEE.Name = "maskedTextNIFEE";
             maskedTextNIFEE.Size = new Size(76, 23);
             maskedTextNIFEE.TabIndex = 5;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.BackColor = Color.RoyalBlue;
-            btnBuscar.BackgroundImageLayout = ImageLayout.Center;
-            btnBuscar.FlatStyle = FlatStyle.Flat;
-            btnBuscar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(362, 563);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(409, 32);
-            btnBuscar.TabIndex = 13;
-            btnBuscar.Text = "Página de Busca";
-            btnBuscar.UseVisualStyleBackColor = false;
-            btnBuscar.Click += btnBuscar_Click;
             // 
             // painel_de_EE
             // 
@@ -330,8 +315,8 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btnBuscar);
             panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
             panel1.Controls.Add(btnNextPage);
             panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
@@ -342,7 +327,7 @@
             // 
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(873, 13);
+            button4.Location = new Point(947, 12);
             button4.Name = "button4";
             button4.Size = new Size(82, 31);
             button4.TabIndex = 2;
@@ -350,16 +335,18 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // button3
+            // btnBuscar
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(785, 12);
-            button3.Name = "button3";
-            button3.Size = new Size(82, 32);
-            button3.TabIndex = 1;
-            button3.Text = "???";
-            button3.UseVisualStyleBackColor = true;
+            btnBuscar.BackColor = Color.RoyalBlue;
+            btnBuscar.BackgroundImageLayout = ImageLayout.Center;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscar.Location = new Point(785, 12);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(156, 32);
+            btnBuscar.TabIndex = 14;
+            btnBuscar.Text = "Página de Busca";
+            btnBuscar.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -372,7 +359,6 @@
             Controls.Add(cb_Tipo);
             Controls.Add(label2);
             Controls.Add(painel_Parentesco);
-            Controls.Add(btnBuscar);
             Controls.Add(maskedTextNIFEE);
             Controls.Add(maskedTextNIF);
             Controls.Add(btnLimpar);
@@ -389,6 +375,7 @@
             Controls.Add(NIF);
             Name = "Form1";
             Text = "Inserção de utilizador";
+            Load += Form1_Load;
             painel_de_EE.ResumeLayout(false);
             painel_de_EE.PerformLayout();
             painel_Parentesco.ResumeLayout(false);
@@ -415,7 +402,6 @@
         private Button btnNextPage;
         private MaskedTextBox maskedTextNIF;
         private MaskedTextBox maskedTextNIFEE;
-        private Button btnBuscar;
         private Panel painel_de_EE;
         private Label label1;
         private RadioButton rb_Nao;
@@ -429,6 +415,6 @@
         private Panel panel1;
         private Button button2;
         private Button button4;
-        private Button button3;
+        private Button btnBuscar;
     }
 }
