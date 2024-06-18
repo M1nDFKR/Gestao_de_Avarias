@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            dataGridView1 = new DataGridView();
+            dtGridViewQueixas = new DataGridView();
             textBox2 = new TextBox();
             btnInserir = new Button();
             btnLimpar = new Button();
@@ -43,13 +43,9 @@
             Clientes = new Label();
             cb_listaClientes = new ComboBox();
             TipoEquip = new Label();
-            textTipoEquip = new TextBox();
-            N_S = new Label();
-            textN_S = new TextBox();
-            DtQueixa = new Label();
-            dateQueixa = new DateTimePicker();
+            cb_ListadeEquip_NS = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGridViewQueixas).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,29 +55,30 @@
             pictureBox1.Image = Properties.Resources.logo;
             pictureBox1.Location = new Point(415, 61);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(207, 92);
+            pictureBox1.Size = new Size(232, 92);
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dtGridViewQueixas
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(463, 261);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(601, 373);
-            dataGridView1.TabIndex = 17;
+            dtGridViewQueixas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtGridViewQueixas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGridViewQueixas.Location = new Point(463, 261);
+            dtGridViewQueixas.Name = "dtGridViewQueixas";
+            dtGridViewQueixas.ReadOnly = true;
+            dtGridViewQueixas.Size = new Size(733, 373);
+            dtGridViewQueixas.TabIndex = 17;
             // 
             // textBox2
             // 
             textBox2.BackColor = SystemColors.Control;
             textBox2.BorderStyle = BorderStyle.None;
             textBox2.Font = new Font("Calibri", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(12, 232);
+            textBox2.Location = new Point(12, 261);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(251, 26);
+            textBox2.Size = new Size(320, 26);
             textBox2.TabIndex = 18;
-            textBox2.Text = "Informações das queixas.:";
+            textBox2.Text = "Informações das últimas 5 queixas.:";
             // 
             // btnInserir
             // 
@@ -139,7 +136,7 @@
             panel1.Controls.Add(btnPageQueixa);
             panel1.Location = new Point(0, -2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1077, 57);
+            panel1.Size = new Size(1209, 57);
             panel1.TabIndex = 38;
             // 
             // textBox1
@@ -197,7 +194,7 @@
             // 
             Clientes.AutoSize = true;
             Clientes.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Clientes.Location = new Point(12, 276);
+            Clientes.Location = new Point(12, 307);
             Clientes.Name = "Clientes";
             Clientes.Size = new Size(70, 15);
             Clientes.TabIndex = 39;
@@ -206,75 +203,37 @@
             // cb_listaClientes
             // 
             cb_listaClientes.FormattingEnabled = true;
-            cb_listaClientes.Items.AddRange(new object[] { "Selecione um Cliente" });
-            cb_listaClientes.Location = new Point(88, 272);
+            cb_listaClientes.Items.AddRange(new object[] { "Vizualize os últimos 5 Cliente com os seus respetivos NIF e Nome" });
+            cb_listaClientes.Location = new Point(88, 301);
             cb_listaClientes.Name = "cb_listaClientes";
-            cb_listaClientes.Size = new Size(301, 23);
+            cb_listaClientes.Size = new Size(369, 23);
             cb_listaClientes.TabIndex = 40;
             // 
             // TipoEquip
             // 
             TipoEquip.AutoSize = true;
             TipoEquip.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TipoEquip.Location = new Point(12, 319);
+            TipoEquip.Location = new Point(12, 348);
             TipoEquip.Name = "TipoEquip";
-            TipoEquip.Size = new Size(147, 15);
+            TipoEquip.Size = new Size(231, 15);
             TipoEquip.TabIndex = 41;
-            TipoEquip.Text = "Tipo de Equipamento:";
+            TipoEquip.Text = "Tipo de Equipamento e o seu N-S:";
             // 
-            // textTipoEquip
+            // cb_ListadeEquip_NS
             // 
-            textTipoEquip.Location = new Point(156, 316);
-            textTipoEquip.MaxLength = 255;
-            textTipoEquip.Name = "textTipoEquip";
-            textTipoEquip.Size = new Size(217, 23);
-            textTipoEquip.TabIndex = 42;
-            // 
-            // N_S
-            // 
-            N_S.AutoSize = true;
-            N_S.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            N_S.Location = new Point(12, 356);
-            N_S.Name = "N_S";
-            N_S.Size = new Size(35, 15);
-            N_S.TabIndex = 43;
-            N_S.Text = "N-S:";
-            // 
-            // textN_S
-            // 
-            textN_S.Location = new Point(52, 355);
-            textN_S.MaxLength = 255;
-            textN_S.Name = "textN_S";
-            textN_S.Size = new Size(321, 23);
-            textN_S.TabIndex = 44;
-            // 
-            // DtQueixa
-            // 
-            DtQueixa.AutoSize = true;
-            DtQueixa.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DtQueixa.Location = new Point(12, 401);
-            DtQueixa.Name = "DtQueixa";
-            DtQueixa.Size = new Size(112, 15);
-            DtQueixa.TabIndex = 45;
-            DtQueixa.Text = "Data da Queixa:";
-            // 
-            // dateQueixa
-            // 
-            dateQueixa.Location = new Point(123, 397);
-            dateQueixa.Name = "dateQueixa";
-            dateQueixa.Size = new Size(176, 23);
-            dateQueixa.TabIndex = 46;
+            cb_ListadeEquip_NS.FormattingEnabled = true;
+            cb_ListadeEquip_NS.Items.AddRange(new object[] { "Vizualize os últimos 5 Equipamentos com os seus respetivos N-S" });
+            cb_ListadeEquip_NS.Location = new Point(12, 375);
+            cb_ListadeEquip_NS.Name = "cb_ListadeEquip_NS";
+            cb_ListadeEquip_NS.Size = new Size(445, 23);
+            cb_ListadeEquip_NS.TabIndex = 47;
             // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1076, 646);
-            Controls.Add(dateQueixa);
-            Controls.Add(DtQueixa);
-            Controls.Add(textN_S);
-            Controls.Add(N_S);
-            Controls.Add(textTipoEquip);
+            ClientSize = new Size(1208, 646);
+            Controls.Add(cb_ListadeEquip_NS);
             Controls.Add(TipoEquip);
             Controls.Add(cb_listaClientes);
             Controls.Add(Clientes);
@@ -284,13 +243,14 @@
             Controls.Add(btnLimpar);
             Controls.Add(btnInserir);
             Controls.Add(textBox2);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtGridViewQueixas);
             Controls.Add(pictureBox1);
             Name = "home";
             Text = "Gestão de avarias - Home";
             WindowState = FormWindowState.Maximized;
+            Load += home_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGridViewQueixas).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -299,7 +259,7 @@
 
         #endregion
         private PictureBox pictureBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dtGridViewQueixas;
         private TextBox textBox2;
         private Button btnInserir;
         private Button btnLimpar;
@@ -313,10 +273,6 @@
         private Label Clientes;
         private ComboBox cb_listaClientes;
         private Label TipoEquip;
-        private TextBox textTipoEquip;
-        private Label N_S;
-        private TextBox textN_S;
-        private Label DtQueixa;
-        private DateTimePicker dateQueixa;
+        private ComboBox cb_ListadeEquip_NS;
     }
 }

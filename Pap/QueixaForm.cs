@@ -47,7 +47,7 @@ namespace Pap
             try
             {
                 string connectionString = ConexaoBD.basededados;
-                string query = "SELECT NIF, Nome FROM Utilizador ORDER BY DataInsercao DESC LIMIT 2";
+                string query = "SELECT NIF, Nome FROM Utilizador ORDER BY DataInsercao DESC LIMIT 8";
 
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
@@ -108,27 +108,51 @@ namespace Pap
         {
             try
             {
-                //Arrumar isso amanhã
                 if (!string.IsNullOrWhiteSpace(textNIF.Text) &&
                     !string.IsNullOrWhiteSpace(textTipoEquip.Text) &&
                     !string.IsNullOrWhiteSpace(textN_S.Text) &&
-                    !string.IsNullOrWhiteSpace(richTextDescricao.Text) &&
-                    !string.IsNullOrWhiteSpace(richTextDecisao.Text))
+                    !string.IsNullOrWhiteSpace(richTextDescricao.Text))
                 {
 
-                    InserirQueixa inserirQueixa = new InserirQueixa();
+                    InserirQueixa inQueixa = new InserirQueixa();
 
-                    inserirQueixa.NIFUtilizador = textNIF.Text;
-                    inserirQueixa.TipoEquip = textTipoEquip.Text;
-                    inserirQueixa.NS = textN_S.Text;
-                    inserirQueixa.DataQueixa = dateQueixa.Value;
-                    inserirQueixa.Descricao = richTextDescricao.Text;
-                    inserirQueixa.Decisao = richTextDecisao.Text;
+                    inQueixa.NIFUtilizador = textNIF.Text;
+                    inQueixa.TipoEquip = textTipoEquip.Text;
+                    inQueixa.NS = textN_S.Text;
+                    inQueixa.DataQueixa = dateQueixa.Value;
+                    inQueixa.Descricao = richTextDescricao.Text;
+                    inQueixa.Decisao = richTextDecisao.Text;
 
+
+                    if (inQueixa.inserirQueixa())
+                    {
+                        MessageBox.Show($" O(A) Cliente com o NIF: {inQueixa.NIFUtilizador} tem a sua queixa registrada com sucesso.");
+                        textNome.Clear();
+                        textNIF.Clear();
+                        cb_listaClientes.Enabled = true;
+                        cb_listaClientes.SelectedIndex = -1;
+                        textTipoEquip.Clear();
+                        textN_S.Clear();
+                        richTextDescricao.Clear();
+                        richTextDecisao.Clear();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possivel regista a queixa da avaria.");
+                    }
                 }
                 else
                 {
                     MessageBox.Show(" Preencher todos os campos antes de inserir.");
+                    textNome.Clear();
+                    textNIF.Clear();
+                    cb_listaClientes.Enabled = true;
+                    cb_listaClientes.SelectedIndex = -1;
+                    textTipoEquip.Clear();
+                    textN_S.Clear();
+                    richTextDescricao.Clear();
+                    richTextDecisao.Clear();
                 }
             }
             catch (Exception ex)
@@ -138,23 +162,56 @@ namespace Pap
         }
         private void btnPageHome_Click(object sender, EventArgs e)
         {
-            home Home = new home();
-            Home.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(textNIF.Text) &&
+                string.IsNullOrWhiteSpace(textTipoEquip.Text) &&
+                string.IsNullOrWhiteSpace(textN_S.Text) &&
+                string.IsNullOrWhiteSpace(richTextDescricao.Text) &&
+                string.IsNullOrWhiteSpace(richTextDecisao.Text))
+            {
+                home Home = new home();
+                Home.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btnPageBusca_Click(object sender, EventArgs e)
         {
-            BuscarForm buscarForm = new BuscarForm();
-            buscarForm.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(textNIF.Text) &&
+                string.IsNullOrWhiteSpace(textTipoEquip.Text) &&
+                string.IsNullOrWhiteSpace(textN_S.Text) &&
+                string.IsNullOrWhiteSpace(richTextDescricao.Text) &&
+                string.IsNullOrWhiteSpace(richTextDecisao.Text))
+            {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btnPageInsercao_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(textNIF.Text) &&
+                string.IsNullOrWhiteSpace(textTipoEquip.Text) &&
+                string.IsNullOrWhiteSpace(textN_S.Text) &&
+                string.IsNullOrWhiteSpace(richTextDescricao.Text) &&
+                string.IsNullOrWhiteSpace(richTextDecisao.Text))
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
     }
 }

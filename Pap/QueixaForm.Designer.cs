@@ -137,7 +137,7 @@
             btn_Limpar.FlatStyle = FlatStyle.Flat;
             btn_Limpar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_Limpar.ForeColor = Color.White;
-            btn_Limpar.Location = new Point(599, 596);
+            btn_Limpar.Location = new Point(284, 592);
             btn_Limpar.Name = "btn_Limpar";
             btn_Limpar.Size = new Size(168, 34);
             btn_Limpar.TabIndex = 6;
@@ -151,7 +151,7 @@
             btn_Inserir.FlatStyle = FlatStyle.Flat;
             btn_Inserir.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_Inserir.ForeColor = Color.White;
-            btn_Inserir.Location = new Point(379, 596);
+            btn_Inserir.Location = new Point(64, 592);
             btn_Inserir.Name = "btn_Inserir";
             btn_Inserir.Size = new Size(168, 34);
             btn_Inserir.TabIndex = 7;
@@ -236,7 +236,7 @@
             // 
             richTextDescricao.Location = new Point(79, 370);
             richTextDescricao.Name = "richTextDescricao";
-            richTextDescricao.Size = new Size(698, 86);
+            richTextDescricao.Size = new Size(373, 86);
             richTextDescricao.TabIndex = 16;
             richTextDescricao.Text = "";
             // 
@@ -244,7 +244,7 @@
             // 
             richTextDecisao.Location = new Point(79, 462);
             richTextDecisao.Name = "richTextDecisao";
-            richTextDecisao.Size = new Size(698, 85);
+            richTextDecisao.Size = new Size(373, 85);
             richTextDecisao.TabIndex = 17;
             richTextDecisao.Text = "";
             // 
