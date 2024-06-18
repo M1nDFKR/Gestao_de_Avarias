@@ -76,7 +76,6 @@
             pictureBox1.Size = new Size(207, 92);
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += this.pictureBox1_Click;
             // 
             // dataGridView1
             // 
@@ -333,7 +332,6 @@
             textBoxPesquisa.Size = new Size(100, 24);
             textBoxPesquisa.TabIndex = 36;
             textBoxPesquisa.Text = "Pesquisar:";
-            textBoxPesquisa.TextChanged += this.textBox3_TextChanged;
             // 
             // textBox3
             // 
