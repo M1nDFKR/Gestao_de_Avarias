@@ -130,10 +130,10 @@ namespace Pap
                 {
                     MessageBox.Show(" Preencher todos os campos antes de inserir.");
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(" Erro ao resgista Queixa da avaria: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Erro ao resgista Queixa da avaria: " + ex.Message);
             }
         }
     }
