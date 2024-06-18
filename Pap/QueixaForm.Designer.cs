@@ -50,9 +50,9 @@
             richTextDecisao = new RichTextBox();
             panel1 = new Panel();
             textBox1 = new TextBox();
-            button1 = new Button();
-            btnPage = new Button();
-            btnNextPage = new Button();
+            btnPageBusca = new Button();
+            btnPageInsercao = new Button();
+            btnPageHome = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,7 +71,6 @@
             textNIF.ReadOnly = true;
             textNIF.Size = new Size(136, 23);
             textNIF.TabIndex = 1;
-            textNIF.TextChanged += textNIF_TextChanged;
             // 
             // Nome
             // 
@@ -254,9 +253,9 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
             panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(btnPage);
-            panel1.Controls.Add(btnNextPage);
+            panel1.Controls.Add(btnPageBusca);
+            panel1.Controls.Add(btnPageInsercao);
+            panel1.Controls.Add(btnPageHome);
             panel1.Location = new Point(-2, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1090, 59);
@@ -266,49 +265,52 @@
             // 
             textBox1.BackColor = Color.RoyalBlue;
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Calisto MT", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(12, 12);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(251, 35);
+            textBox1.Size = new Size(267, 33);
             textBox1.TabIndex = 15;
             textBox1.Text = "Gestão de avarias";
             // 
-            // button1
+            // btnPageBusca
             // 
-            button1.BackColor = Color.RoyalBlue;
-            button1.BackgroundImageLayout = ImageLayout.Center;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(733, 13);
-            button1.Name = "button1";
-            button1.Size = new Size(156, 32);
-            button1.TabIndex = 14;
-            button1.Text = "Página de Busca";
-            button1.UseVisualStyleBackColor = false;
+            btnPageBusca.BackColor = Color.RoyalBlue;
+            btnPageBusca.BackgroundImageLayout = ImageLayout.Center;
+            btnPageBusca.FlatStyle = FlatStyle.Flat;
+            btnPageBusca.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageBusca.Location = new Point(733, 13);
+            btnPageBusca.Name = "btnPageBusca";
+            btnPageBusca.Size = new Size(156, 32);
+            btnPageBusca.TabIndex = 14;
+            btnPageBusca.Text = "Página de Busca";
+            btnPageBusca.UseVisualStyleBackColor = false;
+            btnPageBusca.Click += btnPageBusca_Click;
             // 
-            // btnPage
+            // btnPageInsercao
             // 
-            btnPage.FlatStyle = FlatStyle.Flat;
-            btnPage.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPage.Location = new Point(895, 13);
-            btnPage.Name = "btnPage";
-            btnPage.Size = new Size(176, 32);
-            btnPage.TabIndex = 6;
-            btnPage.Text = "Página de inserção";
-            btnPage.UseVisualStyleBackColor = true;
+            btnPageInsercao.FlatStyle = FlatStyle.Flat;
+            btnPageInsercao.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageInsercao.Location = new Point(895, 13);
+            btnPageInsercao.Name = "btnPageInsercao";
+            btnPageInsercao.Size = new Size(176, 32);
+            btnPageInsercao.TabIndex = 6;
+            btnPageInsercao.Text = "Página de inserção";
+            btnPageInsercao.UseVisualStyleBackColor = true;
+            btnPageInsercao.Click += btnPageInsercao_Click;
             // 
-            // btnNextPage
+            // btnPageHome
             // 
-            btnNextPage.BackColor = Color.RoyalBlue;
-            btnNextPage.BackgroundImageLayout = ImageLayout.Center;
-            btnNextPage.FlatStyle = FlatStyle.Flat;
-            btnNextPage.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNextPage.Location = new Point(632, 13);
-            btnNextPage.Name = "btnNextPage";
-            btnNextPage.Size = new Size(95, 32);
-            btnNextPage.TabIndex = 12;
-            btnNextPage.Text = " Queixa";
-            btnNextPage.UseVisualStyleBackColor = false;
+            btnPageHome.BackColor = Color.RoyalBlue;
+            btnPageHome.BackgroundImageLayout = ImageLayout.Center;
+            btnPageHome.FlatStyle = FlatStyle.Flat;
+            btnPageHome.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageHome.Location = new Point(577, 13);
+            btnPageHome.Name = "btnPageHome";
+            btnPageHome.Size = new Size(150, 32);
+            btnPageHome.TabIndex = 12;
+            btnPageHome.Text = "Página Inicial";
+            btnPageHome.UseVisualStyleBackColor = false;
+            btnPageHome.Click += btnPageHome_Click;
             // 
             // QueixaForm
             // 
@@ -370,8 +372,8 @@
         private RichTextBox richTextDecisao;
         private Panel panel1;
         private TextBox textBox1;
-        private Button button1;
-        private Button btnPage;
-        private Button btnNextPage;
+        private Button btnPageBusca;
+        private Button btnPageInsercao;
+        private Button btnPageHome;
     }
 }

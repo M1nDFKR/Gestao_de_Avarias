@@ -240,7 +240,28 @@ namespace Pap
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnPageQueixa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (maskedTextNIF.Text.Equals("") && textNome.Text.Equals("") && textProcesso.Text.Equals("") && maskedTextNIFEE.Text.Equals("") && textNomeEE.Text.Equals("") && textEmailEE.Text.Equals(""))
+                {
+                    QueixaForm queixaForm = new QueixaForm();
+                    queixaForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Limpar todos os campos antes de mudar de página.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível ir para a página de busca: " + ex.Message);
+            }
+        }
+
+        private void btnPageBusca_Click(object sender, EventArgs e)
         {
             try
             {
@@ -261,29 +282,25 @@ namespace Pap
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnPageHome_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            try
+            {
+                if (maskedTextNIF.Text.Equals("") && textNome.Text.Equals("") && textProcesso.Text.Equals("") && maskedTextNIFEE.Text.Equals("") && textNomeEE.Text.Equals("") && textEmailEE.Text.Equals(""))
+                {
+                    home Home = new home();
+                    Home.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Limpar todos os campos antes de mudar de página.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível ir para a página de busca: " + ex.Message);
+            }
         }
     }
     public static class EnumExtensions

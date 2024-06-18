@@ -47,7 +47,7 @@ namespace Pap
             try
             {
                 string connectionString = ConexaoBD.basededados;
-                string query = "SELECT NIF, Nome FROM Utilizador ORDER BY DataInsercao DESC LIMIT 8";
+                string query = "SELECT NIF, Nome FROM Utilizador ORDER BY DataInsercao DESC LIMIT 2";
 
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
@@ -136,10 +136,25 @@ namespace Pap
                 MessageBox.Show(" Erro ao resgista Queixa da avaria: " + ex.Message);
             }
         }
-
-        private void textNIF_TextChanged(object sender, EventArgs e)
+        private void btnPageHome_Click(object sender, EventArgs e)
         {
+            home Home = new home();
+            Home.Show();
+            this.Hide();
+        }
 
+        private void btnPageBusca_Click(object sender, EventArgs e)
+        {
+            BuscarForm buscarForm = new BuscarForm();
+            buscarForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageInsercao_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

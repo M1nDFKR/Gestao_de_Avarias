@@ -81,9 +81,9 @@ namespace Pap
                     MessageBox.Show("Nenhum dado foi encontrado.");
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro ao executar a busca:" + ex.Message );
+                MessageBox.Show("Ocorreu um erro ao executar a busca:" + ex.Message);
             }
         }
 
@@ -133,6 +133,48 @@ namespace Pap
             txtBuscaNIF.Clear();
             txtBuscaNome.Clear();
             txtBuscaNIF.Focus();
+        }
+
+        private void btnPageQueixa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBuscaNIF.Text.Equals("") && txtBuscaNome.Text.Equals(""))
+                {
+                    QueixaForm queixaForm = new QueixaForm();
+                    queixaForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Limpar todos os campos antes de mudar de página.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível ir para a próxima página: " + ex.Message);
+            }
+        }
+
+        private void btnPageHome_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBuscaNIF.Text.Equals("") && txtBuscaNome.Text.Equals(""))
+                {
+                    home Home = new home();
+                    Home.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Limpar todos os campos antes de mudar de página.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível ir para a próxima página: " + ex.Message);
+            }
         }
     }
 }

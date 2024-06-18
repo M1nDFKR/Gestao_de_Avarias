@@ -16,5 +16,26 @@ namespace Pap
         {
             InitializeComponent();
         }
+
+        private void btnPageQueixa_Click(object sender, EventArgs e)
+        {
+            QueixaForm queixaForm = new QueixaForm();
+            queixaForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageBusca_Click(object sender, EventArgs e)
+        {
+            BuscarForm buscarForm = new BuscarForm();
+            buscarForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageInsercao_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
     }
 }
