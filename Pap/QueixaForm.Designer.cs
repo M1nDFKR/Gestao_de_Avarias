@@ -100,7 +100,7 @@
             ContinuarQueixa.Name = "ContinuarQueixa";
             ContinuarQueixa.Size = new Size(242, 23);
             ContinuarQueixa.TabIndex = 3;
-            ContinuarQueixa.Text = "Continuar Quiexa do Cliente.:";
+            ContinuarQueixa.Text = "Continuar Queixa do Cliente.:";
             // 
             // EscolherCliente
             // 

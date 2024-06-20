@@ -22,15 +22,42 @@ namespace Pap
                              .Select(e => e.GetEnumDescription())
                              .ToList();
 
-            rb_Parentesco_Sim.CheckedChanged += new EventHandler(rb_Parentesco_Sim_CheckedChanged);
-            rb_Parentesco_Nao.CheckedChanged += new EventHandler(rb_Parentesco_Nao_CheckedChanged);
+            cb_Tipo.SelectedIndex = 0;
 
+            cb_ListaParentesco.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cb_ListaParentesco.Items.AddRange(new string[]
+        {
+            "Sem Parentesco",
+            "Mãe",
+            "Pai",
+            "Avó",
+            "Avô",
+            "Tio",
+            "Tia",
+            "Outro"
+        });
+            cb_ListaParentesco.SelectedIndex = 0;
+
+            rb_Sim.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
+            rb_Nao.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
+        }
+
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_Sim.Checked)
+            {
+                cb_ListaParentesco.SelectedIndex = 0;
+                cb_ListaParentesco.Enabled = false;
+            }
+            else if (rb_Nao.Checked)
+            {
+                cb_ListaParentesco.Enabled = true;
+            }
         }
 
         public enum tipo_Parentesco
         {
-            [Description("Sem parentesco")]
-            Semparentesco,
             [Description("Aluno")]
             Aluno,
             [Description("Professor")]
@@ -80,9 +107,8 @@ namespace Pap
                                 !maskedTextNIFEE.Text.Equals("") &&
                                 !textNomeEE.Text.Equals("");
 
-                bool parentescoSelecionado = rb_Parentesco_Sim.Checked || rb_Parentesco_Nao.Checked;
 
-                if (todosOsCamposPreenchidos && parentescoSelecionado && encarregadoDeEducacao)
+                if (todosOsCamposPreenchidos && encarregadoDeEducacao)
                 {
                     Inserir inResponsavel = new Inserir();
 
@@ -104,13 +130,13 @@ namespace Pap
                     inResponsavel.NomeEE = textNomeEE.Text;
                     inResponsavel.EmailEE = textEmailEE.Text;
 
-                    if (rb_Parentesco_Sim.Checked)
+                    if (rb_Sim.Checked == true)
                     {
-                        inResponsavel.Parentesco = "Sim";
+                        inResponsavel.Parentesco = cb_ListaParentesco.SelectedItem.ToString();
                     }
-                    else if (rb_Parentesco_Nao.Checked)
+                    else if (rb_Nao.Checked == true)
                     {
-                        inResponsavel.Parentesco = "Não";
+                        inResponsavel.Parentesco = cb_ListaParentesco.SelectedItem.ToString();
                     }
 
                     inResponsavel.Tipo = cb_Tipo.SelectedItem.ToString();
@@ -142,8 +168,8 @@ namespace Pap
                         textNomeEE.Clear();
                         textEmailEE.Clear();
                         maskedTextNIF.Focus();
-                        rb_Parentesco_Sim.Checked = false;
-                        rb_Parentesco_Nao.Checked = false;
+                        cb_ListaParentesco.Enabled = true;
+                        cb_ListaParentesco.SelectedIndex = 0;
                         cb_Tipo.Enabled = true;
                         cb_Tipo.SelectedIndex = 0;
 
@@ -169,31 +195,13 @@ namespace Pap
                     textNomeEE.Clear();
                     textEmailEE.Clear();
                     maskedTextNIF.Focus();
-                    rb_Parentesco_Sim.Checked = false;
-                    rb_Parentesco_Nao.Checked = false;
+                    cb_ListaParentesco.SelectedIndex = 0;
                     cb_Tipo.SelectedIndex = 0;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(" Erro ao resgista utilizador(a) da avaria: " + ex.Message);
-            }
-        }
-
-        private void rb_Parentesco_Sim_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rb_Parentesco_Sim.Checked)
-            {
-                cb_Tipo.Enabled = true;
-            }
-        }
-
-        private void rb_Parentesco_Nao_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rb_Parentesco_Nao.Checked)
-            {
-                cb_Tipo.SelectedIndex = 0;
-                cb_Tipo.Enabled = false;
             }
         }
 
@@ -208,8 +216,8 @@ namespace Pap
             textNomeEE.Clear();
             textEmailEE.Clear();
             maskedTextNIF.Focus();
-            rb_Parentesco_Sim.Checked = false;
-            rb_Parentesco_Nao.Checked = false;
+            cb_ListaParentesco.Enabled = true;
+            cb_ListaParentesco.SelectedIndex = 0;
             cb_Tipo.Enabled = true;
             cb_Tipo.SelectedIndex = 0;
         }

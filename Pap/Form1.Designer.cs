@@ -46,9 +46,6 @@
             rb_Nao = new RadioButton();
             rb_Sim = new RadioButton();
             label1 = new Label();
-            painel_Parentesco = new Panel();
-            rb_Parentesco_Nao = new RadioButton();
-            rb_Parentesco_Sim = new RadioButton();
             label2 = new Label();
             cb_Tipo = new ComboBox();
             label3 = new Label();
@@ -58,8 +55,8 @@
             btnPageHome = new Button();
             btnPageQueixa = new Button();
             textBox2 = new TextBox();
+            cb_ListaParentesco = new ComboBox();
             painel_de_EE.SuspendLayout();
-            painel_Parentesco.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -242,37 +239,6 @@
             label1.TabIndex = 0;
             label1.Text = "É o proprio Encarregado de Educação.:";
             // 
-            // painel_Parentesco
-            // 
-            painel_Parentesco.Controls.Add(rb_Parentesco_Nao);
-            painel_Parentesco.Controls.Add(rb_Parentesco_Sim);
-            painel_Parentesco.Location = new Point(149, 457);
-            painel_Parentesco.Name = "painel_Parentesco";
-            painel_Parentesco.Size = new Size(280, 41);
-            painel_Parentesco.TabIndex = 8;
-            // 
-            // rb_Parentesco_Nao
-            // 
-            rb_Parentesco_Nao.AutoSize = true;
-            rb_Parentesco_Nao.Location = new Point(119, 12);
-            rb_Parentesco_Nao.Name = "rb_Parentesco_Nao";
-            rb_Parentesco_Nao.Size = new Size(47, 19);
-            rb_Parentesco_Nao.TabIndex = 1;
-            rb_Parentesco_Nao.TabStop = true;
-            rb_Parentesco_Nao.Text = "Não";
-            rb_Parentesco_Nao.UseVisualStyleBackColor = true;
-            // 
-            // rb_Parentesco_Sim
-            // 
-            rb_Parentesco_Sim.AutoSize = true;
-            rb_Parentesco_Sim.Location = new Point(12, 12);
-            rb_Parentesco_Sim.Name = "rb_Parentesco_Sim";
-            rb_Parentesco_Sim.Size = new Size(45, 19);
-            rb_Parentesco_Sim.TabIndex = 0;
-            rb_Parentesco_Sim.TabStop = true;
-            rb_Parentesco_Sim.Text = "Sim";
-            rb_Parentesco_Sim.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -286,7 +252,8 @@
             // cb_Tipo
             // 
             cb_Tipo.FormattingEnabled = true;
-            cb_Tipo.Location = new Point(149, 521);
+            cb_Tipo.Items.AddRange(new object[] { "Selecione" });
+            cb_Tipo.Location = new Point(149, 522);
             cb_Tipo.Name = "cb_Tipo";
             cb_Tipo.Size = new Size(166, 23);
             cb_Tipo.TabIndex = 9;
@@ -311,7 +278,7 @@
             panel1.Controls.Add(btnPageQueixa);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1082, 57);
+            panel1.Size = new Size(1372, 57);
             panel1.TabIndex = 20;
             // 
             // textBox1
@@ -376,18 +343,26 @@
             textBox2.TabIndex = 21;
             textBox2.Text = "Inserção de cliente";
             // 
+            // cb_ListaParentesco
+            // 
+            cb_ListaParentesco.FormattingEnabled = true;
+            cb_ListaParentesco.Location = new Point(149, 466);
+            cb_ListaParentesco.Name = "cb_ListaParentesco";
+            cb_ListaParentesco.Size = new Size(166, 23);
+            cb_ListaParentesco.TabIndex = 22;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1080, 607);
+            ClientSize = new Size(1370, 607);
+            Controls.Add(cb_ListaParentesco);
             Controls.Add(textBox2);
             Controls.Add(panel1);
             Controls.Add(painel_de_EE);
             Controls.Add(label3);
             Controls.Add(cb_Tipo);
             Controls.Add(label2);
-            Controls.Add(painel_Parentesco);
             Controls.Add(maskedTextNIFEE);
             Controls.Add(maskedTextNIF);
             Controls.Add(btnLimpar);
@@ -407,8 +382,6 @@
             WindowState = FormWindowState.Maximized;
             painel_de_EE.ResumeLayout(false);
             painel_de_EE.PerformLayout();
-            painel_Parentesco.ResumeLayout(false);
-            painel_Parentesco.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -435,10 +408,7 @@
         private Label label1;
         private RadioButton rb_Nao;
         private RadioButton rb_Sim;
-        private Panel painel_Parentesco;
         private Label label2;
-        private RadioButton rb_Parentesco_Nao;
-        private RadioButton rb_Parentesco_Sim;
         private ComboBox cb_Tipo;
         private Label label3;
         private Button button2;
@@ -448,5 +418,6 @@
         private Button btnPageHome;
         private Button btnPageQueixa;
         private TextBox textBox2;
+        private ComboBox cb_ListaParentesco;
     }
 }

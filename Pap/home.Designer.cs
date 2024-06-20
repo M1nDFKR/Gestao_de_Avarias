@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            dtGridViewQueixas = new DataGridView();
-            textBox2 = new TextBox();
-            btnInserir = new Button();
+            Informacao = new TextBox();
+            btnPesquisar = new Button();
             btnLimpar = new Button();
-            textBoxPesquisa = new TextBox();
-            textBox3 = new TextBox();
+            Pesquisar = new TextBox();
+            txt_buscar = new TextBox();
             panel1 = new Panel();
-            textBox1 = new TextBox();
+            Gestao_De_Avaria = new TextBox();
             btnPageBusca = new Button();
             btnPageInsercao = new Button();
             btnPageQueixa = new Button();
@@ -44,8 +43,8 @@
             cb_listaClientes = new ComboBox();
             TipoEquip = new Label();
             cb_ListadeEquip_NS = new ComboBox();
+            lstDados = new ListView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dtGridViewQueixas).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,46 +52,37 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(415, 61);
+            pictureBox1.Location = new Point(12, 79);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(232, 92);
+            pictureBox1.Size = new Size(219, 92);
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             // 
-            // dtGridViewQueixas
+            // Informacao
             // 
-            dtGridViewQueixas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dtGridViewQueixas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGridViewQueixas.Location = new Point(463, 261);
-            dtGridViewQueixas.Name = "dtGridViewQueixas";
-            dtGridViewQueixas.ReadOnly = true;
-            dtGridViewQueixas.Size = new Size(733, 373);
-            dtGridViewQueixas.TabIndex = 17;
+            Informacao.BackColor = SystemColors.Control;
+            Informacao.BorderStyle = BorderStyle.None;
+            Informacao.Font = new Font("Calibri", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Informacao.Location = new Point(38, 301);
+            Informacao.Name = "Informacao";
+            Informacao.Size = new Size(320, 26);
+            Informacao.TabIndex = 0;
+            Informacao.Text = "Informações das últimas 5 queixas.:";
             // 
-            // textBox2
+            // btnPesquisar
             // 
-            textBox2.BackColor = SystemColors.Control;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Calibri", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(12, 261);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(320, 26);
-            textBox2.TabIndex = 18;
-            textBox2.Text = "Informações das últimas 5 queixas.:";
-            // 
-            // btnInserir
-            // 
-            btnInserir.BackColor = Color.RoyalBlue;
-            btnInserir.BackgroundImageLayout = ImageLayout.Center;
-            btnInserir.FlatStyle = FlatStyle.Popup;
-            btnInserir.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInserir.ForeColor = Color.White;
-            btnInserir.Location = new Point(463, 192);
-            btnInserir.Name = "btnInserir";
-            btnInserir.Size = new Size(218, 32);
-            btnInserir.TabIndex = 34;
-            btnInserir.Text = "Pesquisar";
-            btnInserir.UseVisualStyleBackColor = false;
+            btnPesquisar.BackColor = Color.RoyalBlue;
+            btnPesquisar.BackgroundImageLayout = ImageLayout.Center;
+            btnPesquisar.FlatStyle = FlatStyle.Popup;
+            btnPesquisar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPesquisar.ForeColor = Color.White;
+            btnPesquisar.Location = new Point(565, 79);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(218, 32);
+            btnPesquisar.TabIndex = 3;
+            btnPesquisar.Text = "Pesquisar";
+            btnPesquisar.UseVisualStyleBackColor = false;
+            btnPesquisar.Click += btnPesquisar_Click;
             // 
             // btnLimpar
             // 
@@ -101,54 +91,56 @@
             btnLimpar.FlatStyle = FlatStyle.Popup;
             btnLimpar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLimpar.ForeColor = Color.White;
-            btnLimpar.Location = new Point(687, 192);
+            btnLimpar.Location = new Point(789, 79);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(137, 32);
-            btnLimpar.TabIndex = 35;
+            btnLimpar.TabIndex = 4;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = false;
+            btnLimpar.Click += btnLimpar_Click;
             // 
-            // textBoxPesquisa
+            // Pesquisar
             // 
-            textBoxPesquisa.BackColor = SystemColors.Control;
-            textBoxPesquisa.BorderStyle = BorderStyle.None;
-            textBoxPesquisa.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBoxPesquisa.Location = new Point(463, 230);
-            textBoxPesquisa.Name = "textBoxPesquisa";
-            textBoxPesquisa.Size = new Size(100, 23);
-            textBoxPesquisa.TabIndex = 36;
-            textBoxPesquisa.Text = "Pesquisar:";
+            Pesquisar.BackColor = SystemColors.Control;
+            Pesquisar.BorderStyle = BorderStyle.None;
+            Pesquisar.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pesquisar.Location = new Point(565, 130);
+            Pesquisar.Name = "Pesquisar";
+            Pesquisar.Size = new Size(100, 23);
+            Pesquisar.TabIndex = 0;
+            Pesquisar.Text = "Pesquisar:";
             // 
-            // textBox3
+            // txt_buscar
             // 
-            textBox3.Location = new Point(565, 232);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(499, 23);
-            textBox3.TabIndex = 37;
+            txt_buscar.Location = new Point(667, 132);
+            txt_buscar.MaxLength = 255;
+            txt_buscar.Name = "txt_buscar";
+            txt_buscar.Size = new Size(499, 23);
+            txt_buscar.TabIndex = 5;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(Gestao_De_Avaria);
             panel1.Controls.Add(btnPageBusca);
             panel1.Controls.Add(btnPageInsercao);
             panel1.Controls.Add(btnPageQueixa);
             panel1.Location = new Point(0, -2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1209, 57);
-            panel1.TabIndex = 38;
+            panel1.Size = new Size(1371, 57);
+            panel1.TabIndex = 6;
             // 
-            // textBox1
+            // Gestao_De_Avaria
             // 
-            textBox1.BackColor = Color.RoyalBlue;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(12, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 33);
-            textBox1.TabIndex = 15;
-            textBox1.Text = "Gestão de avarias";
+            Gestao_De_Avaria.BackColor = Color.RoyalBlue;
+            Gestao_De_Avaria.BorderStyle = BorderStyle.None;
+            Gestao_De_Avaria.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Gestao_De_Avaria.Location = new Point(12, 12);
+            Gestao_De_Avaria.Name = "Gestao_De_Avaria";
+            Gestao_De_Avaria.Size = new Size(260, 33);
+            Gestao_De_Avaria.TabIndex = 0;
+            Gestao_De_Avaria.Text = "Gestão de avarias";
             // 
             // btnPageBusca
             // 
@@ -159,7 +151,7 @@
             btnPageBusca.Location = new Point(733, 13);
             btnPageBusca.Name = "btnPageBusca";
             btnPageBusca.Size = new Size(156, 32);
-            btnPageBusca.TabIndex = 14;
+            btnPageBusca.TabIndex = 2;
             btnPageBusca.Text = "Página de Busca";
             btnPageBusca.UseVisualStyleBackColor = false;
             btnPageBusca.Click += btnPageBusca_Click;
@@ -171,7 +163,7 @@
             btnPageInsercao.Location = new Point(895, 13);
             btnPageInsercao.Name = "btnPageInsercao";
             btnPageInsercao.Size = new Size(176, 32);
-            btnPageInsercao.TabIndex = 6;
+            btnPageInsercao.TabIndex = 3;
             btnPageInsercao.Text = "Página de inserção";
             btnPageInsercao.UseVisualStyleBackColor = true;
             btnPageInsercao.Click += btnPageInsercao_Click;
@@ -185,7 +177,7 @@
             btnPageQueixa.Location = new Point(632, 13);
             btnPageQueixa.Name = "btnPageQueixa";
             btnPageQueixa.Size = new Size(95, 32);
-            btnPageQueixa.TabIndex = 12;
+            btnPageQueixa.TabIndex = 1;
             btnPageQueixa.Text = " Queixa";
             btnPageQueixa.UseVisualStyleBackColor = false;
             btnPageQueixa.Click += btnPageQueixa_Click;
@@ -194,63 +186,70 @@
             // 
             Clientes.AutoSize = true;
             Clientes.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Clientes.Location = new Point(12, 307);
+            Clientes.Location = new Point(38, 347);
             Clientes.Name = "Clientes";
             Clientes.Size = new Size(70, 15);
-            Clientes.TabIndex = 39;
+            Clientes.TabIndex = 0;
             Clientes.Text = "Clientes:";
             // 
             // cb_listaClientes
             // 
             cb_listaClientes.FormattingEnabled = true;
             cb_listaClientes.Items.AddRange(new object[] { "Vizualize os últimos 5 Cliente com os seus respetivos NIF e Nome" });
-            cb_listaClientes.Location = new Point(88, 301);
+            cb_listaClientes.Location = new Point(114, 341);
             cb_listaClientes.Name = "cb_listaClientes";
-            cb_listaClientes.Size = new Size(369, 23);
-            cb_listaClientes.TabIndex = 40;
+            cb_listaClientes.Size = new Size(404, 23);
+            cb_listaClientes.TabIndex = 1;
             // 
             // TipoEquip
             // 
             TipoEquip.AutoSize = true;
             TipoEquip.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TipoEquip.Location = new Point(12, 348);
+            TipoEquip.Location = new Point(38, 388);
             TipoEquip.Name = "TipoEquip";
             TipoEquip.Size = new Size(231, 15);
-            TipoEquip.TabIndex = 41;
+            TipoEquip.TabIndex = 0;
             TipoEquip.Text = "Tipo de Equipamento e o seu N-S:";
             // 
             // cb_ListadeEquip_NS
             // 
             cb_ListadeEquip_NS.FormattingEnabled = true;
             cb_ListadeEquip_NS.Items.AddRange(new object[] { "Vizualize os últimos 5 Equipamentos com os seus respetivos N-S" });
-            cb_ListadeEquip_NS.Location = new Point(12, 375);
+            cb_ListadeEquip_NS.Location = new Point(38, 415);
             cb_ListadeEquip_NS.Name = "cb_ListadeEquip_NS";
-            cb_ListadeEquip_NS.Size = new Size(445, 23);
-            cb_ListadeEquip_NS.TabIndex = 47;
+            cb_ListadeEquip_NS.Size = new Size(480, 23);
+            cb_ListadeEquip_NS.TabIndex = 2;
+            // 
+            // lstDados
+            // 
+            lstDados.Location = new Point(565, 161);
+            lstDados.Name = "lstDados";
+            lstDados.Size = new Size(793, 576);
+            lstDados.TabIndex = 0;
+            lstDados.UseCompatibleStateImageBehavior = false;
             // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1208, 646);
+            ClientSize = new Size(1370, 749);
+            Controls.Add(lstDados);
             Controls.Add(cb_ListadeEquip_NS);
             Controls.Add(TipoEquip);
             Controls.Add(cb_listaClientes);
             Controls.Add(Clientes);
             Controls.Add(panel1);
-            Controls.Add(textBox3);
-            Controls.Add(textBoxPesquisa);
+            Controls.Add(txt_buscar);
+            Controls.Add(Pesquisar);
             Controls.Add(btnLimpar);
-            Controls.Add(btnInserir);
-            Controls.Add(textBox2);
-            Controls.Add(dtGridViewQueixas);
+            Controls.Add(btnPesquisar);
+            Controls.Add(Informacao);
             Controls.Add(pictureBox1);
             Name = "home";
             Text = "Gestão de avarias - Home";
             WindowState = FormWindowState.Maximized;
             Load += home_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dtGridViewQueixas).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -259,14 +258,13 @@
 
         #endregion
         private PictureBox pictureBox1;
-        private DataGridView dtGridViewQueixas;
-        private TextBox textBox2;
-        private Button btnInserir;
+        private TextBox Informacao;
+        private Button btnPesquisar;
         private Button btnLimpar;
-        private TextBox textBoxPesquisa;
-        private TextBox textBox3;
+        private TextBox Pesquisar;
+        private TextBox txt_buscar;
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox Gestao_De_Avaria;
         private Button btnPageBusca;
         private Button btnPageInsercao;
         private Button btnPageQueixa;
@@ -274,5 +272,6 @@
         private ComboBox cb_listaClientes;
         private Label TipoEquip;
         private ComboBox cb_ListadeEquip_NS;
+        private ListView lstDados;
     }
 }
