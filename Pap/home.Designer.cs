@@ -55,7 +55,7 @@
             pictureBox1.Image = Properties.Resources.logo;
             pictureBox1.Location = new Point(12, 79);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(219, 92);
+            pictureBox1.Size = new Size(243, 113);
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             // 
@@ -75,11 +75,11 @@
             btnPesquisar.BackColor = Color.RoyalBlue;
             btnPesquisar.BackgroundImageLayout = ImageLayout.Center;
             btnPesquisar.FlatStyle = FlatStyle.Popup;
-            btnPesquisar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPesquisar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPesquisar.ForeColor = Color.White;
-            btnPesquisar.Location = new Point(565, 79);
+            btnPesquisar.Location = new Point(1172, 132);
             btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(218, 32);
+            btnPesquisar.Size = new Size(98, 23);
             btnPesquisar.TabIndex = 3;
             btnPesquisar.Text = "Pesquisar";
             btnPesquisar.UseVisualStyleBackColor = false;
@@ -90,11 +90,11 @@
             btnLimpar.BackColor = Color.RoyalBlue;
             btnLimpar.BackgroundImageLayout = ImageLayout.Center;
             btnLimpar.FlatStyle = FlatStyle.Popup;
-            btnLimpar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLimpar.ForeColor = Color.White;
-            btnLimpar.Location = new Point(789, 79);
+            btnLimpar.Location = new Point(1276, 132);
             btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(137, 32);
+            btnLimpar.Size = new Size(76, 23);
             btnLimpar.TabIndex = 4;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = false;
@@ -150,7 +150,7 @@
             btnPageBusca.BackgroundImageLayout = ImageLayout.Center;
             btnPageBusca.FlatStyle = FlatStyle.Flat;
             btnPageBusca.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageBusca.Location = new Point(733, 13);
+            btnPageBusca.Location = new Point(1020, 12);
             btnPageBusca.Name = "btnPageBusca";
             btnPageBusca.Size = new Size(156, 32);
             btnPageBusca.TabIndex = 2;
@@ -162,7 +162,7 @@
             // 
             btnPageInsercao.FlatStyle = FlatStyle.Flat;
             btnPageInsercao.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageInsercao.Location = new Point(895, 13);
+            btnPageInsercao.Location = new Point(1182, 12);
             btnPageInsercao.Name = "btnPageInsercao";
             btnPageInsercao.Size = new Size(176, 32);
             btnPageInsercao.TabIndex = 3;
@@ -176,7 +176,7 @@
             btnPageQueixa.BackgroundImageLayout = ImageLayout.Center;
             btnPageQueixa.FlatStyle = FlatStyle.Flat;
             btnPageQueixa.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageQueixa.Location = new Point(632, 13);
+            btnPageQueixa.Location = new Point(919, 12);
             btnPageQueixa.Name = "btnPageQueixa";
             btnPageQueixa.Size = new Size(95, 32);
             btnPageQueixa.TabIndex = 1;

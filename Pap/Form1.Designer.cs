@@ -140,9 +140,9 @@
             EmailEE.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             EmailEE.Location = new Point(51, 419);
             EmailEE.Name = "EmailEE";
-            EmailEE.Size = new Size(63, 15);
+            EmailEE.Size = new Size(70, 15);
             EmailEE.TabIndex = 0;
-            EmailEE.Text = "EmailEE:";
+            EmailEE.Text = "Email EE:";
             // 
             // textEmailEE
             // 
@@ -159,7 +159,7 @@
             btnInserir.FlatStyle = FlatStyle.Flat;
             btnInserir.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInserir.ForeColor = Color.White;
-            btnInserir.Location = new Point(408, 563);
+            btnInserir.Location = new Point(51, 641);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(137, 32);
             btnInserir.TabIndex = 10;
@@ -174,7 +174,7 @@
             btnLimpar.FlatStyle = FlatStyle.Flat;
             btnLimpar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLimpar.ForeColor = Color.White;
-            btnLimpar.Location = new Point(580, 563);
+            btnLimpar.Location = new Point(350, 641);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(130, 32);
             btnLimpar.TabIndex = 11;
@@ -255,14 +255,14 @@
             cb_Tipo.Items.AddRange(new object[] { "Selecione" });
             cb_Tipo.Location = new Point(149, 522);
             cb_Tipo.Name = "cb_Tipo";
-            cb_Tipo.Size = new Size(166, 23);
+            cb_Tipo.Size = new Size(186, 23);
             cb_Tipo.TabIndex = 9;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(55, 525);
+            label3.Location = new Point(48, 525);
             label3.Name = "label3";
             label3.Size = new Size(42, 15);
             label3.TabIndex = 0;
@@ -298,7 +298,7 @@
             btnPageBusca.BackgroundImageLayout = ImageLayout.Center;
             btnPageBusca.FlatStyle = FlatStyle.Flat;
             btnPageBusca.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageBusca.Location = new Point(733, 13);
+            btnPageBusca.Location = new Point(1020, 13);
             btnPageBusca.Name = "btnPageBusca";
             btnPageBusca.Size = new Size(156, 32);
             btnPageBusca.TabIndex = 14;
@@ -310,7 +310,7 @@
             // 
             btnPageHome.FlatStyle = FlatStyle.Flat;
             btnPageHome.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageHome.Location = new Point(895, 13);
+            btnPageHome.Location = new Point(1182, 13);
             btnPageHome.Name = "btnPageHome";
             btnPageHome.Size = new Size(176, 32);
             btnPageHome.TabIndex = 6;
@@ -324,7 +324,7 @@
             btnPageQueixa.BackgroundImageLayout = ImageLayout.Center;
             btnPageQueixa.FlatStyle = FlatStyle.Flat;
             btnPageQueixa.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageQueixa.Location = new Point(632, 13);
+            btnPageQueixa.Location = new Point(919, 13);
             btnPageQueixa.Name = "btnPageQueixa";
             btnPageQueixa.Size = new Size(95, 32);
             btnPageQueixa.TabIndex = 12;
@@ -348,14 +348,14 @@
             cb_ListaParentesco.FormattingEnabled = true;
             cb_ListaParentesco.Location = new Point(149, 466);
             cb_ListaParentesco.Name = "cb_ListaParentesco";
-            cb_ListaParentesco.Size = new Size(166, 23);
+            cb_ListaParentesco.Size = new Size(186, 23);
             cb_ListaParentesco.TabIndex = 22;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 607);
+            ClientSize = new Size(1370, 749);
             Controls.Add(cb_ListaParentesco);
             Controls.Add(textBox2);
             Controls.Add(panel1);
@@ -378,7 +378,7 @@
             Controls.Add(Nome);
             Controls.Add(NIF);
             Name = "Form1";
-            Text = "Inserção de utilizador";
+            Text = "Gestão de avarias - Inserção de clientes";
             WindowState = FormWindowState.Maximized;
             painel_de_EE.ResumeLayout(false);
             painel_de_EE.PerformLayout();

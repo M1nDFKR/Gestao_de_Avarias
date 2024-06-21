@@ -258,7 +258,7 @@
             panel1.Controls.Add(btnPageHome);
             panel1.Location = new Point(-2, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1090, 59);
+            panel1.Size = new Size(1376, 59);
             panel1.TabIndex = 20;
             // 
             // textBox1
@@ -278,7 +278,7 @@
             btnPageBusca.BackgroundImageLayout = ImageLayout.Center;
             btnPageBusca.FlatStyle = FlatStyle.Flat;
             btnPageBusca.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageBusca.Location = new Point(733, 13);
+            btnPageBusca.Location = new Point(1022, 17);
             btnPageBusca.Name = "btnPageBusca";
             btnPageBusca.Size = new Size(156, 32);
             btnPageBusca.TabIndex = 14;
@@ -290,7 +290,7 @@
             // 
             btnPageInsercao.FlatStyle = FlatStyle.Flat;
             btnPageInsercao.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageInsercao.Location = new Point(895, 13);
+            btnPageInsercao.Location = new Point(1184, 17);
             btnPageInsercao.Name = "btnPageInsercao";
             btnPageInsercao.Size = new Size(176, 32);
             btnPageInsercao.TabIndex = 6;
@@ -304,7 +304,7 @@
             btnPageHome.BackgroundImageLayout = ImageLayout.Center;
             btnPageHome.FlatStyle = FlatStyle.Flat;
             btnPageHome.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageHome.Location = new Point(577, 13);
+            btnPageHome.Location = new Point(866, 17);
             btnPageHome.Name = "btnPageHome";
             btnPageHome.Size = new Size(150, 32);
             btnPageHome.TabIndex = 12;
@@ -316,7 +316,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1084, 638);
+            ClientSize = new Size(1370, 749);
             Controls.Add(panel1);
             Controls.Add(richTextDecisao);
             Controls.Add(richTextDescricao);
@@ -339,7 +339,7 @@
             Controls.Add(textNIF);
             Controls.Add(textNome);
             Name = "QueixaForm";
-            Text = "Formulário de Queixa";
+            Text = "Gestão de avarias - Inserir queixa";
             WindowState = FormWindowState.Maximized;
             Load += QueixaForm_Load;
             panel1.ResumeLayout(false);
