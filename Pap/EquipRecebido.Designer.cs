@@ -282,7 +282,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "EquipRecebido";
-            Text = "Formulário de Equipamentos";
+            Text = "Gestão de avarias - Formulário de Equipamentos";
             WindowState = FormWindowState.Minimized;
             Load += EquipRecebido_Load;
             panel1.ResumeLayout(false);
