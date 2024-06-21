@@ -35,6 +35,7 @@
             Pesquisar = new TextBox();
             txt_buscar = new TextBox();
             panel1 = new Panel();
+            btnPageEquipamentos = new Button();
             Gestao_De_Avaria = new TextBox();
             btnPageBusca = new Button();
             btnPageInsercao = new Button();
@@ -44,7 +45,6 @@
             TipoEquip = new Label();
             cb_ListadeEquip_NS = new ComboBox();
             lstDados = new ListView();
-            btnPageEquipamentos = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -132,6 +132,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1371, 57);
             panel1.TabIndex = 6;
+            // 
+            // btnPageEquipamentos
+            // 
+            btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
+            btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageEquipamentos.Location = new Point(737, 12);
+            btnPageEquipamentos.Name = "btnPageEquipamentos";
+            btnPageEquipamentos.Size = new Size(176, 32);
+            btnPageEquipamentos.TabIndex = 4;
+            btnPageEquipamentos.Text = "Equipamentos";
+            btnPageEquipamentos.UseVisualStyleBackColor = true;
+            btnPageEquipamentos.Click += btnPageEquipamentos_Click;
             // 
             // Gestao_De_Avaria
             // 
@@ -229,18 +241,6 @@
             lstDados.Size = new Size(793, 576);
             lstDados.TabIndex = 0;
             lstDados.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnPageEquipamentos
-            // 
-            btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
-            btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageEquipamentos.Location = new Point(1077, 12);
-            btnPageEquipamentos.Name = "btnPageEquipamentos";
-            btnPageEquipamentos.Size = new Size(176, 32);
-            btnPageEquipamentos.TabIndex = 4;
-            btnPageEquipamentos.Text = "Página de inserção";
-            btnPageEquipamentos.UseVisualStyleBackColor = true;
-            btnPageEquipamentos.Click += btnPageEquipamentos_Click;
             // 
             // home
             // 

@@ -213,5 +213,12 @@ namespace Pap
                 MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
             }
         }
+
+        private void btnPageEquipamentos_Click(object sender, EventArgs e)
+        {
+            EquipRecebido equipamentorecebido = new EquipRecebido();
+            equipamentorecebido.Show();
+            this.Hide();
+        }
     }
 }

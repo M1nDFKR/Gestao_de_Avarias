@@ -41,6 +41,7 @@
             textBox1 = new TextBox();
             btnPageHome = new Button();
             btnPageQueixa = new Button();
+            btnPageEquipamentos = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -120,7 +121,7 @@
             // 
             btnPage.FlatStyle = FlatStyle.Flat;
             btnPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPage.Location = new Point(1182, 17);
+            btnPage.Location = new Point(1033, 17);
             btnPage.Name = "btnPage";
             btnPage.Size = new Size(176, 32);
             btnPage.TabIndex = 6;
@@ -146,6 +147,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btnPageEquipamentos);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(btnPageHome);
             panel1.Controls.Add(btnPage);
@@ -172,7 +174,7 @@
             btnPageHome.BackgroundImageLayout = ImageLayout.Center;
             btnPageHome.FlatStyle = FlatStyle.Flat;
             btnPageHome.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageHome.Location = new Point(1020, 17);
+            btnPageHome.Location = new Point(1215, 17);
             btnPageHome.Name = "btnPageHome";
             btnPageHome.Size = new Size(156, 32);
             btnPageHome.TabIndex = 14;
@@ -186,13 +188,25 @@
             btnPageQueixa.BackgroundImageLayout = ImageLayout.Center;
             btnPageQueixa.FlatStyle = FlatStyle.Flat;
             btnPageQueixa.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageQueixa.Location = new Point(919, 17);
+            btnPageQueixa.Location = new Point(932, 17);
             btnPageQueixa.Name = "btnPageQueixa";
             btnPageQueixa.Size = new Size(95, 32);
             btnPageQueixa.TabIndex = 12;
             btnPageQueixa.Text = "Queixa";
             btnPageQueixa.UseVisualStyleBackColor = false;
             btnPageQueixa.Click += btnPageQueixa_Click;
+            // 
+            // btnPageEquipamentos
+            // 
+            btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
+            btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageEquipamentos.Location = new Point(750, 17);
+            btnPageEquipamentos.Name = "btnPageEquipamentos";
+            btnPageEquipamentos.Size = new Size(176, 32);
+            btnPageEquipamentos.TabIndex = 20;
+            btnPageEquipamentos.Text = "Equipamentos";
+            btnPageEquipamentos.UseVisualStyleBackColor = true;
+            btnPageEquipamentos.Click += btnPageEquipamentos_Click;
             // 
             // BuscarForm
             // 
@@ -233,5 +247,6 @@
         private TextBox textBox1;
         private Button btnPageHome;
         private Button btnPageQueixa;
+        private Button btnPageEquipamentos;
     }
 }

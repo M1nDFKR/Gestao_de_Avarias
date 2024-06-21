@@ -42,32 +42,42 @@
             btn_Limpar = new Button();
             btn_Inserir = new Button();
             label5 = new Label();
+            panel1 = new Panel();
+            btnPage = new Button();
+            textBox1 = new TextBox();
+            btnPageBusca = new Button();
+            btnPageHome = new Button();
+            btnPageQueixa = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 168);
+            label1.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(14, 346);
             label1.Name = "label1";
-            label1.Size = new Size(176, 15);
+            label1.Size = new Size(210, 15);
             label1.TabIndex = 0;
             label1.Text = "Data de Equipamento Recebido:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 123);
+            label2.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(14, 301);
             label2.Name = "label2";
-            label2.Size = new Size(202, 15);
+            label2.Size = new Size(252, 15);
             label2.TabIndex = 1;
             label2.Text = "Selecione a Queixa e o Equipamento:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 204);
+            label3.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(14, 382);
             label3.Name = "label3";
-            label3.Size = new Size(178, 15);
+            label3.Size = new Size(224, 15);
             label3.TabIndex = 2;
             label3.Text = "Referência da Queixa a Empresa:";
             // 
@@ -75,54 +85,56 @@
             // 
             cb_ListaDeQueixas.FormattingEnabled = true;
             cb_ListaDeQueixas.Items.AddRange(new object[] { "Selecione um Equipamento" });
-            cb_ListaDeQueixas.Location = new Point(233, 120);
+            cb_ListaDeQueixas.Location = new Point(272, 298);
             cb_ListaDeQueixas.Name = "cb_ListaDeQueixas";
-            cb_ListaDeQueixas.Size = new Size(278, 23);
+            cb_ListaDeQueixas.Size = new Size(290, 23);
             cb_ListaDeQueixas.TabIndex = 3;
             // 
             // dataDeEntrada
             // 
-            dataDeEntrada.Location = new Point(233, 162);
+            dataDeEntrada.Location = new Point(235, 340);
             dataDeEntrada.Name = "dataDeEntrada";
-            dataDeEntrada.Size = new Size(200, 23);
+            dataDeEntrada.Size = new Size(207, 23);
             dataDeEntrada.TabIndex = 4;
             // 
             // txt_referencia
             // 
-            txt_referencia.Location = new Point(233, 201);
+            txt_referencia.Location = new Point(244, 379);
             txt_referencia.Name = "txt_referencia";
             txt_referencia.Size = new Size(278, 23);
             txt_referencia.TabIndex = 5;
             // 
             // txt_NS
             // 
-            txt_NS.Location = new Point(148, 78);
+            txt_NS.Location = new Point(160, 256);
             txt_NS.Name = "txt_NS";
             txt_NS.Size = new Size(178, 23);
             txt_NS.TabIndex = 6;
             // 
             // txt_TipoDeEquipamento
             // 
-            txt_TipoDeEquipamento.Location = new Point(475, 78);
+            txt_TipoDeEquipamento.Location = new Point(500, 256);
             txt_TipoDeEquipamento.Name = "txt_TipoDeEquipamento";
-            txt_TipoDeEquipamento.Size = new Size(192, 23);
+            txt_TipoDeEquipamento.Size = new Size(178, 23);
             txt_TipoDeEquipamento.TabIndex = 7;
             // 
             // NS
             // 
             NS.AutoSize = true;
-            NS.Location = new Point(12, 81);
+            NS.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NS.Location = new Point(14, 259);
             NS.Name = "NS";
-            NS.Size = new Size(121, 15);
+            NS.Size = new Size(140, 15);
             NS.TabIndex = 8;
             NS.Text = "N-S do Equipamento:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(345, 81);
+            label4.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(347, 259);
             label4.Name = "label4";
-            label4.Size = new Size(124, 15);
+            label4.Size = new Size(147, 15);
             label4.TabIndex = 9;
             label4.Text = "Tipo do Equipamento:";
             // 
@@ -136,38 +148,125 @@
             // 
             // btn_Limpar
             // 
-            btn_Limpar.Location = new Point(119, 304);
+            btn_Limpar.BackColor = Color.RoyalBlue;
+            btn_Limpar.FlatStyle = FlatStyle.Flat;
+            btn_Limpar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Limpar.ForeColor = Color.White;
+            btn_Limpar.Location = new Point(347, 428);
             btn_Limpar.Name = "btn_Limpar";
-            btn_Limpar.Size = new Size(75, 23);
+            btn_Limpar.Size = new Size(103, 35);
             btn_Limpar.TabIndex = 11;
             btn_Limpar.Text = "Limpar";
-            btn_Limpar.UseVisualStyleBackColor = true;
+            btn_Limpar.UseVisualStyleBackColor = false;
             btn_Limpar.Click += btn_Limpar_Click;
             // 
             // btn_Inserir
             // 
-            btn_Inserir.Location = new Point(233, 304);
+            btn_Inserir.BackColor = Color.RoyalBlue;
+            btn_Inserir.FlatStyle = FlatStyle.Flat;
+            btn_Inserir.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Inserir.ForeColor = Color.White;
+            btn_Inserir.Location = new Point(121, 428);
             btn_Inserir.Name = "btn_Inserir";
-            btn_Inserir.Size = new Size(75, 23);
+            btn_Inserir.Size = new Size(103, 35);
             btn_Inserir.TabIndex = 12;
             btn_Inserir.Text = "Inserir";
-            btn_Inserir.UseVisualStyleBackColor = true;
+            btn_Inserir.UseVisualStyleBackColor = false;
             btn_Inserir.Click += btn_Inserir_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 45);
+            label5.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(14, 223);
             label5.Name = "label5";
-            label5.Size = new Size(73, 15);
+            label5.Size = new Size(84, 15);
             label5.TabIndex = 13;
             label5.Text = "NSA Queixa:";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btnPage);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(btnPageBusca);
+            panel1.Controls.Add(btnPageHome);
+            panel1.Controls.Add(btnPageQueixa);
+            panel1.Location = new Point(1, -1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1372, 61);
+            panel1.TabIndex = 21;
+            // 
+            // btnPage
+            // 
+            btnPage.FlatStyle = FlatStyle.Flat;
+            btnPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPage.Location = new Point(737, 17);
+            btnPage.Name = "btnPage";
+            btnPage.Size = new Size(176, 32);
+            btnPage.TabIndex = 22;
+            btnPage.Text = "Página de inserção";
+            btnPage.UseVisualStyleBackColor = true;
+            btnPage.Click += btnPage_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.RoyalBlue;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(12, 12);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(272, 33);
+            textBox1.TabIndex = 15;
+            textBox1.Text = "Gestão de avarias";
+            // 
+            // btnPageBusca
+            // 
+            btnPageBusca.BackColor = Color.RoyalBlue;
+            btnPageBusca.BackgroundImageLayout = ImageLayout.Center;
+            btnPageBusca.FlatStyle = FlatStyle.Flat;
+            btnPageBusca.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageBusca.Location = new Point(1020, 17);
+            btnPageBusca.Name = "btnPageBusca";
+            btnPageBusca.Size = new Size(156, 32);
+            btnPageBusca.TabIndex = 14;
+            btnPageBusca.Text = "Página de Busca";
+            btnPageBusca.UseVisualStyleBackColor = false;
+            btnPageBusca.Click += btnPageBusca_Click;
+            // 
+            // btnPageHome
+            // 
+            btnPageHome.FlatStyle = FlatStyle.Flat;
+            btnPageHome.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageHome.Location = new Point(1182, 17);
+            btnPageHome.Name = "btnPageHome";
+            btnPageHome.Size = new Size(176, 32);
+            btnPageHome.TabIndex = 6;
+            btnPageHome.Text = "Página de Inicial";
+            btnPageHome.UseVisualStyleBackColor = true;
+            btnPageHome.Click += btnPageHome_Click;
+            // 
+            // btnPageQueixa
+            // 
+            btnPageQueixa.BackColor = Color.RoyalBlue;
+            btnPageQueixa.BackgroundImageLayout = ImageLayout.Center;
+            btnPageQueixa.FlatStyle = FlatStyle.Flat;
+            btnPageQueixa.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageQueixa.Location = new Point(919, 17);
+            btnPageQueixa.Name = "btnPageQueixa";
+            btnPageQueixa.Size = new Size(95, 32);
+            btnPageQueixa.TabIndex = 12;
+            btnPageQueixa.Text = "Queixa";
+            btnPageQueixa.UseVisualStyleBackColor = false;
+            btnPageQueixa.Click += btnPageQueixa_Click;
             // 
             // EquipRecebido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(932, 566);
+            ClientSize = new Size(1370, 749);
+            Controls.Add(panel1);
             Controls.Add(label5);
             Controls.Add(btn_Inserir);
             Controls.Add(btn_Limpar);
@@ -184,7 +283,10 @@
             Controls.Add(label1);
             Name = "EquipRecebido";
             Text = "Formulário de Equipamentos";
+            WindowState = FormWindowState.Minimized;
             Load += EquipRecebido_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,5 +307,11 @@
         private Button btn_Limpar;
         private Button btn_Inserir;
         private Label label5;
+        private Panel panel1;
+        private TextBox textBox1;
+        private Button btnPageBusca;
+        private Button btnPageHome;
+        private Button btnPageQueixa;
+        private Button btnPage;
     }
 }

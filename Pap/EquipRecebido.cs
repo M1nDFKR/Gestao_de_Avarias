@@ -135,5 +135,33 @@ namespace Pap
                 MessageBox.Show(" Erro ao resgista Equipamento: " + ex.Message);
             }
         }
+
+        private void btnPageHome_Click(object sender, EventArgs e)
+        {
+            home Home = new home();
+            Home.Show();
+            this.Hide();
+        }
+
+        private void btnPageQueixa_Click(object sender, EventArgs e)
+        {
+            QueixaForm queixaForm = new QueixaForm();
+            queixaForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageBusca_Click(object sender, EventArgs e)
+        {
+            BuscarForm buscarForm = new BuscarForm();
+            buscarForm.Show();
+            this.Hide();
+        }
+
+        private void btnPage_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
     }
 }

@@ -176,5 +176,12 @@ namespace Pap
                 MessageBox.Show("Não foi possível ir para a próxima página: " + ex.Message);
             }
         }
+
+        private void btnPageEquipamentos_Click(object sender, EventArgs e)
+        {
+            EquipRecebido equipamentorecebido = new EquipRecebido();
+            equipamentorecebido.Show();
+            this.Hide();
+        }
     }
 }

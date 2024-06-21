@@ -49,6 +49,7 @@
             richTextDescricao = new RichTextBox();
             richTextDecisao = new RichTextBox();
             panel1 = new Panel();
+            btnPageEquipamentos = new Button();
             textBox1 = new TextBox();
             btnPageBusca = new Button();
             btnPageInsercao = new Button();
@@ -252,6 +253,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btnPageEquipamentos);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(btnPageBusca);
             panel1.Controls.Add(btnPageInsercao);
@@ -260,6 +262,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1376, 59);
             panel1.TabIndex = 20;
+            // 
+            // btnPageEquipamentos
+            // 
+            btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
+            btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageEquipamentos.Location = new Point(684, 17);
+            btnPageEquipamentos.Name = "btnPageEquipamentos";
+            btnPageEquipamentos.Size = new Size(176, 32);
+            btnPageEquipamentos.TabIndex = 21;
+            btnPageEquipamentos.Text = "Equipamentos";
+            btnPageEquipamentos.UseVisualStyleBackColor = true;
+            btnPageEquipamentos.Click += btnPageEquipamentos_Click;
             // 
             // textBox1
             // 
@@ -278,7 +292,7 @@
             btnPageBusca.BackgroundImageLayout = ImageLayout.Center;
             btnPageBusca.FlatStyle = FlatStyle.Flat;
             btnPageBusca.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageBusca.Location = new Point(1022, 17);
+            btnPageBusca.Location = new Point(1048, 17);
             btnPageBusca.Name = "btnPageBusca";
             btnPageBusca.Size = new Size(156, 32);
             btnPageBusca.TabIndex = 14;
@@ -290,7 +304,7 @@
             // 
             btnPageInsercao.FlatStyle = FlatStyle.Flat;
             btnPageInsercao.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageInsercao.Location = new Point(1184, 17);
+            btnPageInsercao.Location = new Point(866, 17);
             btnPageInsercao.Name = "btnPageInsercao";
             btnPageInsercao.Size = new Size(176, 32);
             btnPageInsercao.TabIndex = 6;
@@ -304,7 +318,7 @@
             btnPageHome.BackgroundImageLayout = ImageLayout.Center;
             btnPageHome.FlatStyle = FlatStyle.Flat;
             btnPageHome.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageHome.Location = new Point(866, 17);
+            btnPageHome.Location = new Point(1210, 17);
             btnPageHome.Name = "btnPageHome";
             btnPageHome.Size = new Size(150, 32);
             btnPageHome.TabIndex = 12;
@@ -375,5 +389,6 @@
         private Button btnPageBusca;
         private Button btnPageInsercao;
         private Button btnPageHome;
+        private Button btnPageEquipamentos;
     }
 }

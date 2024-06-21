@@ -50,6 +50,7 @@
             cb_Tipo = new ComboBox();
             label3 = new Label();
             panel1 = new Panel();
+            btnPageEquipamentos = new Button();
             textBox1 = new TextBox();
             btnPageBusca = new Button();
             btnPageHome = new Button();
@@ -272,6 +273,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btnPageEquipamentos);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(btnPageBusca);
             panel1.Controls.Add(btnPageHome);
@@ -280,6 +282,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1372, 57);
             panel1.TabIndex = 20;
+            // 
+            // btnPageEquipamentos
+            // 
+            btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
+            btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageEquipamentos.Location = new Point(737, 13);
+            btnPageEquipamentos.Name = "btnPageEquipamentos";
+            btnPageEquipamentos.Size = new Size(176, 32);
+            btnPageEquipamentos.TabIndex = 23;
+            btnPageEquipamentos.Text = "Equipamentos";
+            btnPageEquipamentos.UseVisualStyleBackColor = true;
+            btnPageEquipamentos.Click += btnPageEquipamentos_Click;
             // 
             // textBox1
             // 
@@ -419,5 +433,6 @@
         private Button btnPageQueixa;
         private TextBox textBox2;
         private ComboBox cb_ListaParentesco;
+        private Button btnPageEquipamentos;
     }
 }
