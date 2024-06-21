@@ -54,7 +54,7 @@
             pictureBox1.Image = Properties.Resources.logo;
             pictureBox1.Location = new Point(12, 79);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(219, 92);
+            pictureBox1.Size = new Size(243, 113);
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             // 
@@ -148,7 +148,7 @@
             btnPageBusca.BackgroundImageLayout = ImageLayout.Center;
             btnPageBusca.FlatStyle = FlatStyle.Flat;
             btnPageBusca.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageBusca.Location = new Point(733, 13);
+            btnPageBusca.Location = new Point(1020, 12);
             btnPageBusca.Name = "btnPageBusca";
             btnPageBusca.Size = new Size(156, 32);
             btnPageBusca.TabIndex = 2;
@@ -160,7 +160,7 @@
             // 
             btnPageInsercao.FlatStyle = FlatStyle.Flat;
             btnPageInsercao.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageInsercao.Location = new Point(895, 13);
+            btnPageInsercao.Location = new Point(1182, 12);
             btnPageInsercao.Name = "btnPageInsercao";
             btnPageInsercao.Size = new Size(176, 32);
             btnPageInsercao.TabIndex = 3;
@@ -174,7 +174,7 @@
             btnPageQueixa.BackgroundImageLayout = ImageLayout.Center;
             btnPageQueixa.FlatStyle = FlatStyle.Flat;
             btnPageQueixa.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageQueixa.Location = new Point(632, 13);
+            btnPageQueixa.Location = new Point(919, 12);
             btnPageQueixa.Name = "btnPageQueixa";
             btnPageQueixa.Size = new Size(95, 32);
             btnPageQueixa.TabIndex = 1;

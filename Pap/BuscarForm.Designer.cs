@@ -120,7 +120,7 @@
             // 
             btnPage.FlatStyle = FlatStyle.Flat;
             btnPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPage.Location = new Point(895, 13);
+            btnPage.Location = new Point(1182, 17);
             btnPage.Name = "btnPage";
             btnPage.Size = new Size(176, 32);
             btnPage.TabIndex = 6;
@@ -172,7 +172,7 @@
             btnPageHome.BackgroundImageLayout = ImageLayout.Center;
             btnPageHome.FlatStyle = FlatStyle.Flat;
             btnPageHome.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageHome.Location = new Point(733, 13);
+            btnPageHome.Location = new Point(1020, 17);
             btnPageHome.Name = "btnPageHome";
             btnPageHome.Size = new Size(156, 32);
             btnPageHome.TabIndex = 14;
@@ -186,7 +186,7 @@
             btnPageQueixa.BackgroundImageLayout = ImageLayout.Center;
             btnPageQueixa.FlatStyle = FlatStyle.Flat;
             btnPageQueixa.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageQueixa.Location = new Point(632, 13);
+            btnPageQueixa.Location = new Point(919, 17);
             btnPageQueixa.Name = "btnPageQueixa";
             btnPageQueixa.Size = new Size(95, 32);
             btnPageQueixa.TabIndex = 12;
@@ -209,7 +209,7 @@
             Controls.Add(btnBuscar_NIF);
             Controls.Add(lstDados);
             Name = "BuscarForm";
-            Text = "Formulário de busca";
+            Text = "Gestão de avarias - Procurar avarias";
             WindowState = FormWindowState.Maximized;
             Load += BuscarForm_Load;
             panel1.ResumeLayout(false);
