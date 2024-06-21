@@ -202,5 +202,12 @@ namespace Pap
                 MessageBox.Show("Erro ao carregar dados: " + ex.Message);
             }
         }
+
+        private void btnPageEquipamentos_Click(object sender, EventArgs e)
+        {
+            EquipRecebido equipamentorecebido = new EquipRecebido();
+            equipamentorecebido.Show();
+            this.Hide();
+        }
     }
 }

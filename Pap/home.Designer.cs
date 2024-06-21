@@ -44,6 +44,7 @@
             TipoEquip = new Label();
             cb_ListadeEquip_NS = new ComboBox();
             lstDados = new ListView();
+            btnPageEquipamentos = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -122,6 +123,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btnPageEquipamentos);
             panel1.Controls.Add(Gestao_De_Avaria);
             panel1.Controls.Add(btnPageBusca);
             panel1.Controls.Add(btnPageInsercao);
@@ -228,6 +230,18 @@
             lstDados.TabIndex = 0;
             lstDados.UseCompatibleStateImageBehavior = false;
             // 
+            // btnPageEquipamentos
+            // 
+            btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
+            btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageEquipamentos.Location = new Point(1077, 12);
+            btnPageEquipamentos.Name = "btnPageEquipamentos";
+            btnPageEquipamentos.Size = new Size(176, 32);
+            btnPageEquipamentos.TabIndex = 4;
+            btnPageEquipamentos.Text = "Página de inserção";
+            btnPageEquipamentos.UseVisualStyleBackColor = true;
+            btnPageEquipamentos.Click += btnPageEquipamentos_Click;
+            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -273,5 +287,6 @@
         private Label TipoEquip;
         private ComboBox cb_ListadeEquip_NS;
         private ListView lstDados;
+        private Button btnPageEquipamentos;
     }
 }
