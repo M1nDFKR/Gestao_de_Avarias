@@ -61,10 +61,10 @@ namespace Pap
             if (cb_ListaDeQueixas.SelectedIndex == 0)
             {
                 MessageBox.Show("Este item não pode ser selecionado.");
-
-                cb_ListaDeQueixas.SelectedIndex = 0;
+                cb_ListaDeQueixas.SelectedIndex = -1;
                 return;
             }
+
             if (cb_ListaDeQueixas.SelectedIndex != -1)
             {
                 string selectedItem = cb_ListaDeQueixas.SelectedItem.ToString();
@@ -72,12 +72,54 @@ namespace Pap
 
                 if (parts.Length == 3)
                 {
-                    NSA_Queixas.Text = parts[0].Trim();
-                    txt_NS.Text = parts[1].Trim();
-                    txt_TipoDeEquipamento.Text = parts[2].Trim();
+                    string nsaQueixa = parts[0].Trim();
+                    string ns = parts[1].Trim();
+                    string tipoEquip = parts[2].Trim();
+
+                    if (EquipamentoJaExiste(ns, tipoEquip))
+                    {
+                        MessageBox.Show("Este equipamento já está registrado na base de dados.");
+                        cb_ListaDeQueixas.SelectedIndex = -1;
+                        NSA_Queixas.Text = string.Empty;
+                        txt_NS.Clear();
+                        txt_TipoDeEquipamento.Clear();
+                        return;
+                    }
+
+                    NSA_Queixas.Text = nsaQueixa;
+                    txt_NS.Text = ns;
+                    txt_TipoDeEquipamento.Text = tipoEquip;
                 }
             }
         }
+
+        
+        private bool EquipamentoJaExiste(string ns, string tipoEquip)
+        {
+            try
+            {
+                string connectionString = ConexaoBD.basededados;
+                string query = "SELECT COUNT(*) FROM EquipRecebido WHERE `N-S` = @NS AND TipoEquip = @TipoEquip";
+
+                using (MySqlConnection conexao = new MySqlConnection(connectionString))
+                {
+                    conexao.Open();
+                    MySqlCommand comando = new MySqlCommand(query, conexao);
+                    comando.Parameters.AddWithValue("@NS", ns);
+                    comando.Parameters.AddWithValue("@TipoEquip", tipoEquip);
+
+                    int count = Convert.ToInt32(comando.ExecuteScalar());
+
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar a existência do equipamento: " + ex.Message);
+                return true;
+            }
+        }
+
 
         private void btn_Limpar_Click(object sender, EventArgs e)
         {

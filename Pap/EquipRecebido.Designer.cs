@@ -141,7 +141,7 @@
             // NSA_Queixas
             // 
             NSA_Queixas.AutoSize = true;
-            NSA_Queixas.Location = new Point(148, 45);
+            NSA_Queixas.Location = new Point(104, 223);
             NSA_Queixas.Name = "NSA_Queixas";
             NSA_Queixas.Size = new Size(0, 15);
             NSA_Queixas.TabIndex = 10;

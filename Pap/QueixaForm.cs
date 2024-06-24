@@ -47,7 +47,7 @@ namespace Pap
             try
             {
                 string connectionString = ConexaoBD.basededados;
-                string query = "SELECT NIF, Nome FROM Utilizador ORDER BY DataInsercao DESC LIMIT 8";
+                string query = "SELECT NIF, Nome FROM Utilizador ORDER BY DataInsercao DESC LIMIT 5";
 
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
@@ -77,8 +77,7 @@ namespace Pap
             if (cb_listaClientes.SelectedIndex == 0)
             {
                 MessageBox.Show("Este item não pode ser selecionado.");
-
-                cb_listaClientes.SelectedIndex = 0;
+                cb_listaClientes.SelectedIndex = -1;
                 return;
             }
 
@@ -87,8 +86,45 @@ namespace Pap
                 string selectedItem = cb_listaClientes.SelectedItem.ToString();
                 string[] parts = selectedItem.Split('-');
 
-                textNIF.Text = parts[0].Trim();
-                textNome.Text = parts[1].Trim();
+                string nif = parts[0].Trim();
+                string nome = parts[1].Trim();
+
+                if (UtilizadorJaTemQueixa(nif))
+                {
+                    MessageBox.Show("Este utilizador já tem uma queixa registrada.");
+                    cb_listaClientes.SelectedIndex = -1;
+                    textNome.Clear();
+                    textNIF.Clear();
+                    return;
+                }
+
+                textNIF.Text = nif;
+                textNome.Text = nome;
+            }
+        }
+
+        private bool UtilizadorJaTemQueixa(string nif)
+        {
+            try
+            {
+                string connectionString = ConexaoBD.basededados;
+                string query = "SELECT COUNT(*) FROM Queixa WHERE NIF_Utilizador = @NIF";
+
+                using (MySqlConnection conexao = new MySqlConnection(connectionString))
+                {
+                    conexao.Open();
+                    MySqlCommand comando = new MySqlCommand(query, conexao);
+                    comando.Parameters.AddWithValue("@NIF", nif);
+
+                    int count = Convert.ToInt32(comando.ExecuteScalar());
+
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar a existência de queixa: " + ex.Message);
+                return true; 
             }
         }
 

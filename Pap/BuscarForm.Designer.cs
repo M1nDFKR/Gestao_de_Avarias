@@ -38,10 +38,10 @@
             btnPage = new Button();
             btnLimpar = new Button();
             panel1 = new Panel();
+            btnPageEquipamentos = new Button();
             textBox1 = new TextBox();
             btnPageHome = new Button();
             btnPageQueixa = new Button();
-            btnPageEquipamentos = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -121,7 +121,7 @@
             // 
             btnPage.FlatStyle = FlatStyle.Flat;
             btnPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPage.Location = new Point(1033, 17);
+            btnPage.Location = new Point(1020, 12);
             btnPage.Name = "btnPage";
             btnPage.Size = new Size(176, 32);
             btnPage.TabIndex = 6;
@@ -157,6 +157,18 @@
             panel1.Size = new Size(1374, 57);
             panel1.TabIndex = 19;
             // 
+            // btnPageEquipamentos
+            // 
+            btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
+            btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPageEquipamentos.Location = new Point(737, 12);
+            btnPageEquipamentos.Name = "btnPageEquipamentos";
+            btnPageEquipamentos.Size = new Size(176, 32);
+            btnPageEquipamentos.TabIndex = 20;
+            btnPageEquipamentos.Text = "Equipamentos";
+            btnPageEquipamentos.UseVisualStyleBackColor = true;
+            btnPageEquipamentos.Click += btnPageEquipamentos_Click;
+            // 
             // textBox1
             // 
             textBox1.BackColor = Color.RoyalBlue;
@@ -174,7 +186,7 @@
             btnPageHome.BackgroundImageLayout = ImageLayout.Center;
             btnPageHome.FlatStyle = FlatStyle.Flat;
             btnPageHome.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageHome.Location = new Point(1215, 17);
+            btnPageHome.Location = new Point(1202, 12);
             btnPageHome.Name = "btnPageHome";
             btnPageHome.Size = new Size(156, 32);
             btnPageHome.TabIndex = 14;
@@ -188,25 +200,13 @@
             btnPageQueixa.BackgroundImageLayout = ImageLayout.Center;
             btnPageQueixa.FlatStyle = FlatStyle.Flat;
             btnPageQueixa.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageQueixa.Location = new Point(932, 17);
+            btnPageQueixa.Location = new Point(919, 12);
             btnPageQueixa.Name = "btnPageQueixa";
             btnPageQueixa.Size = new Size(95, 32);
             btnPageQueixa.TabIndex = 12;
             btnPageQueixa.Text = "Queixa";
             btnPageQueixa.UseVisualStyleBackColor = false;
             btnPageQueixa.Click += btnPageQueixa_Click;
-            // 
-            // btnPageEquipamentos
-            // 
-            btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
-            btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageEquipamentos.Location = new Point(750, 17);
-            btnPageEquipamentos.Name = "btnPageEquipamentos";
-            btnPageEquipamentos.Size = new Size(176, 32);
-            btnPageEquipamentos.TabIndex = 20;
-            btnPageEquipamentos.Text = "Equipamentos";
-            btnPageEquipamentos.UseVisualStyleBackColor = true;
-            btnPageEquipamentos.Click += btnPageEquipamentos_Click;
             // 
             // BuscarForm
             // 
