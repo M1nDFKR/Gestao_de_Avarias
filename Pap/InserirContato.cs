@@ -11,7 +11,7 @@ namespace Pap
     internal class InserirContacto
     {
         private int nsaEmpresa;
-        private DateTime dtContact;
+        private DateTime dtContacto;
         private TimeSpan hrContacto;
         private string resumo;
         private string forma;
@@ -25,10 +25,10 @@ namespace Pap
             set { nsaEmpresa = value; }
         }
 
-        public DateTime DtContact
+        public DateTime DtContacto
         {
-            get { return dtContact; }
-            set { dtContact = value; }
+            get { return dtContacto; }
+            set { dtContacto = value; }
         }
 
         public TimeSpan HrContacto
@@ -76,12 +76,12 @@ namespace Pap
                     conexao.Open();
 
                     string insert = "INSERT INTO Contacto (`NSA-Empresa`, DtContact, HrContacto, Resumo, Forma, InfoContacto, NSA_Queixa, NIF_Utilizador) " +
-                                    "VALUES (@NSAEmpresa, @DtContact, @HrContacto, @Resumo, @Forma, @InfoContacto, @NSA_Queixa, @NIF_Utilizador)";
+                                    "VALUES (@NSAEmpresa, @DtContacto, @HrContacto, @Resumo, @Forma, @InfoContacto, @NSA_Queixa, @NIF_Utilizador)";
 
                     using (MySqlCommand comandoSql = new MySqlCommand(insert, conexao))
                     {
                         comandoSql.Parameters.AddWithValue("@NSAEmpresa", NSA_Empresa == 0 ? (object)DBNull.Value : NSA_Empresa);
-                        comandoSql.Parameters.AddWithValue("@DtContact", DtContact.Date);
+                        comandoSql.Parameters.AddWithValue("@DtContacto", DtContacto.Date);
                         comandoSql.Parameters.AddWithValue("@HrContacto", HrContacto);
                         comandoSql.Parameters.AddWithValue("@Resumo", string.IsNullOrEmpty(Resumo) ? (object)DBNull.Value : Resumo);
                         comandoSql.Parameters.AddWithValue("@Forma", Forma);

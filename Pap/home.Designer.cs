@@ -45,6 +45,7 @@
             TipoEquip = new Label();
             cb_ListadeEquip_NS = new ComboBox();
             lstDados = new ListView();
+            btn_Contato = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -123,6 +124,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btn_Contato);
             panel1.Controls.Add(btnPageEquipamentos);
             panel1.Controls.Add(Gestao_De_Avaria);
             panel1.Controls.Add(btnPageBusca);
@@ -242,6 +244,18 @@
             lstDados.TabIndex = 0;
             lstDados.UseCompatibleStateImageBehavior = false;
             // 
+            // btn_Contato
+            // 
+            btn_Contato.FlatStyle = FlatStyle.Flat;
+            btn_Contato.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Contato.Location = new Point(555, 12);
+            btn_Contato.Name = "btn_Contato";
+            btn_Contato.Size = new Size(176, 32);
+            btn_Contato.TabIndex = 5;
+            btn_Contato.Text = "Contato";
+            btn_Contato.UseVisualStyleBackColor = true;
+            btn_Contato.Click += btn_Contato_Click;
+            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -288,5 +302,6 @@
         private ComboBox cb_ListadeEquip_NS;
         private ListView lstDados;
         private Button btnPageEquipamentos;
+        private Button btn_Contato;
     }
 }

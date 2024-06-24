@@ -43,9 +43,10 @@ namespace Pap
             lstDados.Columns.Add("Ref_Quei_Empr", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("DtContact", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("HrContacto", 40, HorizontalAlignment.Left);
-            lstDados.Columns.Add("Resumo_Contacto", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("Forma", 40, HorizontalAlignment.Left);
+            lstDados.Columns.Add("Resumo_Contacto", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("InfoContacto", 40, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NSA-Empresa", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("Referencia", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("DtEnvio", 40, HorizontalAlignment.Left);
             lstDados.Columns.Add("NSA_Transp", 40, HorizontalAlignment.Left);

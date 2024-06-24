@@ -171,7 +171,6 @@ namespace Pap
                         textN_S.Clear();
                         richTextDescricao.Clear();
                         richTextDecisao.Clear();
-
                     }
                     else
                     {
