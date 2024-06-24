@@ -63,7 +63,7 @@
             textNome.Name = "textNome";
             textNome.ReadOnly = true;
             textNome.Size = new Size(136, 23);
-            textNome.TabIndex = 0;
+            textNome.TabIndex = 1;
             // 
             // textNIF
             // 
@@ -71,7 +71,7 @@
             textNIF.Name = "textNIF";
             textNIF.ReadOnly = true;
             textNIF.Size = new Size(136, 23);
-            textNIF.TabIndex = 1;
+            textNIF.TabIndex = 2;
             // 
             // Nome
             // 
@@ -80,7 +80,7 @@
             Nome.Location = new Point(16, 139);
             Nome.Name = "Nome";
             Nome.Size = new Size(42, 15);
-            Nome.TabIndex = 2;
+            Nome.TabIndex = 0;
             Nome.Text = "Nome:";
             // 
             // NIF
@@ -90,7 +90,7 @@
             NIF.Location = new Point(257, 139);
             NIF.Name = "NIF";
             NIF.Size = new Size(35, 15);
-            NIF.TabIndex = 2;
+            NIF.TabIndex = 0;
             NIF.Text = "NIF:";
             // 
             // ContinuarQueixa
@@ -100,7 +100,7 @@
             ContinuarQueixa.Location = new Point(16, 100);
             ContinuarQueixa.Name = "ContinuarQueixa";
             ContinuarQueixa.Size = new Size(242, 23);
-            ContinuarQueixa.TabIndex = 3;
+            ContinuarQueixa.TabIndex = 0;
             ContinuarQueixa.Text = "Continuar Queixa do Cliente.:";
             // 
             // EscolherCliente
@@ -110,7 +110,7 @@
             EscolherCliente.Location = new Point(16, 184);
             EscolherCliente.Name = "EscolherCliente";
             EscolherCliente.Size = new Size(291, 23);
-            EscolherCliente.TabIndex = 3;
+            EscolherCliente.TabIndex = 0;
             EscolherCliente.Text = "Inserir Queixa do cliente desejado.:";
             // 
             // cb_listaClientes
@@ -120,7 +120,7 @@
             cb_listaClientes.Location = new Point(86, 222);
             cb_listaClientes.Name = "cb_listaClientes";
             cb_listaClientes.Size = new Size(366, 23);
-            cb_listaClientes.TabIndex = 4;
+            cb_listaClientes.TabIndex = 3;
             // 
             // Clientes
             // 
@@ -129,7 +129,7 @@
             Clientes.Location = new Point(10, 225);
             Clientes.Name = "Clientes";
             Clientes.Size = new Size(70, 15);
-            Clientes.TabIndex = 5;
+            Clientes.TabIndex = 0;
             Clientes.Text = "Clientes:";
             // 
             // btn_Limpar
@@ -141,7 +141,7 @@
             btn_Limpar.Location = new Point(284, 592);
             btn_Limpar.Name = "btn_Limpar";
             btn_Limpar.Size = new Size(168, 34);
-            btn_Limpar.TabIndex = 6;
+            btn_Limpar.TabIndex = 10;
             btn_Limpar.Text = "Limpar";
             btn_Limpar.UseVisualStyleBackColor = false;
             btn_Limpar.Click += btn_Limpar_Click;
@@ -155,7 +155,7 @@
             btn_Inserir.Location = new Point(64, 592);
             btn_Inserir.Name = "btn_Inserir";
             btn_Inserir.Size = new Size(168, 34);
-            btn_Inserir.TabIndex = 7;
+            btn_Inserir.TabIndex = 9;
             btn_Inserir.Text = "Inserir";
             btn_Inserir.UseVisualStyleBackColor = false;
             btn_Inserir.Click += btn_Inserir_Click;
@@ -167,7 +167,7 @@
             TipoEquip.Location = new Point(7, 261);
             TipoEquip.Name = "TipoEquip";
             TipoEquip.Size = new Size(147, 15);
-            TipoEquip.TabIndex = 8;
+            TipoEquip.TabIndex = 0;
             TipoEquip.Text = "Tipo de Equipamento:";
             // 
             // N_S
@@ -177,7 +177,7 @@
             N_S.Location = new Point(10, 296);
             N_S.Name = "N_S";
             N_S.Size = new Size(35, 15);
-            N_S.TabIndex = 9;
+            N_S.TabIndex = 0;
             N_S.Text = "N-S:";
             // 
             // DtQueixa
@@ -187,7 +187,7 @@
             DtQueixa.Location = new Point(7, 339);
             DtQueixa.Name = "DtQueixa";
             DtQueixa.Size = new Size(112, 15);
-            DtQueixa.TabIndex = 10;
+            DtQueixa.TabIndex = 0;
             DtQueixa.Text = "Data da Queixa:";
             // 
             // Descricao
@@ -197,7 +197,7 @@
             Descricao.Location = new Point(3, 370);
             Descricao.Name = "Descricao";
             Descricao.Size = new Size(77, 15);
-            Descricao.TabIndex = 11;
+            Descricao.TabIndex = 0;
             Descricao.Text = "Descrição:";
             // 
             // Decisao
@@ -207,7 +207,7 @@
             Decisao.Location = new Point(7, 462);
             Decisao.Name = "Decisao";
             Decisao.Size = new Size(63, 15);
-            Decisao.TabIndex = 12;
+            Decisao.TabIndex = 0;
             Decisao.Text = "Decisão:";
             // 
             // textTipoEquip
@@ -216,7 +216,7 @@
             textTipoEquip.MaxLength = 255;
             textTipoEquip.Name = "textTipoEquip";
             textTipoEquip.Size = new Size(301, 23);
-            textTipoEquip.TabIndex = 13;
+            textTipoEquip.TabIndex = 4;
             // 
             // textN_S
             // 
@@ -224,21 +224,21 @@
             textN_S.MaxLength = 255;
             textN_S.Name = "textN_S";
             textN_S.Size = new Size(408, 23);
-            textN_S.TabIndex = 14;
+            textN_S.TabIndex = 5;
             // 
             // dateQueixa
             // 
             dateQueixa.Location = new Point(141, 333);
             dateQueixa.Name = "dateQueixa";
             dateQueixa.Size = new Size(176, 23);
-            dateQueixa.TabIndex = 15;
+            dateQueixa.TabIndex = 6;
             // 
             // richTextDescricao
             // 
             richTextDescricao.Location = new Point(79, 370);
             richTextDescricao.Name = "richTextDescricao";
             richTextDescricao.Size = new Size(373, 86);
-            richTextDescricao.TabIndex = 16;
+            richTextDescricao.TabIndex = 7;
             richTextDescricao.Text = "";
             // 
             // richTextDecisao
@@ -246,7 +246,7 @@
             richTextDecisao.Location = new Point(79, 462);
             richTextDecisao.Name = "richTextDecisao";
             richTextDecisao.Size = new Size(373, 85);
-            richTextDecisao.TabIndex = 17;
+            richTextDecisao.TabIndex = 8;
             richTextDecisao.Text = "";
             // 
             // panel1
@@ -261,7 +261,7 @@
             panel1.Location = new Point(-2, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1376, 59);
-            panel1.TabIndex = 20;
+            panel1.TabIndex = 0;
             // 
             // btnPageEquipamentos
             // 
@@ -270,7 +270,7 @@
             btnPageEquipamentos.Location = new Point(684, 17);
             btnPageEquipamentos.Name = "btnPageEquipamentos";
             btnPageEquipamentos.Size = new Size(176, 32);
-            btnPageEquipamentos.TabIndex = 21;
+            btnPageEquipamentos.TabIndex = 1;
             btnPageEquipamentos.Text = "Equipamentos";
             btnPageEquipamentos.UseVisualStyleBackColor = true;
             btnPageEquipamentos.Click += btnPageEquipamentos_Click;
@@ -283,7 +283,7 @@
             textBox1.Location = new Point(12, 12);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(267, 33);
-            textBox1.TabIndex = 15;
+            textBox1.TabIndex = 0;
             textBox1.Text = "Gestão de avarias";
             // 
             // btnPageBusca
@@ -295,7 +295,7 @@
             btnPageBusca.Location = new Point(1048, 17);
             btnPageBusca.Name = "btnPageBusca";
             btnPageBusca.Size = new Size(156, 32);
-            btnPageBusca.TabIndex = 14;
+            btnPageBusca.TabIndex = 3;
             btnPageBusca.Text = "Página de Busca";
             btnPageBusca.UseVisualStyleBackColor = false;
             btnPageBusca.Click += btnPageBusca_Click;
@@ -307,7 +307,7 @@
             btnPageInsercao.Location = new Point(866, 17);
             btnPageInsercao.Name = "btnPageInsercao";
             btnPageInsercao.Size = new Size(176, 32);
-            btnPageInsercao.TabIndex = 6;
+            btnPageInsercao.TabIndex = 2;
             btnPageInsercao.Text = "Página de inserção";
             btnPageInsercao.UseVisualStyleBackColor = true;
             btnPageInsercao.Click += btnPageInsercao_Click;
@@ -321,7 +321,7 @@
             btnPageHome.Location = new Point(1210, 17);
             btnPageHome.Name = "btnPageHome";
             btnPageHome.Size = new Size(150, 32);
-            btnPageHome.TabIndex = 12;
+            btnPageHome.TabIndex = 4;
             btnPageHome.Text = "Página Inicial";
             btnPageHome.UseVisualStyleBackColor = false;
             btnPageHome.Click += btnPageHome_Click;

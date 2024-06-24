@@ -68,7 +68,7 @@
             label2.Location = new Point(14, 301);
             label2.Name = "label2";
             label2.Size = new Size(252, 15);
-            label2.TabIndex = 1;
+            label2.TabIndex = 0;
             label2.Text = "Selecione a Queixa e o Equipamento:";
             // 
             // label3
@@ -78,7 +78,7 @@
             label3.Location = new Point(14, 382);
             label3.Name = "label3";
             label3.Size = new Size(224, 15);
-            label3.TabIndex = 2;
+            label3.TabIndex = 0;
             label3.Text = "Referência da Queixa a Empresa:";
             // 
             // cb_ListaDeQueixas
@@ -109,14 +109,14 @@
             txt_NS.Location = new Point(160, 256);
             txt_NS.Name = "txt_NS";
             txt_NS.Size = new Size(178, 23);
-            txt_NS.TabIndex = 6;
+            txt_NS.TabIndex = 1;
             // 
             // txt_TipoDeEquipamento
             // 
             txt_TipoDeEquipamento.Location = new Point(500, 256);
             txt_TipoDeEquipamento.Name = "txt_TipoDeEquipamento";
             txt_TipoDeEquipamento.Size = new Size(178, 23);
-            txt_TipoDeEquipamento.TabIndex = 7;
+            txt_TipoDeEquipamento.TabIndex = 2;
             // 
             // NS
             // 
@@ -125,7 +125,7 @@
             NS.Location = new Point(14, 259);
             NS.Name = "NS";
             NS.Size = new Size(140, 15);
-            NS.TabIndex = 8;
+            NS.TabIndex = 0;
             NS.Text = "N-S do Equipamento:";
             // 
             // label4
@@ -135,7 +135,7 @@
             label4.Location = new Point(347, 259);
             label4.Name = "label4";
             label4.Size = new Size(147, 15);
-            label4.TabIndex = 9;
+            label4.TabIndex = 0;
             label4.Text = "Tipo do Equipamento:";
             // 
             // NSA_Queixas
@@ -144,7 +144,7 @@
             NSA_Queixas.Location = new Point(104, 223);
             NSA_Queixas.Name = "NSA_Queixas";
             NSA_Queixas.Size = new Size(0, 15);
-            NSA_Queixas.TabIndex = 10;
+            NSA_Queixas.TabIndex = 0;
             // 
             // btn_Limpar
             // 
@@ -155,7 +155,7 @@
             btn_Limpar.Location = new Point(347, 428);
             btn_Limpar.Name = "btn_Limpar";
             btn_Limpar.Size = new Size(103, 35);
-            btn_Limpar.TabIndex = 11;
+            btn_Limpar.TabIndex = 7;
             btn_Limpar.Text = "Limpar";
             btn_Limpar.UseVisualStyleBackColor = false;
             btn_Limpar.Click += btn_Limpar_Click;
@@ -169,7 +169,7 @@
             btn_Inserir.Location = new Point(121, 428);
             btn_Inserir.Name = "btn_Inserir";
             btn_Inserir.Size = new Size(103, 35);
-            btn_Inserir.TabIndex = 12;
+            btn_Inserir.TabIndex = 6;
             btn_Inserir.Text = "Inserir";
             btn_Inserir.UseVisualStyleBackColor = false;
             btn_Inserir.Click += btn_Inserir_Click;
@@ -181,7 +181,7 @@
             label5.Location = new Point(14, 223);
             label5.Name = "label5";
             label5.Size = new Size(84, 15);
-            label5.TabIndex = 13;
+            label5.TabIndex = 0;
             label5.Text = "NSA Queixa:";
             // 
             // panel1
@@ -196,7 +196,7 @@
             panel1.Location = new Point(1, -1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1372, 61);
-            panel1.TabIndex = 21;
+            panel1.TabIndex = 0;
             // 
             // btnPage
             // 
@@ -205,7 +205,7 @@
             btnPage.Location = new Point(737, 17);
             btnPage.Name = "btnPage";
             btnPage.Size = new Size(176, 32);
-            btnPage.TabIndex = 22;
+            btnPage.TabIndex = 1;
             btnPage.Text = "Página de inserção";
             btnPage.UseVisualStyleBackColor = true;
             btnPage.Click += btnPage_Click;
@@ -218,7 +218,7 @@
             textBox1.Location = new Point(12, 12);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(272, 33);
-            textBox1.TabIndex = 15;
+            textBox1.TabIndex = 0;
             textBox1.Text = "Gestão de avarias";
             // 
             // btnPageBusca
@@ -230,7 +230,7 @@
             btnPageBusca.Location = new Point(1020, 17);
             btnPageBusca.Name = "btnPageBusca";
             btnPageBusca.Size = new Size(156, 32);
-            btnPageBusca.TabIndex = 14;
+            btnPageBusca.TabIndex = 3;
             btnPageBusca.Text = "Página de Busca";
             btnPageBusca.UseVisualStyleBackColor = false;
             btnPageBusca.Click += btnPageBusca_Click;
@@ -242,7 +242,7 @@
             btnPageHome.Location = new Point(1182, 17);
             btnPageHome.Name = "btnPageHome";
             btnPageHome.Size = new Size(176, 32);
-            btnPageHome.TabIndex = 6;
+            btnPageHome.TabIndex = 4;
             btnPageHome.Text = "Página de Inicial";
             btnPageHome.UseVisualStyleBackColor = true;
             btnPageHome.Click += btnPageHome_Click;
@@ -256,7 +256,7 @@
             btnPageQueixa.Location = new Point(919, 17);
             btnPageQueixa.Name = "btnPageQueixa";
             btnPageQueixa.Size = new Size(95, 32);
-            btnPageQueixa.TabIndex = 12;
+            btnPageQueixa.TabIndex = 2;
             btnPageQueixa.Text = "Queixa";
             btnPageQueixa.UseVisualStyleBackColor = false;
             btnPageQueixa.Click += btnPageQueixa_Click;
