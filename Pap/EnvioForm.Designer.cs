@@ -33,13 +33,15 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            txt_NSA_Transporter = new TextBox();
+            txt_Referencia_Envio = new TextBox();
+            Data_de_Envio = new DateTimePicker();
             label6 = new Label();
-            comboBox1 = new ComboBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            cb_Lista_Queixa = new ComboBox();
+            txt_NSA_Queixa = new TextBox();
+            txt_NIF_Utilizador = new TextBox();
+            btn_Limpar = new Button();
+            btn_Inserir = new Button();
             SuspendLayout();
             // 
             // label1
@@ -65,9 +67,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(12, 188);
             label3.Name = "label3";
-            label3.Size = new Size(109, 15);
+            label3.Size = new Size(253, 15);
             label3.TabIndex = 2;
-            label3.Text = "Selecione a Queixa:";
+            label3.Text = "Selecione a Queixa com o NIF correspondente:";
             // 
             // label4
             // 
@@ -87,26 +89,26 @@
             label5.TabIndex = 4;
             label5.Text = "Data de Envio:";
             // 
-            // textBox1
+            // txt_NSA_Transporter
             // 
-            textBox1.Location = new Point(157, 308);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(171, 23);
-            textBox1.TabIndex = 5;
+            txt_NSA_Transporter.Location = new Point(278, 308);
+            txt_NSA_Transporter.Name = "txt_NSA_Transporter";
+            txt_NSA_Transporter.Size = new Size(171, 23);
+            txt_NSA_Transporter.TabIndex = 5;
             // 
-            // textBox2
+            // txt_Referencia_Envio
             // 
-            textBox2.Location = new Point(157, 227);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(171, 23);
-            textBox2.TabIndex = 6;
+            txt_Referencia_Envio.Location = new Point(278, 227);
+            txt_Referencia_Envio.Name = "txt_Referencia_Envio";
+            txt_Referencia_Envio.Size = new Size(171, 23);
+            txt_Referencia_Envio.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // Data_de_Envio
             // 
-            dateTimePicker1.Location = new Point(157, 266);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(171, 23);
-            dateTimePicker1.TabIndex = 7;
+            Data_de_Envio.Location = new Point(278, 266);
+            Data_de_Envio.Name = "Data_de_Envio";
+            Data_de_Envio.Size = new Size(171, 23);
+            Data_de_Envio.TabIndex = 7;
             // 
             // label6
             // 
@@ -117,40 +119,63 @@
             label6.TabIndex = 8;
             label6.Text = "NSA Transporte:";
             // 
-            // comboBox1
+            // cb_Lista_Queixa
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(157, 185);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(171, 23);
-            comboBox1.TabIndex = 9;
+            cb_Lista_Queixa.FormattingEnabled = true;
+            cb_Lista_Queixa.Items.AddRange(new object[] { "Selecione a Queixa" });
+            cb_Lista_Queixa.Location = new Point(278, 185);
+            cb_Lista_Queixa.Name = "cb_Lista_Queixa";
+            cb_Lista_Queixa.Size = new Size(171, 23);
+            cb_Lista_Queixa.TabIndex = 9;
             // 
-            // textBox3
+            // txt_NSA_Queixa
             // 
-            textBox3.Location = new Point(157, 148);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(171, 23);
-            textBox3.TabIndex = 10;
+            txt_NSA_Queixa.Location = new Point(278, 148);
+            txt_NSA_Queixa.Name = "txt_NSA_Queixa";
+            txt_NSA_Queixa.ReadOnly = true;
+            txt_NSA_Queixa.Size = new Size(35, 23);
+            txt_NSA_Queixa.TabIndex = 10;
             // 
-            // textBox4
+            // txt_NIF_Utilizador
             // 
-            textBox4.Location = new Point(157, 107);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(171, 23);
-            textBox4.TabIndex = 11;
+            txt_NIF_Utilizador.Location = new Point(278, 107);
+            txt_NIF_Utilizador.Name = "txt_NIF_Utilizador";
+            txt_NIF_Utilizador.ReadOnly = true;
+            txt_NIF_Utilizador.Size = new Size(171, 23);
+            txt_NIF_Utilizador.TabIndex = 11;
+            // 
+            // btn_Limpar
+            // 
+            btn_Limpar.Location = new Point(146, 404);
+            btn_Limpar.Name = "btn_Limpar";
+            btn_Limpar.Size = new Size(100, 37);
+            btn_Limpar.TabIndex = 12;
+            btn_Limpar.Text = "Limpar";
+            btn_Limpar.UseVisualStyleBackColor = true;
+            // 
+            // btn_Inserir
+            // 
+            btn_Inserir.Location = new Point(278, 404);
+            btn_Inserir.Name = "btn_Inserir";
+            btn_Inserir.Size = new Size(100, 37);
+            btn_Inserir.TabIndex = 13;
+            btn_Inserir.Text = "Inserir";
+            btn_Inserir.UseVisualStyleBackColor = true;
             // 
             // EnvioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(954, 543);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(comboBox1);
+            Controls.Add(btn_Inserir);
+            Controls.Add(btn_Limpar);
+            Controls.Add(txt_NIF_Utilizador);
+            Controls.Add(txt_NSA_Queixa);
+            Controls.Add(cb_Lista_Queixa);
             Controls.Add(label6);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(Data_de_Envio);
+            Controls.Add(txt_Referencia_Envio);
+            Controls.Add(txt_NSA_Transporter);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -158,6 +183,7 @@
             Controls.Add(label1);
             Name = "EnvioForm";
             Text = "Formulário de Envio";
+            Load += EnvioForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -169,12 +195,14 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private DateTimePicker dateTimePicker1;
+        private TextBox txt_NSA_Transporter;
+        private TextBox txt_Referencia_Envio;
+        private DateTimePicker Data_de_Envio;
         private Label label6;
-        private ComboBox comboBox1;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private ComboBox cb_Lista_Queixa;
+        private TextBox txt_NSA_Queixa;
+        private TextBox txt_NIF_Utilizador;
+        private Button btn_Limpar;
+        private Button btn_Inserir;
     }
 }

@@ -46,6 +46,7 @@
             TipoEquip = new Label();
             cb_ListadeEquip_NS = new ComboBox();
             lstDados = new ListView();
+            btn_Page_Envio = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -124,6 +125,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btn_Page_Envio);
             panel1.Controls.Add(btn_Contato);
             panel1.Controls.Add(btnPageEquipamentos);
             panel1.Controls.Add(Gestao_De_Avaria);
@@ -256,6 +258,18 @@
             lstDados.TabIndex = 0;
             lstDados.UseCompatibleStateImageBehavior = false;
             // 
+            // btn_Page_Envio
+            // 
+            btn_Page_Envio.FlatStyle = FlatStyle.Flat;
+            btn_Page_Envio.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Page_Envio.Location = new Point(592, 12);
+            btn_Page_Envio.Name = "btn_Page_Envio";
+            btn_Page_Envio.Size = new Size(92, 32);
+            btn_Page_Envio.TabIndex = 6;
+            btn_Page_Envio.Text = "Envio";
+            btn_Page_Envio.UseVisualStyleBackColor = true;
+            btn_Page_Envio.Click += btn_Page_Envio_Click;
+            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -303,5 +317,6 @@
         private ListView lstDados;
         private Button btnPageEquipamentos;
         private Button btn_Contato;
+        private Button btn_Page_Envio;
     }
 }

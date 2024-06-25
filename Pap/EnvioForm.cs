@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,40 @@ namespace Pap
         public EnvioForm()
         {
             InitializeComponent();
+
+            cb_Lista_Queixa.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cb_Lista_Queixa.SelectedIndex = 0;
+        }
+
+        private void EnvioForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string connectionString = ConexaoBD.basededados;
+                string query = "SELECT NSA, NIF_Utilizador FROM Queixa ORDER BY NSA";
+
+                using (MySqlConnection conexao = new MySqlConnection(connectionString))
+                {
+                    conexao.Open();
+                    MySqlCommand comando = new MySqlCommand(query, conexao);
+
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string nsa = reader["NSA"].ToString();
+                            string nif = reader["NIF_Utilizador"].ToString();
+
+                            cb_Lista_Queixa.Items.Add($"{nsa} - {nif}");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar queixas: " + ex.Message);
+            }
         }
     }
 }
