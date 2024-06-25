@@ -33,7 +33,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            txt_NSA_Transporter = new TextBox();
+            txt_NSA_Transporte = new TextBox();
             txt_Referencia_Envio = new TextBox();
             Data_de_Envio = new DateTimePicker();
             label6 = new Label();
@@ -89,12 +89,12 @@
             label5.TabIndex = 4;
             label5.Text = "Data de Envio:";
             // 
-            // txt_NSA_Transporter
+            // txt_NSA_Transporte
             // 
-            txt_NSA_Transporter.Location = new Point(278, 308);
-            txt_NSA_Transporter.Name = "txt_NSA_Transporter";
-            txt_NSA_Transporter.Size = new Size(171, 23);
-            txt_NSA_Transporter.TabIndex = 5;
+            txt_NSA_Transporte.Location = new Point(278, 308);
+            txt_NSA_Transporte.Name = "txt_NSA_Transporte";
+            txt_NSA_Transporte.Size = new Size(171, 23);
+            txt_NSA_Transporte.TabIndex = 5;
             // 
             // txt_Referencia_Envio
             // 
@@ -133,7 +133,7 @@
             txt_NSA_Queixa.Location = new Point(278, 148);
             txt_NSA_Queixa.Name = "txt_NSA_Queixa";
             txt_NSA_Queixa.ReadOnly = true;
-            txt_NSA_Queixa.Size = new Size(35, 23);
+            txt_NSA_Queixa.Size = new Size(32, 23);
             txt_NSA_Queixa.TabIndex = 10;
             // 
             // txt_NIF_Utilizador
@@ -162,6 +162,7 @@
             btn_Inserir.TabIndex = 13;
             btn_Inserir.Text = "Inserir";
             btn_Inserir.UseVisualStyleBackColor = true;
+            btn_Inserir.Click += btn_Inserir_Click;
             // 
             // EnvioForm
             // 
@@ -176,7 +177,7 @@
             Controls.Add(label6);
             Controls.Add(Data_de_Envio);
             Controls.Add(txt_Referencia_Envio);
-            Controls.Add(txt_NSA_Transporter);
+            Controls.Add(txt_NSA_Transporte);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -196,7 +197,7 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox txt_NSA_Transporter;
+        private TextBox txt_NSA_Transporte;
         private TextBox txt_Referencia_Envio;
         private DateTimePicker Data_de_Envio;
         private Label label6;

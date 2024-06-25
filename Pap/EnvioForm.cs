@@ -74,11 +74,46 @@ namespace Pap
                     string nsa = parts[0].Trim();
                     string nif = parts[1].Trim();
 
+                    if (QueixaJaTemEnvio(nsa))
+                    {
+                        MessageBox.Show("Esta queixa já possui um envio registrado.");
+                        cb_Lista_Queixa.SelectedIndex = -1;
+                        txt_NIF_Utilizador.Clear();
+                        txt_NSA_Queixa.Clear();
+                        return;
+                    }
+
                     txt_NSA_Queixa.Text = nsa;
                     txt_NIF_Utilizador.Text = nif;
                 }
             }
         }
+
+        private bool QueixaJaTemEnvio(string nsa)
+        {
+            try
+            {
+                string connectionString = ConexaoBD.basededados;
+                string query = "SELECT COUNT(*) FROM Envio WHERE NSA_Queixa = @NSA";
+
+                using (MySqlConnection conexao = new MySqlConnection(connectionString))
+                {
+                    conexao.Open();
+                    MySqlCommand comando = new MySqlCommand(query, conexao);
+                    comando.Parameters.AddWithValue("@NSA", nsa);
+
+                    int count = Convert.ToInt32(comando.ExecuteScalar());
+
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar a existência de envio: " + ex.Message);
+                return true;
+            }
+        }
+
 
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
@@ -87,7 +122,68 @@ namespace Pap
             cb_Lista_Queixa.Enabled = true;
             cb_Lista_Queixa.SelectedIndex = -1;
             txt_Referencia_Envio.Clear();
-            txt_NSA_Transporter.Clear();
+            txt_NSA_Transporte.Clear();
+        }
+
+        private void btn_Inserir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txt_NSA_Queixa.Text) &&
+                    !string.IsNullOrWhiteSpace(txt_NSA_Transporte.Text) &&
+                    !string.IsNullOrWhiteSpace(txt_Referencia_Envio.Text))
+                {
+                    InserirEnvio inEnvio = new InserirEnvio();
+
+                    inEnvio.DtEnvio = Data_de_Envio.Value;
+
+                    int nsaQueixa;
+                    int referencia;
+                    int nsaTransp;
+
+                    if (int.TryParse(txt_NSA_Queixa.Text, out nsaQueixa) &&
+                        int.TryParse(txt_Referencia_Envio.Text, out referencia) &&
+                        int.TryParse(txt_NSA_Transporte.Text, out nsaTransp))
+                    {
+                        inEnvio.NSAQueixa = nsaQueixa;
+                        inEnvio.Referencia = referencia;
+                        inEnvio.NSATransp = nsaTransp;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao converter valores. Certifique-se de que os campos contêm valores numéricos válidos.");
+                    }
+
+                    if (inEnvio.inserirEnvio())
+                    {
+                        MessageBox.Show($" O(A) Cliente com a Queixa nº: {inEnvio.NSAQueixa} tem o seu Envio registrado com sucesso.");
+                        txt_NIF_Utilizador.Clear();
+                        txt_NSA_Queixa.Clear();
+                        cb_Lista_Queixa.Enabled = true;
+                        cb_Lista_Queixa.SelectedIndex = -1;
+                        txt_Referencia_Envio.Clear();
+                        txt_NSA_Transporte.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possivel regista a queixa da avaria.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Todos os campos devem ser preenchidos antes de inserir.");
+                    txt_NIF_Utilizador.Clear();
+                    txt_NSA_Queixa.Clear();
+                    cb_Lista_Queixa.Enabled = true;
+                    cb_Lista_Queixa.SelectedIndex = -1;
+                    txt_Referencia_Envio.Clear();
+                    txt_NSA_Transporte.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir o dados do formulário Envio: " + ex.Message);
+            }
         }
     }
 }
