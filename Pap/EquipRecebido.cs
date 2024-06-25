@@ -93,7 +93,7 @@ namespace Pap
             }
         }
 
-        
+
         private bool EquipamentoJaExiste(string ns, string tipoEquip)
         {
             try
@@ -203,6 +203,13 @@ namespace Pap
         {
             Form1 form1 = new Form1();
             form1.Show();
+            this.Hide();
+        }
+
+        private void btn_Contato_Click(object sender, EventArgs e)
+        {
+            ContatoForm contatoForm = new ContatoForm();
+            contatoForm.Show();
             this.Hide();
         }
     }

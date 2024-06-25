@@ -183,5 +183,40 @@ namespace Pap
                 MessageBox.Show("Erro ao inserir o formulário de contato: " + ex.Message);
             }
         }
+
+        private void btnPageBusca_Click(object sender, EventArgs e)
+        {
+            BuscarForm buscarForm = new BuscarForm();
+            buscarForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageInsercao_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void btnPageQueixa_Click(object sender, EventArgs e)
+        {
+            QueixaForm queixaForm = new QueixaForm();
+            queixaForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageEquipamentos_Click(object sender, EventArgs e)
+        {
+            EquipRecebido equipamentorecebido = new EquipRecebido();
+            equipamentorecebido.Show();
+            this.Hide();
+        }
+
+        private void btnPageHome_Click(object sender, EventArgs e)
+        {
+            home Home = new home();
+            Home.Show();
+            this.Hide();
+        }
     }
 }

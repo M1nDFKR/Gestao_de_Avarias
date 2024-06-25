@@ -35,6 +35,7 @@
             Pesquisar = new TextBox();
             txt_buscar = new TextBox();
             panel1 = new Panel();
+            btn_Contato = new Button();
             btnPageEquipamentos = new Button();
             Gestao_De_Avaria = new TextBox();
             btnPageBusca = new Button();
@@ -45,7 +46,6 @@
             TipoEquip = new Label();
             cb_ListadeEquip_NS = new ComboBox();
             lstDados = new ListView();
-            btn_Contato = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -135,13 +135,25 @@
             panel1.Size = new Size(1371, 57);
             panel1.TabIndex = 6;
             // 
+            // btn_Contato
+            // 
+            btn_Contato.FlatStyle = FlatStyle.Flat;
+            btn_Contato.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Contato.Location = new Point(690, 12);
+            btn_Contato.Name = "btn_Contato";
+            btn_Contato.Size = new Size(92, 32);
+            btn_Contato.TabIndex = 5;
+            btn_Contato.Text = "Contacto";
+            btn_Contato.UseVisualStyleBackColor = true;
+            btn_Contato.Click += btn_Contato_Click;
+            // 
             // btnPageEquipamentos
             // 
             btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
             btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageEquipamentos.Location = new Point(737, 12);
+            btnPageEquipamentos.Location = new Point(788, 12);
             btnPageEquipamentos.Name = "btnPageEquipamentos";
-            btnPageEquipamentos.Size = new Size(176, 32);
+            btnPageEquipamentos.Size = new Size(137, 32);
             btnPageEquipamentos.TabIndex = 4;
             btnPageEquipamentos.Text = "Equipamentos";
             btnPageEquipamentos.UseVisualStyleBackColor = true;
@@ -190,9 +202,9 @@
             btnPageQueixa.BackgroundImageLayout = ImageLayout.Center;
             btnPageQueixa.FlatStyle = FlatStyle.Flat;
             btnPageQueixa.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageQueixa.Location = new Point(919, 12);
+            btnPageQueixa.Location = new Point(931, 12);
             btnPageQueixa.Name = "btnPageQueixa";
-            btnPageQueixa.Size = new Size(95, 32);
+            btnPageQueixa.Size = new Size(83, 32);
             btnPageQueixa.TabIndex = 1;
             btnPageQueixa.Text = " Queixa";
             btnPageQueixa.UseVisualStyleBackColor = false;
@@ -243,18 +255,6 @@
             lstDados.Size = new Size(793, 576);
             lstDados.TabIndex = 0;
             lstDados.UseCompatibleStateImageBehavior = false;
-            // 
-            // btn_Contato
-            // 
-            btn_Contato.FlatStyle = FlatStyle.Flat;
-            btn_Contato.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_Contato.Location = new Point(555, 12);
-            btn_Contato.Name = "btn_Contato";
-            btn_Contato.Size = new Size(176, 32);
-            btn_Contato.TabIndex = 5;
-            btn_Contato.Text = "Contato";
-            btn_Contato.UseVisualStyleBackColor = true;
-            btn_Contato.Click += btn_Contato_Click;
             // 
             // home
             // 

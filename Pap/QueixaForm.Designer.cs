@@ -49,6 +49,7 @@
             richTextDescricao = new RichTextBox();
             richTextDecisao = new RichTextBox();
             panel1 = new Panel();
+            btn_Contato = new Button();
             btnPageEquipamentos = new Button();
             textBox1 = new TextBox();
             btnPageBusca = new Button();
@@ -253,6 +254,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btn_Contato);
             panel1.Controls.Add(btnPageEquipamentos);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(btnPageBusca);
@@ -263,13 +265,25 @@
             panel1.Size = new Size(1376, 59);
             panel1.TabIndex = 0;
             // 
+            // btn_Contato
+            // 
+            btn_Contato.FlatStyle = FlatStyle.Flat;
+            btn_Contato.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Contato.Location = new Point(683, 17);
+            btn_Contato.Name = "btn_Contato";
+            btn_Contato.Size = new Size(94, 32);
+            btn_Contato.TabIndex = 11;
+            btn_Contato.Text = "Contacto";
+            btn_Contato.UseVisualStyleBackColor = true;
+            btn_Contato.Click += btn_Contato_Click;
+            // 
             // btnPageEquipamentos
             // 
             btnPageEquipamentos.FlatStyle = FlatStyle.Flat;
             btnPageEquipamentos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageEquipamentos.Location = new Point(684, 17);
+            btnPageEquipamentos.Location = new Point(783, 17);
             btnPageEquipamentos.Name = "btnPageEquipamentos";
-            btnPageEquipamentos.Size = new Size(176, 32);
+            btnPageEquipamentos.Size = new Size(134, 32);
             btnPageEquipamentos.TabIndex = 1;
             btnPageEquipamentos.Text = "Equipamentos";
             btnPageEquipamentos.UseVisualStyleBackColor = true;
@@ -292,9 +306,9 @@
             btnPageBusca.BackgroundImageLayout = ImageLayout.Center;
             btnPageBusca.FlatStyle = FlatStyle.Flat;
             btnPageBusca.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageBusca.Location = new Point(1048, 17);
+            btnPageBusca.Location = new Point(1091, 17);
             btnPageBusca.Name = "btnPageBusca";
-            btnPageBusca.Size = new Size(156, 32);
+            btnPageBusca.Size = new Size(145, 32);
             btnPageBusca.TabIndex = 3;
             btnPageBusca.Text = "Página de Busca";
             btnPageBusca.UseVisualStyleBackColor = false;
@@ -304,9 +318,9 @@
             // 
             btnPageInsercao.FlatStyle = FlatStyle.Flat;
             btnPageInsercao.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageInsercao.Location = new Point(866, 17);
+            btnPageInsercao.Location = new Point(923, 17);
             btnPageInsercao.Name = "btnPageInsercao";
-            btnPageInsercao.Size = new Size(176, 32);
+            btnPageInsercao.Size = new Size(162, 32);
             btnPageInsercao.TabIndex = 2;
             btnPageInsercao.Text = "Página de inserção";
             btnPageInsercao.UseVisualStyleBackColor = true;
@@ -318,9 +332,9 @@
             btnPageHome.BackgroundImageLayout = ImageLayout.Center;
             btnPageHome.FlatStyle = FlatStyle.Flat;
             btnPageHome.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPageHome.Location = new Point(1210, 17);
+            btnPageHome.Location = new Point(1242, 17);
             btnPageHome.Name = "btnPageHome";
-            btnPageHome.Size = new Size(150, 32);
+            btnPageHome.Size = new Size(118, 32);
             btnPageHome.TabIndex = 4;
             btnPageHome.Text = "Página Inicial";
             btnPageHome.UseVisualStyleBackColor = false;
@@ -390,5 +404,6 @@
         private Button btnPageInsercao;
         private Button btnPageHome;
         private Button btnPageEquipamentos;
+        private Button btn_Contato;
     }
 }

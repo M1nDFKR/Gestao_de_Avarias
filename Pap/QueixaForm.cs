@@ -124,7 +124,7 @@ namespace Pap
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao verificar a existência de queixa: " + ex.Message);
-                return true; 
+                return true;
             }
         }
 
@@ -253,6 +253,13 @@ namespace Pap
         {
             EquipRecebido equipamentorecebido = new EquipRecebido();
             equipamentorecebido.Show();
+            this.Hide();
+        }
+
+        private void btn_Contato_Click(object sender, EventArgs e)
+        {
+            ContatoForm contatoForm = new ContatoForm();
+            contatoForm.Show();
             this.Hide();
         }
     }

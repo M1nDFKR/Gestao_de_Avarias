@@ -184,5 +184,12 @@ namespace Pap
             equipamentorecebido.Show();
             this.Hide();
         }
+
+        private void btn_Contato_Click(object sender, EventArgs e)
+        {
+            ContatoForm contatoForm = new ContatoForm();
+            contatoForm.Show();
+            this.Hide();
+        }
     }
 }
