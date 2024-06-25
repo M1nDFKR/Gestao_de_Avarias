@@ -79,5 +79,15 @@ namespace Pap
                 }
             }
         }
+
+        private void btn_Limpar_Click(object sender, EventArgs e)
+        {
+            txt_NIF_Utilizador.Clear();
+            txt_NSA_Queixa.Clear();
+            cb_Lista_Queixa.Enabled = true;
+            cb_Lista_Queixa.SelectedIndex = -1;
+            txt_Referencia_Envio.Clear();
+            txt_NSA_Transporter.Clear();
+        }
     }
 }

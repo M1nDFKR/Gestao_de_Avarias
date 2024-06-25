@@ -180,37 +180,82 @@ namespace Pap
 
         private void btnPageHome_Click(object sender, EventArgs e)
         {
-            home Home = new home();
-            Home.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            {
+                home Home = new home();
+                Home.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btnPageQueixa_Click(object sender, EventArgs e)
         {
-            QueixaForm queixaForm = new QueixaForm();
-            queixaForm.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            {
+                QueixaForm queixaForm = new QueixaForm();
+                queixaForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btnPageBusca_Click(object sender, EventArgs e)
         {
-            BuscarForm buscarForm = new BuscarForm();
-            buscarForm.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btnPage_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btn_Contato_Click(object sender, EventArgs e)
         {
-            ContatoForm contatoForm = new ContatoForm();
-            contatoForm.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            {
+                ContatoForm contatoForm = new ContatoForm();
+                contatoForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
     }
 }

@@ -186,37 +186,102 @@ namespace Pap
 
         private void btnPageBusca_Click(object sender, EventArgs e)
         {
-            BuscarForm buscarForm = new BuscarForm();
-            buscarForm.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
+                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+            {
+                BuscarForm buscarForm = new BuscarForm();
+                buscarForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btnPageInsercao_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
+                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btnPageQueixa_Click(object sender, EventArgs e)
         {
-            QueixaForm queixaForm = new QueixaForm();
-            queixaForm.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
+                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+            {
+                QueixaForm queixaForm = new QueixaForm();
+                queixaForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btnPageEquipamentos_Click(object sender, EventArgs e)
         {
-            EquipRecebido equipamentorecebido = new EquipRecebido();
-            equipamentorecebido.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
+                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+            {
+                EquipRecebido equipamentorecebido = new EquipRecebido();
+                equipamentorecebido.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btnPageHome_Click(object sender, EventArgs e)
         {
-            home Home = new home();
-            Home.Show();
-            this.Hide();
+            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
+                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+            {
+                home Home = new home();
+                Home.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
     }
 }

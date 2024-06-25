@@ -251,16 +251,38 @@ namespace Pap
 
         private void btnPageEquipamentos_Click(object sender, EventArgs e)
         {
-            EquipRecebido equipamentorecebido = new EquipRecebido();
-            equipamentorecebido.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(textNIF.Text) &&
+                string.IsNullOrWhiteSpace(textTipoEquip.Text) &&
+                string.IsNullOrWhiteSpace(textN_S.Text) &&
+                string.IsNullOrWhiteSpace(richTextDescricao.Text) &&
+                string.IsNullOrWhiteSpace(richTextDecisao.Text))
+            {
+                EquipRecebido equipamentorecebido = new EquipRecebido();
+                equipamentorecebido.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
 
         private void btn_Contato_Click(object sender, EventArgs e)
         {
-            ContatoForm contatoForm = new ContatoForm();
-            contatoForm.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(textNIF.Text) &&
+                string.IsNullOrWhiteSpace(textTipoEquip.Text) &&
+                string.IsNullOrWhiteSpace(textN_S.Text) &&
+                string.IsNullOrWhiteSpace(richTextDescricao.Text) &&
+                string.IsNullOrWhiteSpace(richTextDecisao.Text))
+            {
+                ContatoForm contatoForm = new ContatoForm();
+                contatoForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
         }
     }
 }

@@ -152,6 +152,7 @@
             btn_Limpar.TabIndex = 12;
             btn_Limpar.Text = "Limpar";
             btn_Limpar.UseVisualStyleBackColor = true;
+            btn_Limpar.Click += btn_Limpar_Click;
             // 
             // btn_Inserir
             // 

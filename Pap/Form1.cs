@@ -222,32 +222,6 @@ namespace Pap
             cb_Tipo.SelectedIndex = 0;
         }
 
-        private void btnNextPage_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(maskedTextNIF.Text) &&
-                    string.IsNullOrWhiteSpace(textNome.Text) &&
-                    string.IsNullOrWhiteSpace(textProcesso.Text) &&
-                    string.IsNullOrWhiteSpace(maskedTextNIFEE.Text) &&
-                    string.IsNullOrWhiteSpace(textNomeEE.Text) &&
-                    string.IsNullOrWhiteSpace(textEmailEE.Text))
-                {
-                    QueixaForm queixaForm = new QueixaForm();
-                    queixaForm.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Limpar todos os campos antes de mudar de página.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Não foi possível ir para a próxima página: " + ex.Message);
-            }
-        }
-
         private void btnPageQueixa_Click(object sender, EventArgs e)
         {
             try
@@ -265,7 +239,7 @@ namespace Pap
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Não foi possível ir para a página de busca: " + ex.Message);
+                MessageBox.Show("Não foi possível ir para a página de Queixa: " + ex.Message);
             }
         }
 
@@ -286,7 +260,7 @@ namespace Pap
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Não foi possível ir para a página de busca: " + ex.Message);
+                MessageBox.Show("Não foi possível ir para a página de Busca: " + ex.Message);
             }
         }
 
@@ -307,22 +281,50 @@ namespace Pap
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Não foi possível ir para a página de busca: " + ex.Message);
+                MessageBox.Show("Não foi possível ir para a página de Inicial: " + ex.Message);
             }
         }
 
         private void btnPageEquipamentos_Click(object sender, EventArgs e)
         {
-            EquipRecebido equipamentorecebido = new EquipRecebido();
-            equipamentorecebido.Show();
-            this.Hide();
+            try
+            {
+                if (maskedTextNIF.Text.Equals("") && textNome.Text.Equals("") && textProcesso.Text.Equals("") && maskedTextNIFEE.Text.Equals("") && textNomeEE.Text.Equals("") && textEmailEE.Text.Equals(""))
+                {
+                    EquipRecebido equipamentorecebido = new EquipRecebido();
+                    equipamentorecebido.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Limpar todos os campos antes de mudar de página.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível ir para a página de Equipamentos: " + ex.Message);
+            }
         }
 
         private void btn_Contato_Click(object sender, EventArgs e)
         {
-            ContatoForm contatoForm = new ContatoForm();
-            contatoForm.Show();
-            this.Hide();
+            try
+            {
+                if (maskedTextNIF.Text.Equals("") && textNome.Text.Equals("") && textProcesso.Text.Equals("") && maskedTextNIFEE.Text.Equals("") && textNomeEE.Text.Equals("") && textEmailEE.Text.Equals(""))
+                {
+                    ContatoForm contatoForm = new ContatoForm();
+                    contatoForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Limpar todos os campos antes de mudar de página.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível ir para a página de Contacto: " + ex.Message);
+            }
         }
     }
     public static class EnumExtensions
