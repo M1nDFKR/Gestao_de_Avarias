@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace Pap
             cb_Lista_Queixa.DropDownStyle = ComboBoxStyle.DropDownList;
 
             cb_Lista_Queixa.SelectedIndex = 0;
+
+            cb_Lista_Queixa.SelectedIndexChanged += new EventHandler(cb_Lista_Queixa_SelectedIndexChanged);
         }
 
         private void EnvioForm_Load(object sender, EventArgs e)
@@ -27,7 +30,7 @@ namespace Pap
             try
             {
                 string connectionString = ConexaoBD.basededados;
-                string query = "SELECT NSA, NIF_Utilizador FROM Queixa ORDER BY NSA";
+                string query = "SELECT NSA, NIF_Utilizador FROM Queixa ORDER BY DtQueixa DESC LIMIT 5";
 
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
@@ -49,6 +52,31 @@ namespace Pap
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar queixas: " + ex.Message);
+            }
+        }
+
+        private void cb_Lista_Queixa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_Lista_Queixa.SelectedIndex == 0)
+            {
+                MessageBox.Show("Este item não pode ser selecionado.");
+                cb_Lista_Queixa.SelectedIndex = -1;
+                return;
+            }
+
+            if (cb_Lista_Queixa.SelectedIndex != -1)
+            {
+                string selectedItem = cb_Lista_Queixa.SelectedItem.ToString();
+                string[] parts = selectedItem.Split('-');
+
+                if (parts.Length == 2)
+                {
+                    string nsa = parts[0].Trim();
+                    string nif = parts[1].Trim();
+
+                    txt_NSA_Queixa.Text = nsa;
+                    txt_NIF_Utilizador.Text = nif;
+                }
             }
         }
     }
