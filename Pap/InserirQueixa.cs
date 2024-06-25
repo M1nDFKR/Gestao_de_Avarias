@@ -9,7 +9,6 @@ namespace Pap
 {
     internal class InserirQueixa
     {
-
         private string nifUtilizador;
         private string tipoEquip;
         private string n_s;
