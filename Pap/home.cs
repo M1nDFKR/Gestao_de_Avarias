@@ -216,12 +216,5 @@ namespace Pap
             contatoForm.Show();
             this.Hide();
         }
-
-        private void btn_Page_Envio_Click(object sender, EventArgs e)
-        {
-            EnvioForm envioForm = new EnvioForm();
-            envioForm.Show();
-            this.Hide();
-        }
     }
 }
