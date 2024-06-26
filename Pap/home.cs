@@ -223,5 +223,12 @@ namespace Pap
             envioForm.Show();
             this.Hide();
         }
+
+        private void btn_Orcamento_Click(object sender, EventArgs e)
+        {
+            OrcamentoForm orcamentoForm = new OrcamentoForm();
+            orcamentoForm.Show();
+            this.Hide();
+        }
     }
 }
