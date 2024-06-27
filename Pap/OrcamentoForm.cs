@@ -15,6 +15,20 @@ namespace Pap
         public OrcamentoForm()
         {
             InitializeComponent();
+
+            cb_Lista_Queixa.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cb_Lista_Queixa.SelectedIndex = 0;
+        }
+
+        private void btn_Inserir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Limpar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
