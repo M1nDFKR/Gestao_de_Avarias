@@ -318,6 +318,7 @@
             Controls.Add(cb_Lista_Queixa);
             Name = "OrcamentoForm";
             Text = "Formulário de Orçamento";
+            Load += OrcamentoForm_Load;
             painelPagamento.ResumeLayout(false);
             painelPagamento.PerformLayout();
             ResumeLayout(false);

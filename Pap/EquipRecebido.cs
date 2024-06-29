@@ -180,9 +180,9 @@ namespace Pap
 
         private void btnPageHome_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
-                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
-                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            if (string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                string.IsNullOrWhiteSpace(txt_referencia.Text))
             {
                 home Home = new home();
                 Home.Show();
@@ -196,9 +196,9 @@ namespace Pap
 
         private void btnPageQueixa_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
-                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
-                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            if (string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                string.IsNullOrWhiteSpace(txt_referencia.Text))
             {
                 QueixaForm queixaForm = new QueixaForm();
                 queixaForm.Show();
@@ -212,9 +212,9 @@ namespace Pap
 
         private void btnPageBusca_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
-                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
-                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            if (string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                string.IsNullOrWhiteSpace(txt_referencia.Text))
             {
                 BuscarForm buscarForm = new BuscarForm();
                 buscarForm.Show();
@@ -228,9 +228,9 @@ namespace Pap
 
         private void btnPage_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
-                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
-                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            if (string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                string.IsNullOrWhiteSpace(txt_referencia.Text))
             {
                 Form1 form1 = new Form1();
                 form1.Show();
@@ -244,9 +244,9 @@ namespace Pap
 
         private void btn_Contato_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txt_NS.Text) &&
-                !string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
-                !string.IsNullOrWhiteSpace(txt_referencia.Text))
+            if (string.IsNullOrWhiteSpace(txt_NS.Text) &&
+                string.IsNullOrWhiteSpace(txt_TipoDeEquipamento.Text) &&
+                string.IsNullOrWhiteSpace(txt_referencia.Text))
             {
                 ContatoForm contatoForm = new ContatoForm();
                 contatoForm.Show();

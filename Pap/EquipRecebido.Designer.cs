@@ -109,6 +109,7 @@
             // 
             txt_NS.Location = new Point(160, 256);
             txt_NS.Name = "txt_NS";
+            txt_NS.ReadOnly = true;
             txt_NS.Size = new Size(178, 23);
             txt_NS.TabIndex = 1;
             // 
@@ -116,6 +117,7 @@
             // 
             txt_TipoDeEquipamento.Location = new Point(500, 256);
             txt_TipoDeEquipamento.Name = "txt_TipoDeEquipamento";
+            txt_TipoDeEquipamento.ReadOnly = true;
             txt_TipoDeEquipamento.Size = new Size(178, 23);
             txt_TipoDeEquipamento.TabIndex = 2;
             // 

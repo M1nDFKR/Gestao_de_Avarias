@@ -180,19 +180,18 @@ namespace Pap
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao inserir o formulário de contato: " + ex.Message);
+                MessageBox.Show("Erro ao inserir o Formulário de Contacto: " + ex.Message);
             }
         }
 
         private void btnPageBusca_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
-                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
-                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
-                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
-                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+            if (string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                string.IsNullOrWhiteSpace(richTextInfoContato.Text))
             {
                 BuscarForm buscarForm = new BuscarForm();
                 buscarForm.Show();
@@ -206,14 +205,13 @@ namespace Pap
 
         private void btnPageInsercao_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
-                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
-                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
-                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
-                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
-            {
+            if (string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+                {
                 Form1 form1 = new Form1();
                 form1.Show();
                 this.Hide();
@@ -226,14 +224,13 @@ namespace Pap
 
         private void btnPageQueixa_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
-                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
-                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
-                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
-                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
-            {
+            if (string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+                {
                 QueixaForm queixaForm = new QueixaForm();
                 queixaForm.Show();
                 this.Hide();
@@ -246,14 +243,13 @@ namespace Pap
 
         private void btnPageEquipamentos_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
-                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
-                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
-                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
-                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
-            {
+            if (string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+                {
                 EquipRecebido equipamentorecebido = new EquipRecebido();
                 equipamentorecebido.Show();
                 this.Hide();
@@ -266,14 +262,13 @@ namespace Pap
 
         private void btnPageHome_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
-                !string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
-                !string.IsNullOrWhiteSpace(maskedTextHora.Text) &&
-                !string.IsNullOrWhiteSpace(richTextResumo.Text) &&
-                !string.IsNullOrWhiteSpace(txt_Forma.Text) &&
-                !string.IsNullOrWhiteSpace(richTextInfoContato.Text))
-            {
+            if (string.IsNullOrWhiteSpace(NSA_Queixa.Text) &&
+                string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                string.IsNullOrWhiteSpace(txt_NSA_Empresa.Text) &&
+                string.IsNullOrWhiteSpace(richTextResumo.Text) &&
+                string.IsNullOrWhiteSpace(txt_Forma.Text) &&
+                string.IsNullOrWhiteSpace(richTextInfoContato.Text))
+                {
                 home Home = new home();
                 Home.Show();
                 this.Hide();

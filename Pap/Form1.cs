@@ -154,8 +154,6 @@ namespace Pap
                         MessageBox.Show("Erro ao converter data.");
                     }
 
-
-
                     if (inResponsavel.inserirResponsavel())
                     {
                         MessageBox.Show($" O(A) utilizador(a) {inResponsavel.Nome} responsável pela avaria foi registrada com sucesso.");
