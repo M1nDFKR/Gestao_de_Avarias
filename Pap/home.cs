@@ -230,5 +230,12 @@ namespace Pap
             orcamentoForm.Show();
             this.Hide();
         }
+
+        private void btn_Devolucao_Click(object sender, EventArgs e)
+        {
+            DevolucaoForm devolucaoForm = new DevolucaoForm();
+            devolucaoForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -77,6 +77,8 @@ namespace Pap
             {
                 MessageBox.Show("Este item não pode ser selecionado.");
                 cb_listaClientes.SelectedIndex = -1;
+                textNome.Clear();
+                textNIF.Clear();
                 return;
             }
 

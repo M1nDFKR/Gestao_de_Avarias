@@ -61,6 +61,8 @@ namespace Pap
             {
                 MessageBox.Show("Este item não pode ser selecionado.");
                 cb_Lista_Queixa.SelectedIndex = -1;
+                txt_NIF_Utilizador.Clear();
+                txt_NSA_Queixa.Clear();
                 return;
             }
 

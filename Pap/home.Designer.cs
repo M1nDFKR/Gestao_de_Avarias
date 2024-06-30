@@ -35,6 +35,7 @@
             Pesquisar = new TextBox();
             txt_buscar = new TextBox();
             panel1 = new Panel();
+            btn_Orcamento = new Button();
             btn_Envio = new Button();
             btn_Contato = new Button();
             btnPageEquipamentos = new Button();
@@ -47,7 +48,7 @@
             TipoEquip = new Label();
             cb_ListadeEquip_NS = new ComboBox();
             lstDados = new ListView();
-            btn_Orcamento = new Button();
+            btn_Devolucao = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -126,6 +127,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btn_Devolucao);
             panel1.Controls.Add(btn_Orcamento);
             panel1.Controls.Add(btn_Envio);
             panel1.Controls.Add(btn_Contato);
@@ -138,6 +140,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1371, 57);
             panel1.TabIndex = 6;
+            // 
+            // btn_Orcamento
+            // 
+            btn_Orcamento.FlatStyle = FlatStyle.Flat;
+            btn_Orcamento.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Orcamento.Location = new Point(449, 12);
+            btn_Orcamento.Name = "btn_Orcamento";
+            btn_Orcamento.Size = new Size(137, 32);
+            btn_Orcamento.TabIndex = 7;
+            btn_Orcamento.Text = "Orçamento";
+            btn_Orcamento.UseVisualStyleBackColor = true;
+            btn_Orcamento.Click += btn_Orcamento_Click;
             // 
             // btn_Envio
             // 
@@ -272,17 +286,17 @@
             lstDados.TabIndex = 0;
             lstDados.UseCompatibleStateImageBehavior = false;
             // 
-            // btn_Orcamento
+            // btn_Devolucao
             // 
-            btn_Orcamento.FlatStyle = FlatStyle.Flat;
-            btn_Orcamento.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_Orcamento.Location = new Point(449, 12);
-            btn_Orcamento.Name = "btn_Orcamento";
-            btn_Orcamento.Size = new Size(137, 32);
-            btn_Orcamento.TabIndex = 7;
-            btn_Orcamento.Text = "Orçamento";
-            btn_Orcamento.UseVisualStyleBackColor = true;
-            btn_Orcamento.Click += btn_Orcamento_Click;
+            btn_Devolucao.FlatStyle = FlatStyle.Flat;
+            btn_Devolucao.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Devolucao.Location = new Point(306, 12);
+            btn_Devolucao.Name = "btn_Devolucao";
+            btn_Devolucao.Size = new Size(137, 32);
+            btn_Devolucao.TabIndex = 8;
+            btn_Devolucao.Text = "Devolução";
+            btn_Devolucao.UseVisualStyleBackColor = true;
+            btn_Devolucao.Click += btn_Devolucao_Click;
             // 
             // home
             // 
@@ -333,5 +347,6 @@
         private Button btn_Contato;
         private Button btn_Envio;
         private Button btn_Orcamento;
+        private Button btn_Devolucao;
     }
 }

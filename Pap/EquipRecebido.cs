@@ -62,6 +62,9 @@ namespace Pap
             {
                 MessageBox.Show("Este item não pode ser selecionado.");
                 cb_ListaDeQueixas.SelectedIndex = -1;
+                NSA_Queixas.Text = string.Empty;
+                txt_NS.Clear();
+                txt_TipoDeEquipamento.Clear();
                 return;
             }
 
@@ -78,7 +81,7 @@ namespace Pap
 
                     if (EquipamentoJaExiste(ns, tipoEquip))
                     {
-                        MessageBox.Show("Este equipamento já está registrado na base de dados.");
+                        MessageBox.Show("Este equipamento já está registrado.");
                         cb_ListaDeQueixas.SelectedIndex = -1;
                         NSA_Queixas.Text = string.Empty;
                         txt_NS.Clear();

@@ -68,6 +68,9 @@ namespace Pap
             {
                 MessageBox.Show("Este item não pode ser selecionado.");
                 cb_Lista_NSA_NIF_NIFEE.SelectedIndex = -1;
+                txt_NSA_Queixa.Clear();
+                txt_NIF.Clear();
+                txt_NIFEE.Clear();
                 return;
             }
 
@@ -82,6 +85,16 @@ namespace Pap
                     string nifUtilizador = parts[1].Trim();
                     string nifEE = parts[2].Trim();
 
+                    if (UtilizadorJaTemDevolucao(nsa))
+                    {
+                        MessageBox.Show("Este utilizador já possui uma devolução registrada.");
+                        cb_Lista_NSA_NIF_NIFEE.SelectedIndex = -1;
+                        txt_NSA_Queixa.Clear();
+                        txt_NIF.Clear();
+                        txt_NIFEE.Clear();
+                        return;
+                    }
+
                     txt_NSA_Queixa.Text = nsa;
                     txt_NIF.Text = nifUtilizador;
                     txt_NIFEE.Text = nifEE;
@@ -89,19 +102,18 @@ namespace Pap
             }
         }
 
-
-        private bool UtilizadorJaTemDevolucao(string nif)
+        private bool UtilizadorJaTemDevolucao(string nsa)
         {
             try
             {
                 string connectionString = ConexaoBD.basededados;
-                string query = "SELECT COUNT(*) FROM Devolucao WHERE NIF_Utilizador = @NIF OR NIFEE = @NIF";
+                string query = "SELECT COUNT(*) FROM Devolucao WHERE NSA_Queixa = @NSA";
 
                 using (MySqlConnection conexao = new MySqlConnection(connectionString))
                 {
                     conexao.Open();
                     MySqlCommand comando = new MySqlCommand(query, conexao);
-                    comando.Parameters.AddWithValue("@NIF", nif);
+                    comando.Parameters.AddWithValue("@NSA", nsa);
 
                     int count = Convert.ToInt32(comando.ExecuteScalar());
 
@@ -114,7 +126,6 @@ namespace Pap
                 return true;
             }
         }
-
 
         private void btn_Inserir_Click(object sender, EventArgs e)
         {
