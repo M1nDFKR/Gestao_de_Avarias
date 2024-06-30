@@ -41,7 +41,6 @@ namespace Pap
             richTextDescricao.WordWrap = true;
         }
 
-
         private void QueixaForm_Load(object sender, EventArgs e)
         {
             try
