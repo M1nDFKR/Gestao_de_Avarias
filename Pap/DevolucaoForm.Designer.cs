@@ -36,8 +36,8 @@
             label6 = new Label();
             btn_Inserir = new Button();
             btn_Limpar = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            DataDeDevolucao = new DateTimePicker();
+            DataDeEntrega = new DateTimePicker();
             cb_Lista_NSA_NIF_NIFEE = new ComboBox();
             txt_NIFEE = new TextBox();
             txt_NIF = new TextBox();
@@ -118,19 +118,19 @@
             btn_Limpar.UseVisualStyleBackColor = true;
             btn_Limpar.Click += btn_Limpar_Click;
             // 
-            // dateTimePicker1
+            // DataDeDevolucao
             // 
-            dateTimePicker1.Location = new Point(164, 295);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 8;
+            DataDeDevolucao.Location = new Point(164, 295);
+            DataDeDevolucao.Name = "DataDeDevolucao";
+            DataDeDevolucao.Size = new Size(200, 23);
+            DataDeDevolucao.TabIndex = 8;
             // 
-            // dateTimePicker2
+            // DataDeEntrega
             // 
-            dateTimePicker2.Location = new Point(164, 352);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 9;
+            DataDeEntrega.Location = new Point(164, 352);
+            DataDeEntrega.Name = "DataDeEntrega";
+            DataDeEntrega.Size = new Size(200, 23);
+            DataDeEntrega.TabIndex = 9;
             // 
             // cb_Lista_NSA_NIF_NIFEE
             // 
@@ -138,7 +138,7 @@
             cb_Lista_NSA_NIF_NIFEE.Items.AddRange(new object[] { "Selecione o NSA da Queixa o NIF e o NIFEE" });
             cb_Lista_NSA_NIF_NIFEE.Location = new Point(164, 236);
             cb_Lista_NSA_NIF_NIFEE.Name = "cb_Lista_NSA_NIF_NIFEE";
-            cb_Lista_NSA_NIF_NIFEE.Size = new Size(229, 23);
+            cb_Lista_NSA_NIF_NIFEE.Size = new Size(266, 23);
             cb_Lista_NSA_NIF_NIFEE.TabIndex = 10;
             // 
             // txt_NIFEE
@@ -174,8 +174,8 @@
             Controls.Add(txt_NIF);
             Controls.Add(txt_NIFEE);
             Controls.Add(cb_Lista_NSA_NIF_NIFEE);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(DataDeEntrega);
+            Controls.Add(DataDeDevolucao);
             Controls.Add(btn_Limpar);
             Controls.Add(btn_Inserir);
             Controls.Add(label6);
@@ -201,8 +201,8 @@
         private Label label6;
         private Button btn_Inserir;
         private Button btn_Limpar;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker DataDeDevolucao;
+        private DateTimePicker DataDeEntrega;
         private ComboBox cb_Lista_NSA_NIF_NIFEE;
         private TextBox txt_NIFEE;
         private TextBox txt_NIF;
