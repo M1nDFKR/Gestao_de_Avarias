@@ -29,6 +29,24 @@ namespace Pap
 
             richTextInfoContato.ScrollBars = RichTextBoxScrollBars.Vertical;
             richTextInfoContato.WordWrap = true;
+
+            lstDados.View = View.Details;
+            lstDados.LabelEdit = true;
+            lstDados.AllowColumnReorder = true;
+            lstDados.FullRowSelect = true;
+            lstDados.GridLines = true;
+
+            lstDados.Columns.Add("NSA", 50, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NSA-Empresa", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("DtContact", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("HrContacto", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("Resumo", 150, HorizontalAlignment.Left);
+            lstDados.Columns.Add("Forma", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("InfoContacto", 200, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NSA_Queixa", 50, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NIF_Utilizador", 100, HorizontalAlignment.Left);
+
+            CarregarDadosContacto();
         }
 
         private void ContatoForm_Load(object sender, EventArgs e)
@@ -211,7 +229,7 @@ namespace Pap
                 string.IsNullOrWhiteSpace(richTextResumo.Text) &&
                 string.IsNullOrWhiteSpace(txt_Forma.Text) &&
                 string.IsNullOrWhiteSpace(richTextInfoContato.Text))
-                {
+            {
                 Form1 form1 = new Form1();
                 form1.Show();
                 this.Hide();
@@ -230,7 +248,7 @@ namespace Pap
                 string.IsNullOrWhiteSpace(richTextResumo.Text) &&
                 string.IsNullOrWhiteSpace(txt_Forma.Text) &&
                 string.IsNullOrWhiteSpace(richTextInfoContato.Text))
-                {
+            {
                 QueixaForm queixaForm = new QueixaForm();
                 queixaForm.Show();
                 this.Hide();
@@ -249,7 +267,7 @@ namespace Pap
                 string.IsNullOrWhiteSpace(richTextResumo.Text) &&
                 string.IsNullOrWhiteSpace(txt_Forma.Text) &&
                 string.IsNullOrWhiteSpace(richTextInfoContato.Text))
-                {
+            {
                 EquipRecebido equipamentorecebido = new EquipRecebido();
                 equipamentorecebido.Show();
                 this.Hide();
@@ -268,7 +286,7 @@ namespace Pap
                 string.IsNullOrWhiteSpace(richTextResumo.Text) &&
                 string.IsNullOrWhiteSpace(txt_Forma.Text) &&
                 string.IsNullOrWhiteSpace(richTextInfoContato.Text))
-                {
+            {
                 home Home = new home();
                 Home.Show();
                 this.Hide();
@@ -278,5 +296,89 @@ namespace Pap
                 MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
             }
         }
+
+        private void btn_Pesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BuscarContato buscar = new BuscarContato();
+                buscar.txt_buscar = txt_Buscar.Text;
+
+                buscar.lst_dados = lstDados;
+
+                if (!buscar.BuscarNaBD_Contacto())
+                {
+                    MessageBox.Show("Nenhum dado foi encontrado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao executar a busca:" + ex.Message);
+            }
+        }
+
+        private void btn_Limpar_Pesquisa_Click(object sender, EventArgs e)
+        {
+            txt_Buscar.Clear();
+            txt_Buscar.Focus();
+            CarregarDadosContacto();
+        }
+
+        private void CarregarDadosContacto()
+        {
+            try
+            {
+                using (MySqlConnection ConexaoBasedeDados = new MySqlConnection(ConexaoBD.basededados))
+                {
+                    ConexaoBasedeDados.Open();
+
+                    string select = @"
+                SELECT 
+                    NSA,
+                    `NSA-Empresa`,
+                    DtContact,
+                    HrContacto,
+                    Resumo,
+                    Forma,
+                    InfoContacto,
+                    NSA_Queixa,
+                    NIF_Utilizador
+                FROM
+                    Contacto;";
+
+                    using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))
+                    {
+                        using (MySqlDataReader reader = comandoSql.ExecuteReader())
+                        {
+                            lstDados.Items.Clear();
+
+                            while (reader.Read())
+                            {
+                                string[] row =
+                                {
+                            reader.IsDBNull(reader.GetOrdinal("NSA")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("NSA-Empresa")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA-Empresa")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("DtContact")) ? "" : reader.GetDateTime(reader.GetOrdinal("DtContact")).ToString("yyyy-MM-dd"),
+                            reader.IsDBNull(reader.GetOrdinal("HrContacto")) ? "" : reader.GetTimeSpan(reader.GetOrdinal("HrContacto")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("Resumo")) ? "" : reader.GetString(reader.GetOrdinal("Resumo")),
+                            reader.IsDBNull(reader.GetOrdinal("Forma")) ? "" : reader.GetString(reader.GetOrdinal("Forma")),
+                            reader.IsDBNull(reader.GetOrdinal("InfoContacto")) ? "" : reader.GetString(reader.GetOrdinal("InfoContacto")),
+                            reader.IsDBNull(reader.GetOrdinal("NSA_Queixa")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA_Queixa")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("NIF_Utilizador")) ? "" : reader.GetString(reader.GetOrdinal("NIF_Utilizador"))
+                        };
+
+                                var listViewItem = new ListViewItem(row);
+                                lstDados.Items.Add(listViewItem);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+            }
+        }
+
     }
 }

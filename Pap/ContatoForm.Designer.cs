@@ -55,6 +55,11 @@
             btnPageBusca = new Button();
             btnPageInsercao = new Button();
             btnPageHome = new Button();
+            Pesquisa = new Label();
+            btn_Limpar_Pesquisa = new Button();
+            txt_Buscar = new TextBox();
+            btn_Pesquisar = new Button();
+            lstDados = new ListView();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -342,11 +347,61 @@
             btnPageHome.UseVisualStyleBackColor = false;
             btnPageHome.Click += btnPageHome_Click;
             // 
+            // Pesquisa
+            // 
+            Pesquisa.AutoSize = true;
+            Pesquisa.Location = new Point(504, 131);
+            Pesquisa.Name = "Pesquisa";
+            Pesquisa.Size = new Size(60, 15);
+            Pesquisa.TabIndex = 32;
+            Pesquisa.Text = "Pesquisar:";
+            // 
+            // btn_Limpar_Pesquisa
+            // 
+            btn_Limpar_Pesquisa.Location = new Point(1179, 124);
+            btn_Limpar_Pesquisa.Name = "btn_Limpar_Pesquisa";
+            btn_Limpar_Pesquisa.Size = new Size(132, 29);
+            btn_Limpar_Pesquisa.TabIndex = 31;
+            btn_Limpar_Pesquisa.Text = "Limpar";
+            btn_Limpar_Pesquisa.UseVisualStyleBackColor = true;
+            btn_Limpar_Pesquisa.Click += btn_Limpar_Pesquisa_Click;
+            // 
+            // txt_Buscar
+            // 
+            txt_Buscar.Location = new Point(610, 128);
+            txt_Buscar.MaxLength = 255;
+            txt_Buscar.Name = "txt_Buscar";
+            txt_Buscar.Size = new Size(425, 23);
+            txt_Buscar.TabIndex = 30;
+            // 
+            // btn_Pesquisar
+            // 
+            btn_Pesquisar.Location = new Point(1041, 124);
+            btn_Pesquisar.Name = "btn_Pesquisar";
+            btn_Pesquisar.Size = new Size(132, 29);
+            btn_Pesquisar.TabIndex = 29;
+            btn_Pesquisar.Text = "Pesquisar";
+            btn_Pesquisar.UseVisualStyleBackColor = true;
+            btn_Pesquisar.Click += btn_Pesquisar_Click;
+            // 
+            // lstDados
+            // 
+            lstDados.Location = new Point(507, 159);
+            lstDados.Name = "lstDados";
+            lstDados.Size = new Size(851, 578);
+            lstDados.TabIndex = 28;
+            lstDados.UseCompatibleStateImageBehavior = false;
+            // 
             // ContatoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 749);
+            Controls.Add(Pesquisa);
+            Controls.Add(btn_Limpar_Pesquisa);
+            Controls.Add(txt_Buscar);
+            Controls.Add(btn_Pesquisar);
+            Controls.Add(lstDados);
             Controls.Add(panel1);
             Controls.Add(btn_Inserir);
             Controls.Add(btn_Limpar);
@@ -407,5 +462,10 @@
         private Button btnPageInsercao;
         private Button btnPageHome;
         private Button btnPageQueixa;
+        private Label Pesquisa;
+        private Button btn_Limpar_Pesquisa;
+        private TextBox txt_Buscar;
+        private Button btn_Pesquisar;
+        private ListView lstDados;
     }
 }
