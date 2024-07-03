@@ -18,11 +18,26 @@ namespace Pap
         {
             InitializeComponent();
 
+            txt_Buscar.Focus();
+
             cb_Lista_Queixa.DropDownStyle = ComboBoxStyle.DropDownList;
 
             cb_Lista_Queixa.SelectedIndex = 0;
 
             cb_Lista_Queixa.SelectedIndexChanged += new EventHandler(cb_Lista_Queixa_SelectedIndexChanged);
+
+            lstDados.View = View.Details;
+            lstDados.LabelEdit = true;
+            lstDados.AllowColumnReorder = true;
+            lstDados.FullRowSelect = true;
+            lstDados.GridLines = true;
+
+            lstDados.Columns.Add("Referencia", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NSA_Queixa", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("DtEnvio", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NSA_Transp", 100, HorizontalAlignment.Left);
+
+            CarregarDadosEnvio();
         }
 
         private void EnvioForm_Load(object sender, EventArgs e)
@@ -125,6 +140,7 @@ namespace Pap
             cb_Lista_Queixa.SelectedIndex = -1;
             txt_Referencia_Envio.Clear();
             txt_NSA_Transporte.Clear();
+            txt_Referencia_Envio.Focus();
         }
 
         private void btn_Inserir_Click(object sender, EventArgs e)
@@ -187,5 +203,79 @@ namespace Pap
                 MessageBox.Show("Erro ao inserir o dados do formulário Envio: " + ex.Message);
             }
         }
+
+        private void btn_Pesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BuscarEnvio buscar = new BuscarEnvio();
+                buscar.txt_buscar = txt_Buscar.Text;
+
+                buscar.lst_dados = lstDados;
+
+                if (!buscar.Buscar_EnvioNaBD())
+                {
+                    MessageBox.Show("Nenhum dado foi encontrado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao executar a busca:" + ex.Message);
+            }
+        }
+
+        private void btn_Limpar_Pesquisa_Click(object sender, EventArgs e)
+        {
+            txt_Buscar.Clear();
+            txt_Buscar.Focus();
+            CarregarDadosEnvio();
+        }
+
+        private void CarregarDadosEnvio()
+        {
+            try
+            {
+                using (MySqlConnection ConexaoBasedeDados = new MySqlConnection(ConexaoBD.basededados))
+                {
+                    ConexaoBasedeDados.Open();
+
+                    string select = @"
+                SELECT 
+                    Referencia,
+                    NSA_Queixa,
+                    DtEnvio,
+                    NSA_Transp
+                FROM
+                    Envio;";
+
+                    using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))
+                    {
+                        using (MySqlDataReader reader = comandoSql.ExecuteReader())
+                        {
+                            lstDados.Items.Clear();
+
+                            while (reader.Read())
+                            {
+                                string[] row =
+                                {
+                            reader.IsDBNull(reader.GetOrdinal("Referencia")) ? "" : reader.GetInt32(reader.GetOrdinal("Referencia")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("NSA_Queixa")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA_Queixa")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("DtEnvio")) ? "" : reader.GetDateTime(reader.GetOrdinal("DtEnvio")).ToString("yyyy-MM-dd"),
+                            reader.IsDBNull(reader.GetOrdinal("NSA_Transp")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA_Transp")).ToString()
+                        };
+
+                                var listViewItem = new ListViewItem(row);
+                                lstDados.Items.Add(listViewItem);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+            }
+        }
+
     }
 }
