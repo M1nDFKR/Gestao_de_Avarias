@@ -185,6 +185,7 @@
             Controls.Add(label1);
             Name = "EnvioForm";
             Text = "Formulário de Envio";
+            WindowState = FormWindowState.Maximized;
             Load += EnvioForm_Load;
             ResumeLayout(false);
             PerformLayout();

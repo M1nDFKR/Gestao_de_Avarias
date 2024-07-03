@@ -186,6 +186,7 @@
             Controls.Add(label1);
             Name = "DevolucaoForm";
             Text = "Formulário de Devolução";
+            WindowState = FormWindowState.Maximized;
             Load += DevolucaoForm_Load;
             ResumeLayout(false);
             PerformLayout();
