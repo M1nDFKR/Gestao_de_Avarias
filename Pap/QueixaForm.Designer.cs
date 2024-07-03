@@ -55,6 +55,11 @@
             btnPageBusca = new Button();
             btnPageInsercao = new Button();
             btnPageHome = new Button();
+            lstDados = new ListView();
+            txt_Buscar = new TextBox();
+            Pesquisar = new TextBox();
+            btn_Limpar_Pesquisa = new Button();
+            btn_Pesquisar = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -340,11 +345,73 @@
             btnPageHome.UseVisualStyleBackColor = false;
             btnPageHome.Click += btnPageHome_Click;
             // 
+            // lstDados
+            // 
+            lstDados.Location = new Point(565, 161);
+            lstDados.Name = "lstDados";
+            lstDados.Size = new Size(793, 576);
+            lstDados.TabIndex = 11;
+            lstDados.UseCompatibleStateImageBehavior = false;
+            // 
+            // txt_Buscar
+            // 
+            txt_Buscar.Location = new Point(667, 132);
+            txt_Buscar.MaxLength = 255;
+            txt_Buscar.Name = "txt_Buscar";
+            txt_Buscar.Size = new Size(499, 23);
+            txt_Buscar.TabIndex = 15;
+            // 
+            // Pesquisar
+            // 
+            Pesquisar.BackColor = SystemColors.Control;
+            Pesquisar.BorderStyle = BorderStyle.None;
+            Pesquisar.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pesquisar.Location = new Point(565, 130);
+            Pesquisar.Name = "Pesquisar";
+            Pesquisar.Size = new Size(100, 23);
+            Pesquisar.TabIndex = 12;
+            Pesquisar.Text = "Pesquisar:";
+            // 
+            // btn_Limpar_Pesquisa
+            // 
+            btn_Limpar_Pesquisa.BackColor = Color.RoyalBlue;
+            btn_Limpar_Pesquisa.BackgroundImageLayout = ImageLayout.Center;
+            btn_Limpar_Pesquisa.FlatStyle = FlatStyle.Popup;
+            btn_Limpar_Pesquisa.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Limpar_Pesquisa.ForeColor = Color.White;
+            btn_Limpar_Pesquisa.Location = new Point(1276, 132);
+            btn_Limpar_Pesquisa.Name = "btn_Limpar_Pesquisa";
+            btn_Limpar_Pesquisa.Size = new Size(76, 23);
+            btn_Limpar_Pesquisa.TabIndex = 14;
+            btn_Limpar_Pesquisa.Text = "Limpar";
+            btn_Limpar_Pesquisa.UseVisualStyleBackColor = false;
+            btn_Limpar_Pesquisa.Click += btn_Limpar_Pesquisa_Click;
+            // 
+            // btn_Pesquisar
+            // 
+            btn_Pesquisar.BackColor = Color.RoyalBlue;
+            btn_Pesquisar.BackgroundImageLayout = ImageLayout.Center;
+            btn_Pesquisar.FlatStyle = FlatStyle.Popup;
+            btn_Pesquisar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Pesquisar.ForeColor = Color.White;
+            btn_Pesquisar.Location = new Point(1172, 132);
+            btn_Pesquisar.Name = "btn_Pesquisar";
+            btn_Pesquisar.Size = new Size(98, 23);
+            btn_Pesquisar.TabIndex = 13;
+            btn_Pesquisar.Text = "Pesquisar";
+            btn_Pesquisar.UseVisualStyleBackColor = false;
+            btn_Pesquisar.Click += btn_Pesquisar_Click;
+            // 
             // QueixaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 749);
+            Controls.Add(lstDados);
+            Controls.Add(txt_Buscar);
+            Controls.Add(Pesquisar);
+            Controls.Add(btn_Limpar_Pesquisa);
+            Controls.Add(btn_Pesquisar);
             Controls.Add(panel1);
             Controls.Add(richTextDecisao);
             Controls.Add(richTextDescricao);
@@ -405,5 +472,10 @@
         private Button btnPageHome;
         private Button btnPageEquipamentos;
         private Button btn_Contato;
+        private ListView lstDados;
+        private TextBox txt_Buscar;
+        private TextBox Pesquisar;
+        private Button btn_Limpar_Pesquisa;
+        private Button btn_Pesquisar;
     }
 }
