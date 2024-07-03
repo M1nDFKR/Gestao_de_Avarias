@@ -49,6 +49,11 @@
             btnPageBusca = new Button();
             btnPageHome = new Button();
             btnPageQueixa = new Button();
+            Pesquisa = new Label();
+            btn_Limpar_Pesquisa = new Button();
+            txt_Buscar = new TextBox();
+            btn_Pesquisar = new Button();
+            lstDados = new ListView();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -110,12 +115,12 @@
             txt_NS.Location = new Point(160, 256);
             txt_NS.Name = "txt_NS";
             txt_NS.ReadOnly = true;
-            txt_NS.Size = new Size(178, 23);
+            txt_NS.Size = new Size(185, 23);
             txt_NS.TabIndex = 1;
             // 
             // txt_TipoDeEquipamento
             // 
-            txt_TipoDeEquipamento.Location = new Point(500, 256);
+            txt_TipoDeEquipamento.Location = new Point(167, 210);
             txt_TipoDeEquipamento.Name = "txt_TipoDeEquipamento";
             txt_TipoDeEquipamento.ReadOnly = true;
             txt_TipoDeEquipamento.Size = new Size(178, 23);
@@ -135,7 +140,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(347, 259);
+            label4.Location = new Point(14, 213);
             label4.Name = "label4";
             label4.Size = new Size(147, 15);
             label4.TabIndex = 0;
@@ -144,7 +149,7 @@
             // NSA_Queixas
             // 
             NSA_Queixas.AutoSize = true;
-            NSA_Queixas.Location = new Point(104, 223);
+            NSA_Queixas.Location = new Point(104, 172);
             NSA_Queixas.Name = "NSA_Queixas";
             NSA_Queixas.Size = new Size(0, 15);
             NSA_Queixas.TabIndex = 0;
@@ -181,7 +186,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Consolas", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(14, 223);
+            label5.Location = new Point(14, 172);
             label5.Name = "label5";
             label5.Size = new Size(84, 15);
             label5.TabIndex = 0;
@@ -277,11 +282,61 @@
             btnPageQueixa.UseVisualStyleBackColor = false;
             btnPageQueixa.Click += btnPageQueixa_Click;
             // 
+            // Pesquisa
+            // 
+            Pesquisa.AutoSize = true;
+            Pesquisa.Location = new Point(568, 193);
+            Pesquisa.Name = "Pesquisa";
+            Pesquisa.Size = new Size(60, 15);
+            Pesquisa.TabIndex = 32;
+            Pesquisa.Text = "Pesquisar:";
+            // 
+            // btn_Limpar_Pesquisa
+            // 
+            btn_Limpar_Pesquisa.Location = new Point(1248, 186);
+            btn_Limpar_Pesquisa.Name = "btn_Limpar_Pesquisa";
+            btn_Limpar_Pesquisa.Size = new Size(110, 29);
+            btn_Limpar_Pesquisa.TabIndex = 31;
+            btn_Limpar_Pesquisa.Text = "Limpar";
+            btn_Limpar_Pesquisa.UseVisualStyleBackColor = true;
+            btn_Limpar_Pesquisa.Click += btn_Limpar_Pesquisa_Click;
+            // 
+            // txt_Buscar
+            // 
+            txt_Buscar.Location = new Point(683, 190);
+            txt_Buscar.MaxLength = 255;
+            txt_Buscar.Name = "txt_Buscar";
+            txt_Buscar.Size = new Size(416, 23);
+            txt_Buscar.TabIndex = 30;
+            // 
+            // btn_Pesquisar
+            // 
+            btn_Pesquisar.Location = new Point(1119, 186);
+            btn_Pesquisar.Name = "btn_Pesquisar";
+            btn_Pesquisar.Size = new Size(123, 29);
+            btn_Pesquisar.TabIndex = 29;
+            btn_Pesquisar.Text = "Pesquisar";
+            btn_Pesquisar.UseVisualStyleBackColor = true;
+            btn_Pesquisar.Click += btn_Pesquisar_Click;
+            // 
+            // lstDados
+            // 
+            lstDados.Location = new Point(568, 223);
+            lstDados.Name = "lstDados";
+            lstDados.Size = new Size(791, 514);
+            lstDados.TabIndex = 28;
+            lstDados.UseCompatibleStateImageBehavior = false;
+            // 
             // EquipRecebido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 749);
+            Controls.Add(Pesquisa);
+            Controls.Add(btn_Limpar_Pesquisa);
+            Controls.Add(txt_Buscar);
+            Controls.Add(btn_Pesquisar);
+            Controls.Add(lstDados);
             Controls.Add(panel1);
             Controls.Add(label5);
             Controls.Add(btn_Inserir);
@@ -299,7 +354,7 @@
             Controls.Add(label1);
             Name = "EquipRecebido";
             Text = "Gestão de avarias - Formulário de Equipamentos";
-            WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Maximized;
             Load += EquipRecebido_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -330,5 +385,10 @@
         private Button btnPageQueixa;
         private Button btnPage;
         private Button btn_Contato;
+        private Label Pesquisa;
+        private Button btn_Limpar_Pesquisa;
+        private TextBox txt_Buscar;
+        private Button btn_Pesquisar;
+        private ListView lstDados;
     }
 }
