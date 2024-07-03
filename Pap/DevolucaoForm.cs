@@ -18,7 +18,24 @@ namespace Pap
         {
             InitializeComponent();
 
+            txt_Buscar.Focus();
+
             cb_Lista_NSA_NIF_NIFEE.SelectedIndexChanged += new EventHandler(cb_Lista_NSA_NIF_NIFEE_SelectedIndexChanged);
+
+            lstDados.View = View.Details;
+            lstDados.LabelEdit = true;
+            lstDados.AllowColumnReorder = true;
+            lstDados.FullRowSelect = true;
+            lstDados.GridLines = true;
+
+            lstDados.Columns.Add("NSA", 50, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NSA_Queixa", 50, HorizontalAlignment.Left);
+            lstDados.Columns.Add("DtDevolucao", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("DtEntrega", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NIF_Utilizador", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NIFEE", 100, HorizontalAlignment.Left);
+
+            CarregarDadosDevolucao();
         }
 
         private void DevolucaoForm_Load(object sender, EventArgs e)
@@ -191,6 +208,84 @@ namespace Pap
             txt_NIFEE.Clear();
             cb_Lista_NSA_NIF_NIFEE.Enabled = true;
             cb_Lista_NSA_NIF_NIFEE.SelectedIndex = -1;
+            txt_Buscar.Focus();
+        }
+
+        private void btn_Pesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Buscar_Devolucao buscar = new Buscar_Devolucao();
+                buscar.txt_buscar = txt_Buscar.Text;
+
+                buscar.lst_dados = lstDados;
+
+                if (!buscar.BuscarDevolucaoNaBD())
+                {
+                    MessageBox.Show("Nenhum dado foi encontrado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao executar a busca:" + ex.Message);
+            }
+        }
+
+        private void btn_Limpar_Pesquisa_Click(object sender, EventArgs e)
+        {
+            txt_Buscar.Clear();
+            txt_Buscar.Focus();
+            CarregarDadosDevolucao();
+        }
+
+        private void CarregarDadosDevolucao()
+        {
+            try
+            {
+                using (MySqlConnection ConexaoBasedeDados = new MySqlConnection(ConexaoBD.basededados))
+                {
+                    ConexaoBasedeDados.Open();
+
+                    string select = @"
+                SELECT 
+                    NSA,
+                    NSA_Queixa,
+                    DtDevolucao,
+                    DtEntrega,
+                    NIF_Utilizador,
+                    NIFEE
+                FROM
+                    Devolucao;";
+
+                    using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))
+                    {
+                        using (MySqlDataReader reader = comandoSql.ExecuteReader())
+                        {
+                            lstDados.Items.Clear();
+
+                            while (reader.Read())
+                            {
+                                string[] row =
+                                {
+                            reader.IsDBNull(reader.GetOrdinal("NSA")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("NSA_Queixa")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA_Queixa")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("DtDevolucao")) ? "" : reader.GetDateTime(reader.GetOrdinal("DtDevolucao")).ToString("yyyy-MM-dd"),
+                            reader.IsDBNull(reader.GetOrdinal("DtEntrega")) ? "" : reader.GetDateTime(reader.GetOrdinal("DtEntrega")).ToString("yyyy-MM-dd"),
+                            reader.IsDBNull(reader.GetOrdinal("NIF_Utilizador")) ? "" : reader.GetString(reader.GetOrdinal("NIF_Utilizador")),
+                            reader.IsDBNull(reader.GetOrdinal("NIFEE")) ? "" : reader.GetString(reader.GetOrdinal("NIFEE"))
+                        };
+
+                                var listViewItem = new ListViewItem(row);
+                                lstDados.Items.Add(listViewItem);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+            }
         }
     }
 }
