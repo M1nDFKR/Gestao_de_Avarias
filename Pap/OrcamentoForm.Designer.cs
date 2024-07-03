@@ -54,6 +54,11 @@
             label11 = new Label();
             btn_Inserir = new Button();
             btn_Limpar = new Button();
+            Pesquisa = new Label();
+            btn_Limpar_Pesquisa = new Button();
+            txt_Buscar = new TextBox();
+            btn_Pesquisar = new Button();
+            lstDados = new ListView();
             painelPagamento.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,7 +66,7 @@
             // 
             cb_Lista_Queixa.FormattingEnabled = true;
             cb_Lista_Queixa.Items.AddRange(new object[] { "Selecione a Queixa e o NIF" });
-            cb_Lista_Queixa.Location = new Point(187, 198);
+            cb_Lista_Queixa.Location = new Point(182, 151);
             cb_Lista_Queixa.Name = "cb_Lista_Queixa";
             cb_Lista_Queixa.Size = new Size(213, 23);
             cb_Lista_Queixa.TabIndex = 0;
@@ -69,7 +74,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(17, 117);
+            label1.Location = new Point(12, 70);
             label1.Name = "label1";
             label1.Size = new Size(85, 15);
             label1.TabIndex = 1;
@@ -77,7 +82,7 @@
             // 
             // txt_NSA_Queixa
             // 
-            txt_NSA_Queixa.Location = new Point(187, 154);
+            txt_NSA_Queixa.Location = new Point(182, 107);
             txt_NSA_Queixa.Name = "txt_NSA_Queixa";
             txt_NSA_Queixa.ReadOnly = true;
             txt_NSA_Queixa.Size = new Size(36, 23);
@@ -85,7 +90,7 @@
             // 
             // txt_NIF_Utilizador
             // 
-            txt_NIF_Utilizador.Location = new Point(187, 114);
+            txt_NIF_Utilizador.Location = new Point(182, 67);
             txt_NIF_Utilizador.Name = "txt_NIF_Utilizador";
             txt_NIF_Utilizador.ReadOnly = true;
             txt_NIF_Utilizador.Size = new Size(130, 23);
@@ -94,7 +99,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(17, 157);
+            label2.Location = new Point(12, 110);
             label2.Name = "label2";
             label2.Size = new Size(89, 15);
             label2.TabIndex = 4;
@@ -103,7 +108,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(17, 201);
+            label3.Location = new Point(12, 154);
             label3.Name = "label3";
             label3.Size = new Size(149, 15);
             label3.TabIndex = 5;
@@ -112,7 +117,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(17, 246);
+            label4.Location = new Point(12, 199);
             label4.Name = "label4";
             label4.Size = new Size(114, 15);
             label4.TabIndex = 6;
@@ -120,14 +125,14 @@
             // 
             // DataDoOrcamento
             // 
-            DataDoOrcamento.Location = new Point(187, 240);
+            DataDoOrcamento.Location = new Point(182, 193);
             DataDoOrcamento.Name = "DataDoOrcamento";
             DataDoOrcamento.Size = new Size(200, 23);
             DataDoOrcamento.TabIndex = 7;
             // 
             // DataDaResposta
             // 
-            DataDaResposta.Location = new Point(614, 320);
+            DataDaResposta.Location = new Point(182, 512);
             DataDaResposta.Name = "DataDaResposta";
             DataDaResposta.Size = new Size(200, 23);
             DataDaResposta.TabIndex = 9;
@@ -135,7 +140,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(482, 326);
+            label5.Location = new Point(12, 518);
             label5.Name = "label5";
             label5.Size = new Size(100, 15);
             label5.TabIndex = 8;
@@ -143,7 +148,7 @@
             // 
             // DataDePagamento
             // 
-            DataDePagamento.Location = new Point(614, 460);
+            DataDePagamento.Location = new Point(182, 637);
             DataDePagamento.Name = "DataDePagamento";
             DataDePagamento.Size = new Size(200, 23);
             DataDePagamento.TabIndex = 11;
@@ -151,7 +156,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(482, 466);
+            label6.Location = new Point(12, 643);
             label6.Name = "label6";
             label6.Size = new Size(114, 15);
             label6.TabIndex = 10;
@@ -160,7 +165,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(17, 296);
+            label7.Location = new Point(12, 235);
             label7.Name = "label7";
             label7.Size = new Size(79, 15);
             label7.TabIndex = 12;
@@ -168,7 +173,7 @@
             // 
             // txt_Comunicado
             // 
-            txt_Comunicado.Location = new Point(187, 293);
+            txt_Comunicado.Location = new Point(182, 232);
             txt_Comunicado.MaxLength = 255;
             txt_Comunicado.Name = "txt_Comunicado";
             txt_Comunicado.Size = new Size(263, 23);
@@ -176,7 +181,7 @@
             // 
             // txt_Forma_Comunicacao
             // 
-            txt_Forma_Comunicacao.Location = new Point(187, 338);
+            txt_Forma_Comunicacao.Location = new Point(182, 277);
             txt_Forma_Comunicacao.MaxLength = 50;
             txt_Forma_Comunicacao.Name = "txt_Forma_Comunicacao";
             txt_Forma_Comunicacao.Size = new Size(263, 23);
@@ -185,7 +190,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(17, 341);
+            label8.Location = new Point(12, 280);
             label8.Name = "label8";
             label8.Size = new Size(137, 15);
             label8.TabIndex = 14;
@@ -193,7 +198,7 @@
             // 
             // richTxt_Resumo
             // 
-            richTxt_Resumo.Location = new Point(187, 385);
+            richTxt_Resumo.Location = new Point(182, 306);
             richTxt_Resumo.Name = "richTxt_Resumo";
             richTxt_Resumo.Size = new Size(263, 96);
             richTxt_Resumo.TabIndex = 16;
@@ -202,7 +207,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(17, 388);
+            label9.Location = new Point(12, 309);
             label9.Name = "label9";
             label9.Size = new Size(53, 15);
             label9.TabIndex = 17;
@@ -211,7 +216,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(475, 204);
+            label10.Location = new Point(12, 411);
             label10.Name = "label10";
             label10.Size = new Size(57, 15);
             label10.TabIndex = 19;
@@ -219,9 +224,9 @@
             // 
             // richTxt_Resposta
             // 
-            richTxt_Resposta.Location = new Point(546, 198);
+            richTxt_Resposta.Location = new Point(182, 408);
             richTxt_Resposta.Name = "richTxt_Resposta";
-            richTxt_Resposta.Size = new Size(268, 96);
+            richTxt_Resposta.Size = new Size(263, 96);
             richTxt_Resposta.TabIndex = 18;
             richTxt_Resposta.Text = "";
             // 
@@ -230,9 +235,9 @@
             painelPagamento.Controls.Add(rb_Sim);
             painelPagamento.Controls.Add(rb_Nao);
             painelPagamento.Controls.Add(label11);
-            painelPagamento.Location = new Point(473, 359);
+            painelPagamento.Location = new Point(7, 541);
             painelPagamento.Name = "painelPagamento";
-            painelPagamento.Size = new Size(341, 84);
+            painelPagamento.Size = new Size(346, 84);
             painelPagamento.TabIndex = 20;
             // 
             // rb_Sim
@@ -262,7 +267,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(9, 16);
+            label11.Location = new Point(5, 16);
             label11.Name = "label11";
             label11.Size = new Size(150, 15);
             label11.TabIndex = 0;
@@ -270,7 +275,7 @@
             // 
             // btn_Inserir
             // 
-            btn_Inserir.Location = new Point(302, 556);
+            btn_Inserir.Location = new Point(182, 688);
             btn_Inserir.Name = "btn_Inserir";
             btn_Inserir.Size = new Size(112, 38);
             btn_Inserir.TabIndex = 21;
@@ -280,7 +285,7 @@
             // 
             // btn_Limpar
             // 
-            btn_Limpar.Location = new Point(482, 556);
+            btn_Limpar.Location = new Point(331, 688);
             btn_Limpar.Name = "btn_Limpar";
             btn_Limpar.Size = new Size(114, 38);
             btn_Limpar.TabIndex = 22;
@@ -288,11 +293,61 @@
             btn_Limpar.UseVisualStyleBackColor = true;
             btn_Limpar.Click += btn_Limpar_Click;
             // 
+            // Pesquisa
+            // 
+            Pesquisa.AutoSize = true;
+            Pesquisa.Location = new Point(504, 131);
+            Pesquisa.Name = "Pesquisa";
+            Pesquisa.Size = new Size(60, 15);
+            Pesquisa.TabIndex = 42;
+            Pesquisa.Text = "Pesquisar:";
+            // 
+            // btn_Limpar_Pesquisa
+            // 
+            btn_Limpar_Pesquisa.Location = new Point(1179, 124);
+            btn_Limpar_Pesquisa.Name = "btn_Limpar_Pesquisa";
+            btn_Limpar_Pesquisa.Size = new Size(132, 29);
+            btn_Limpar_Pesquisa.TabIndex = 41;
+            btn_Limpar_Pesquisa.Text = "Limpar";
+            btn_Limpar_Pesquisa.UseVisualStyleBackColor = true;
+            btn_Limpar_Pesquisa.Click += btn_Limpar_Pesquisa_Click;
+            // 
+            // txt_Buscar
+            // 
+            txt_Buscar.Location = new Point(610, 128);
+            txt_Buscar.MaxLength = 255;
+            txt_Buscar.Name = "txt_Buscar";
+            txt_Buscar.Size = new Size(425, 23);
+            txt_Buscar.TabIndex = 40;
+            // 
+            // btn_Pesquisar
+            // 
+            btn_Pesquisar.Location = new Point(1041, 124);
+            btn_Pesquisar.Name = "btn_Pesquisar";
+            btn_Pesquisar.Size = new Size(132, 29);
+            btn_Pesquisar.TabIndex = 39;
+            btn_Pesquisar.Text = "Pesquisar";
+            btn_Pesquisar.UseVisualStyleBackColor = true;
+            btn_Pesquisar.Click += btn_Pesquisar_Click;
+            // 
+            // lstDados
+            // 
+            lstDados.Location = new Point(504, 159);
+            lstDados.Name = "lstDados";
+            lstDados.Size = new Size(854, 578);
+            lstDados.TabIndex = 38;
+            lstDados.UseCompatibleStateImageBehavior = false;
+            // 
             // OrcamentoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1178, 748);
+            ClientSize = new Size(1370, 749);
+            Controls.Add(Pesquisa);
+            Controls.Add(btn_Limpar_Pesquisa);
+            Controls.Add(txt_Buscar);
+            Controls.Add(btn_Pesquisar);
+            Controls.Add(lstDados);
             Controls.Add(btn_Limpar);
             Controls.Add(btn_Inserir);
             Controls.Add(painelPagamento);
@@ -354,5 +409,10 @@
         private Label label11;
         private Button btn_Inserir;
         private Button btn_Limpar;
+        private Label Pesquisa;
+        private Button btn_Limpar_Pesquisa;
+        private TextBox txt_Buscar;
+        private Button btn_Pesquisar;
+        private ListView lstDados;
     }
 }

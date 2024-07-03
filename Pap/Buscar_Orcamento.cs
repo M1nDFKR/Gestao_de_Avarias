@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Pap
 {
-    internal class BuscarEnvio
+    internal class Buscar_Orcamento
     {
         public string txt_buscar;
         public ListView lst_dados;
 
-        public bool Buscar_EnvioNaBD()
+        public bool Buscar_OrcamentoNaBD()
         {
             try
             {
@@ -23,16 +23,26 @@ namespace Pap
 
                     string select = @"
                 SELECT 
-                    Referencia,
+                    NSA,
                     NSA_Queixa,
-                    DtEnvio,
-                    NSA_Transp
+                    DtOrcamento,
+                    Comunicado,
+                    FormaCom,
+                    Resumo,
+                    Resposta,
+                    DtResposta,
+                    Pago,
+                    DtPagamento
                 FROM
-                    Envio
+                    Orcamento
                 WHERE
-                    CAST(Referencia AS CHAR) LIKE @valor
-                    OR CAST(NSA_Queixa AS CHAR) LIKE @valor
-                    OR CAST(NSA_Transp AS CHAR) LIKE @valor;";
+                    NSA LIKE @valor
+                    OR NSA_Queixa LIKE @valor
+                    OR Comunicado LIKE @valor
+                    OR FormaCom LIKE @valor
+                    OR Resumo LIKE @valor
+                    OR Resposta LIKE @valor
+                    OR Pago LIKE @valor;";
 
                     using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))
                     {
@@ -46,10 +56,16 @@ namespace Pap
                             {
                                 string[] row =
                                 {
-                            reader.IsDBNull(reader.GetOrdinal("Referencia")) ? "" : reader.GetInt32(reader.GetOrdinal("Referencia")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("NSA")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA")).ToString(),
                             reader.IsDBNull(reader.GetOrdinal("NSA_Queixa")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA_Queixa")).ToString(),
-                            reader.IsDBNull(reader.GetOrdinal("DtEnvio")) ? "" : reader.GetDateTime(reader.GetOrdinal("DtEnvio")).ToString("yyyy-MM-dd"),
-                            reader.IsDBNull(reader.GetOrdinal("NSA_Transp")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA_Transp")).ToString()
+                            reader.IsDBNull(reader.GetOrdinal("DtOrcamento")) ? "" : reader.GetDateTime(reader.GetOrdinal("DtOrcamento")).ToString("yyyy-MM-dd"),
+                            reader.IsDBNull(reader.GetOrdinal("Comunicado")) ? "" : reader.GetString(reader.GetOrdinal("Comunicado")),
+                            reader.IsDBNull(reader.GetOrdinal("FormaCom")) ? "" : reader.GetString(reader.GetOrdinal("FormaCom")),
+                            reader.IsDBNull(reader.GetOrdinal("Resumo")) ? "" : reader.GetString(reader.GetOrdinal("Resumo")),
+                            reader.IsDBNull(reader.GetOrdinal("Resposta")) ? "" : reader.GetString(reader.GetOrdinal("Resposta")),
+                            reader.IsDBNull(reader.GetOrdinal("DtResposta")) ? "" : reader.GetDateTime(reader.GetOrdinal("DtResposta")).ToString("yyyy-MM-dd"),
+                            reader.IsDBNull(reader.GetOrdinal("Pago")) ? "" : reader.GetString(reader.GetOrdinal("Pago")),
+                            reader.IsDBNull(reader.GetOrdinal("DtPagamento")) ? "" : reader.GetDateTime(reader.GetOrdinal("DtPagamento")).ToString("yyyy-MM-dd")
                         };
 
                                 var listViewItem = new ListViewItem(row);
