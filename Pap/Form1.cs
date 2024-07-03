@@ -41,6 +41,24 @@ namespace Pap
 
             rb_Sim.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
             rb_Nao.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
+
+            lstDados.View = View.Details;
+            lstDados.LabelEdit = true;
+            lstDados.AllowColumnReorder = true;
+            lstDados.FullRowSelect = true;
+            lstDados.GridLines = true;
+
+            lstDados.Columns.Add("NIF", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("Nome", 150, HorizontalAlignment.Left);
+            lstDados.Columns.Add("Processo", 80, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NIFEE", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("NomeEE", 150, HorizontalAlignment.Left);
+            lstDados.Columns.Add("EmailEE", 200, HorizontalAlignment.Left);
+            lstDados.Columns.Add("Parentesco", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("Tipo", 100, HorizontalAlignment.Left);
+            lstDados.Columns.Add("DataInsercao", 100, HorizontalAlignment.Left);
+
+            CarregarDadosClientes();
         }
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
@@ -324,7 +342,91 @@ namespace Pap
                 MessageBox.Show("Não foi possível ir para a página de Contacto: " + ex.Message);
             }
         }
+
+        private void CarregarDadosClientes()
+        {
+            try
+            {
+                using (MySqlConnection ConexaoBasedeDados = new MySqlConnection(ConexaoBD.basededados))
+                {
+                    ConexaoBasedeDados.Open();
+
+                    string select = @"
+                SELECT 
+                    NIF,
+                    Nome,
+                    Processo,
+                    NIFEE,
+                    NomeEE,
+                    EmailEE,
+                    Parentesco,
+                    Tipo,
+                    DataInsercao
+                FROM
+                    Utilizador;";
+
+                    using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))
+                    {
+                        using (MySqlDataReader reader = comandoSql.ExecuteReader())
+                        {
+                            lstDados.Items.Clear();
+
+                            while (reader.Read())
+                            {
+                                string[] row =
+                                {
+                            reader.IsDBNull(reader.GetOrdinal("NIF")) ? "" : reader.GetString(reader.GetOrdinal("NIF")),
+                            reader.IsDBNull(reader.GetOrdinal("Nome")) ? "" : reader.GetString(reader.GetOrdinal("Nome")),
+                            reader.IsDBNull(reader.GetOrdinal("Processo")) ? "" : reader.GetInt32(reader.GetOrdinal("Processo")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("NIFEE")) ? "" : reader.GetString(reader.GetOrdinal("NIFEE")),
+                            reader.IsDBNull(reader.GetOrdinal("NomeEE")) ? "" : reader.GetString(reader.GetOrdinal("NomeEE")),
+                            reader.IsDBNull(reader.GetOrdinal("EmailEE")) ? "" : reader.GetString(reader.GetOrdinal("EmailEE")),
+                            reader.IsDBNull(reader.GetOrdinal("Parentesco")) ? "" : reader.GetString(reader.GetOrdinal("Parentesco")),
+                            reader.IsDBNull(reader.GetOrdinal("Tipo")) ? "" : reader.GetString(reader.GetOrdinal("Tipo")),
+                            reader.IsDBNull(reader.GetOrdinal("DataInsercao")) ? "" : reader.GetDateTime(reader.GetOrdinal("DataInsercao")).ToString("yyyy-MM-dd")
+                        };
+
+                                var listViewItem = new ListViewItem(row);
+                                lstDados.Items.Add(listViewItem);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+            }
+        }
+
+        private void btn_Pesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Buscar_Clientes buscar = new Buscar_Clientes();
+                buscar.txt_buscar = txt_Buscar.Text;
+
+                buscar.lst_dados = lstDados;
+
+                if (!buscar.BuscarClientesNaBD())
+                {
+                    MessageBox.Show("Nenhum dado foi encontrado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao executar a busca:" + ex.Message);
+            }
+        }
+
+        private void btn_Limpar_Pesquisa_Click(object sender, EventArgs e)
+        {
+            txt_Buscar.Clear();
+            txt_Buscar.Focus();
+            CarregarDadosClientes();
+        }
     }
+
     public static class EnumExtensions
     {
         public static string GetEnumDescription(this Enum value)

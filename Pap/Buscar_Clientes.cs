@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace Pap
 {
-    internal class Busca_Home
+    internal class Buscar_Clientes
     {
-
         public string txt_buscar;
         public ListView lst_dados;
 
-        public bool BuscarNaBD() 
+        public bool BuscarClientesNaBD()
         {
             try
             {
@@ -24,21 +23,26 @@ namespace Pap
 
                     string select = @"
                 SELECT 
-                    NSA,
-                    NIF_Utilizador,
-                    TipoEquip,
-                    `N-S`,
-                    DtQueixa,
-                    Descricao,
-                    Decisao
+                    NIF,
+                    Nome,
+                    Processo,
+                    NIFEE,
+                    NomeEE,
+                    EmailEE,
+                    Parentesco,
+                    Tipo,
+                    DataInsercao
                 FROM
-                    Queixa
+                    Utilizador
                 WHERE
-                    NIF_Utilizador LIKE @valor
-                    OR TipoEquip LIKE @valor
-                    OR `N-S` LIKE @valor
-                    OR Descricao LIKE @valor
-                    OR Decisao LIKE @valor;";
+                    NIF LIKE @valor
+                    OR Nome LIKE @valor
+                    OR Processo LIKE @valor
+                    OR NIFEE LIKE @valor
+                    OR NomeEE LIKE @valor
+                    OR EmailEE LIKE @valor
+                    OR Parentesco LIKE @valor
+                    OR Tipo LIKE @valor;";
 
                     using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))
                     {
@@ -52,14 +56,16 @@ namespace Pap
                             {
                                 string[] row =
                                 {
-                        reader.IsDBNull(reader.GetOrdinal("NSA")) ? "" : reader.GetInt32(reader.GetOrdinal("NSA")).ToString(),
-                        reader.IsDBNull(reader.GetOrdinal("NIF_Utilizador")) ? "" : reader.GetString(reader.GetOrdinal("NIF_Utilizador")),
-                        reader.IsDBNull(reader.GetOrdinal("TipoEquip")) ? "" : reader.GetString(reader.GetOrdinal("TipoEquip")),
-                        reader.IsDBNull(reader.GetOrdinal("N-S")) ? "" : reader.GetString(reader.GetOrdinal("N-S")),
-                        reader.IsDBNull(reader.GetOrdinal("DtQueixa")) ? "" : reader.GetDateTime(reader.GetOrdinal("DtQueixa")).ToString("yyyy-MM-dd"),
-                        reader.IsDBNull(reader.GetOrdinal("Descricao")) ? "" : reader.GetString(reader.GetOrdinal("Descricao")),
-                        reader.IsDBNull(reader.GetOrdinal("Decisao")) ? "" : reader.GetString(reader.GetOrdinal("Decisao"))
-                    };
+                            reader.IsDBNull(reader.GetOrdinal("NIF")) ? "" : reader.GetString(reader.GetOrdinal("NIF")),
+                            reader.IsDBNull(reader.GetOrdinal("Nome")) ? "" : reader.GetString(reader.GetOrdinal("Nome")),
+                            reader.IsDBNull(reader.GetOrdinal("Processo")) ? "" : reader.GetInt32(reader.GetOrdinal("Processo")).ToString(),
+                            reader.IsDBNull(reader.GetOrdinal("NIFEE")) ? "" : reader.GetString(reader.GetOrdinal("NIFEE")),
+                            reader.IsDBNull(reader.GetOrdinal("NomeEE")) ? "" : reader.GetString(reader.GetOrdinal("NomeEE")),
+                            reader.IsDBNull(reader.GetOrdinal("EmailEE")) ? "" : reader.GetString(reader.GetOrdinal("EmailEE")),
+                            reader.IsDBNull(reader.GetOrdinal("Parentesco")) ? "" : reader.GetString(reader.GetOrdinal("Parentesco")),
+                            reader.IsDBNull(reader.GetOrdinal("Tipo")) ? "" : reader.GetString(reader.GetOrdinal("Tipo")),
+                            reader.IsDBNull(reader.GetOrdinal("DataInsercao")) ? "" : reader.GetDateTime(reader.GetOrdinal("DataInsercao")).ToString("yyyy-MM-dd")
+                        };
 
                                 var listViewItem = new ListViewItem(row);
                                 lst_dados.Items.Add(listViewItem);
@@ -87,5 +93,6 @@ namespace Pap
                 }
             }
         }
+
     }
 }

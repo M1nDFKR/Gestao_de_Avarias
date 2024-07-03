@@ -58,6 +58,11 @@
             btnPageQueixa = new Button();
             textBox2 = new TextBox();
             cb_ListaParentesco = new ComboBox();
+            lstDados = new ListView();
+            btn_Pesquisar = new Button();
+            txt_Buscar = new TextBox();
+            btn_Limpar_Pesquisa = new Button();
+            Pesquisa = new Label();
             painel_de_EE.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -379,11 +384,61 @@
             cb_ListaParentesco.Size = new Size(186, 23);
             cb_ListaParentesco.TabIndex = 22;
             // 
+            // lstDados
+            // 
+            lstDados.Location = new Point(507, 223);
+            lstDados.Name = "lstDados";
+            lstDados.Size = new Size(851, 514);
+            lstDados.TabIndex = 23;
+            lstDados.UseCompatibleStateImageBehavior = false;
+            // 
+            // btn_Pesquisar
+            // 
+            btn_Pesquisar.Location = new Point(1044, 188);
+            btn_Pesquisar.Name = "btn_Pesquisar";
+            btn_Pesquisar.Size = new Size(132, 29);
+            btn_Pesquisar.TabIndex = 24;
+            btn_Pesquisar.Text = "Pesquisar";
+            btn_Pesquisar.UseVisualStyleBackColor = true;
+            btn_Pesquisar.Click += btn_Pesquisar_Click;
+            // 
+            // txt_Buscar
+            // 
+            txt_Buscar.Location = new Point(613, 192);
+            txt_Buscar.MaxLength = 255;
+            txt_Buscar.Name = "txt_Buscar";
+            txt_Buscar.Size = new Size(425, 23);
+            txt_Buscar.TabIndex = 25;
+            // 
+            // btn_Limpar_Pesquisa
+            // 
+            btn_Limpar_Pesquisa.Location = new Point(1182, 188);
+            btn_Limpar_Pesquisa.Name = "btn_Limpar_Pesquisa";
+            btn_Limpar_Pesquisa.Size = new Size(132, 29);
+            btn_Limpar_Pesquisa.TabIndex = 26;
+            btn_Limpar_Pesquisa.Text = "Limpar";
+            btn_Limpar_Pesquisa.UseVisualStyleBackColor = true;
+            btn_Limpar_Pesquisa.Click += btn_Limpar_Pesquisa_Click;
+            // 
+            // Pesquisa
+            // 
+            Pesquisa.AutoSize = true;
+            Pesquisa.Location = new Point(507, 195);
+            Pesquisa.Name = "Pesquisa";
+            Pesquisa.Size = new Size(60, 15);
+            Pesquisa.TabIndex = 27;
+            Pesquisa.Text = "Pesquisar:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 749);
+            Controls.Add(Pesquisa);
+            Controls.Add(btn_Limpar_Pesquisa);
+            Controls.Add(txt_Buscar);
+            Controls.Add(btn_Pesquisar);
+            Controls.Add(lstDados);
             Controls.Add(cb_ListaParentesco);
             Controls.Add(textBox2);
             Controls.Add(panel1);
@@ -449,5 +504,10 @@
         private ComboBox cb_ListaParentesco;
         private Button btnPageEquipamentos;
         private Button btn_Contato;
+        private ListView lstDados;
+        private Button btn_Pesquisar;
+        private TextBox txt_Buscar;
+        private Button btn_Limpar_Pesquisa;
+        private Label Pesquisa;
     }
 }
