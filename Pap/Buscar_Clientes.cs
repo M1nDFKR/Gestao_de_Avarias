@@ -42,6 +42,7 @@ namespace Pap
                     OR NomeEE LIKE @valor
                     OR EmailEE LIKE @valor
                     OR Parentesco LIKE @valor
+                    OR DataInsercao LIKE @valor
                     OR Tipo LIKE @valor;";
 
                     using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))

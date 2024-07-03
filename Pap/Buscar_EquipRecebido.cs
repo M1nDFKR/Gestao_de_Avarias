@@ -34,6 +34,7 @@ namespace Pap
                 WHERE
                     `N-S` LIKE @valor
                     OR TipoEquip LIKE @valor
+                    OR DtEntrada LIKE @valor
                     OR Ref_Quei_Empr LIKE @valor;";
 
                     using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))

@@ -32,7 +32,8 @@ namespace Pap
                 WHERE
                     CAST(Referencia AS CHAR) LIKE @valor
                     OR CAST(NSA_Queixa AS CHAR) LIKE @valor
-                    OR CAST(NSA_Transp AS CHAR) LIKE @valor;";
+                    OR CAST(NSA_Transp AS CHAR) LIKE @valor
+                    OR DtEnvio LIKE @valor;";
 
                     using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))
                     {

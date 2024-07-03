@@ -37,6 +37,7 @@ namespace Pap
                     NIF_Utilizador LIKE @valor
                     OR TipoEquip LIKE @valor
                     OR `N-S` LIKE @valor
+                    OR DtQueixa LIKE @valor
                     OR Descricao LIKE @valor
                     OR Decisao LIKE @valor;";
 

@@ -38,11 +38,14 @@ namespace Pap
                 WHERE
                     NSA LIKE @valor
                     OR NSA_Queixa LIKE @valor
+                    OR DtOrcamento LIKE @valor
                     OR Comunicado LIKE @valor
                     OR FormaCom LIKE @valor
                     OR Resumo LIKE @valor
                     OR Resposta LIKE @valor
-                    OR Pago LIKE @valor;";
+                    OR DtResposta LIKE @valor
+                    OR Pago LIKE @valor
+                    OR DtPagamento LIKE @valor;";
 
                     using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))
                     {

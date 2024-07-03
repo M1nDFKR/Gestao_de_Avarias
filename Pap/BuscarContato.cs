@@ -39,6 +39,7 @@ namespace Pap
                     OR Resumo LIKE @valor
                     OR Forma LIKE @valor
                     OR InfoContacto LIKE @valor
+                    OR DtContact LIKE @valor
                     OR NIF_Utilizador LIKE @valor;";
 
                     using (MySqlCommand comandoSql = new MySqlCommand(select, ConexaoBasedeDados))
