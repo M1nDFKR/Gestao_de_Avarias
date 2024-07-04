@@ -35,6 +35,7 @@
             Pesquisar = new TextBox();
             txt_buscar = new TextBox();
             panel1 = new Panel();
+            btn_Devolucao = new Button();
             btn_Orcamento = new Button();
             btn_Envio = new Button();
             btn_Contato = new Button();
@@ -48,7 +49,6 @@
             TipoEquip = new Label();
             cb_ListadeEquip_NS = new ComboBox();
             lstDados = new ListView();
-            btn_Devolucao = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -141,13 +141,25 @@
             panel1.Size = new Size(1371, 57);
             panel1.TabIndex = 6;
             // 
+            // btn_Devolucao
+            // 
+            btn_Devolucao.FlatStyle = FlatStyle.Flat;
+            btn_Devolucao.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Devolucao.Location = new Point(369, 13);
+            btn_Devolucao.Name = "btn_Devolucao";
+            btn_Devolucao.Size = new Size(103, 32);
+            btn_Devolucao.TabIndex = 8;
+            btn_Devolucao.Text = "Devolução";
+            btn_Devolucao.UseVisualStyleBackColor = true;
+            btn_Devolucao.Click += btn_Devolucao_Click;
+            // 
             // btn_Orcamento
             // 
             btn_Orcamento.FlatStyle = FlatStyle.Flat;
             btn_Orcamento.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_Orcamento.Location = new Point(449, 12);
+            btn_Orcamento.Location = new Point(478, 13);
             btn_Orcamento.Name = "btn_Orcamento";
-            btn_Orcamento.Size = new Size(137, 32);
+            btn_Orcamento.Size = new Size(108, 32);
             btn_Orcamento.TabIndex = 7;
             btn_Orcamento.Text = "Orçamento";
             btn_Orcamento.UseVisualStyleBackColor = true;
@@ -285,18 +297,6 @@
             lstDados.Size = new Size(793, 576);
             lstDados.TabIndex = 0;
             lstDados.UseCompatibleStateImageBehavior = false;
-            // 
-            // btn_Devolucao
-            // 
-            btn_Devolucao.FlatStyle = FlatStyle.Flat;
-            btn_Devolucao.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_Devolucao.Location = new Point(306, 12);
-            btn_Devolucao.Name = "btn_Devolucao";
-            btn_Devolucao.Size = new Size(137, 32);
-            btn_Devolucao.TabIndex = 8;
-            btn_Devolucao.Text = "Devolução";
-            btn_Devolucao.UseVisualStyleBackColor = true;
-            btn_Devolucao.Click += btn_Devolucao_Click;
             // 
             // home
             // 

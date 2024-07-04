@@ -425,6 +425,27 @@ namespace Pap
             txt_Buscar.Focus();
             CarregarDadosClientes();
         }
+
+        private void btn_Envio_Click(object sender, EventArgs e)
+        {
+            EnvioForm envioForm = new EnvioForm();
+            envioForm.Show();
+            this.Hide();
+        }
+
+        private void btn_Orcamento_Click(object sender, EventArgs e)
+        {
+            OrcamentoForm orcamentoForm = new OrcamentoForm();
+            orcamentoForm.Show();
+            this.Hide();
+        }
+
+        private void btn_Devolucao_Click(object sender, EventArgs e)
+        {
+            DevolucaoForm devolucaoForm = new DevolucaoForm();
+            devolucaoForm.Show();
+            this.Hide();
+        }
     }
 
     public static class EnumExtensions

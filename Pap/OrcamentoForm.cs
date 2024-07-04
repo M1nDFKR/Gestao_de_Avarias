@@ -280,5 +280,72 @@ namespace Pap
             }
         }
 
+        private void btnPageInsercao_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void btnPageBusca_Click(object sender, EventArgs e)
+        {
+            BuscarForm buscarForm = new BuscarForm();
+            buscarForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageQueixa_Click(object sender, EventArgs e)
+        {
+            QueixaForm queixaForm = new QueixaForm();
+            queixaForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageEquipamentos_Click(object sender, EventArgs e)
+        {
+            EquipRecebido equipamentorecebido = new EquipRecebido();
+            equipamentorecebido.Show();
+            this.Hide();
+        }
+
+        private void btn_Contato_Click(object sender, EventArgs e)
+        {
+            ContatoForm contatoForm = new ContatoForm();
+            contatoForm.Show();
+            this.Hide();
+        }
+
+        private void btn_Envio_Click(object sender, EventArgs e)
+        {
+            EnvioForm envioForm = new EnvioForm();
+            envioForm.Show();
+            this.Hide();
+        }
+
+        private void btn_Devolucao_Click(object sender, EventArgs e)
+        {
+            DevolucaoForm devolucaoForm = new DevolucaoForm();
+            devolucaoForm.Show();
+            this.Hide();
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txt_NSA_Queixa.Text) &&
+                    string.IsNullOrWhiteSpace(txt_NIF_Utilizador.Text) &&
+                    string.IsNullOrWhiteSpace(txt_Comunicado.Text) &&
+                    string.IsNullOrWhiteSpace(txt_Forma_Comunicacao.Text) &&
+                    string.IsNullOrWhiteSpace(richTxt_Resumo.Text) &&
+                    string.IsNullOrWhiteSpace(richTxt_Resposta.Text))
+            {
+                home Home = new home();
+                Home.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
+        }
     }
 }

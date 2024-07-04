@@ -43,6 +43,9 @@
             btn_Inserir = new Button();
             label5 = new Label();
             panel1 = new Panel();
+            btn_Devolucao = new Button();
+            btn_Orcamento = new Button();
+            btn_Envio = new Button();
             btn_Contato = new Button();
             btnPage = new Button();
             textBox1 = new TextBox();
@@ -196,6 +199,9 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(btn_Devolucao);
+            panel1.Controls.Add(btn_Orcamento);
+            panel1.Controls.Add(btn_Envio);
             panel1.Controls.Add(btn_Contato);
             panel1.Controls.Add(btnPage);
             panel1.Controls.Add(textBox1);
@@ -206,6 +212,42 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1372, 61);
             panel1.TabIndex = 0;
+            // 
+            // btn_Devolucao
+            // 
+            btn_Devolucao.FlatStyle = FlatStyle.Flat;
+            btn_Devolucao.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Devolucao.Location = new Point(361, 17);
+            btn_Devolucao.Name = "btn_Devolucao";
+            btn_Devolucao.Size = new Size(103, 32);
+            btn_Devolucao.TabIndex = 35;
+            btn_Devolucao.Text = "Devolução";
+            btn_Devolucao.UseVisualStyleBackColor = true;
+            btn_Devolucao.Click += btn_Devolucao_Click;
+            // 
+            // btn_Orcamento
+            // 
+            btn_Orcamento.FlatStyle = FlatStyle.Flat;
+            btn_Orcamento.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Orcamento.Location = new Point(470, 17);
+            btn_Orcamento.Name = "btn_Orcamento";
+            btn_Orcamento.Size = new Size(108, 32);
+            btn_Orcamento.TabIndex = 34;
+            btn_Orcamento.Text = "Orçamento";
+            btn_Orcamento.UseVisualStyleBackColor = true;
+            btn_Orcamento.Click += btn_Orcamento_Click;
+            // 
+            // btn_Envio
+            // 
+            btn_Envio.FlatStyle = FlatStyle.Flat;
+            btn_Envio.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Envio.Location = new Point(584, 17);
+            btn_Envio.Name = "btn_Envio";
+            btn_Envio.Size = new Size(92, 32);
+            btn_Envio.TabIndex = 33;
+            btn_Envio.Text = "Envio";
+            btn_Envio.UseVisualStyleBackColor = true;
+            btn_Envio.Click += btn_Envio_Click;
             // 
             // btn_Contato
             // 
@@ -285,25 +327,30 @@
             // Pesquisa
             // 
             Pesquisa.AutoSize = true;
+            Pesquisa.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Pesquisa.Location = new Point(568, 193);
             Pesquisa.Name = "Pesquisa";
-            Pesquisa.Size = new Size(60, 15);
+            Pesquisa.Size = new Size(110, 22);
             Pesquisa.TabIndex = 32;
             Pesquisa.Text = "Pesquisar:";
             // 
             // btn_Limpar_Pesquisa
             // 
-            btn_Limpar_Pesquisa.Location = new Point(1248, 186);
+            btn_Limpar_Pesquisa.BackColor = Color.RoyalBlue;
+            btn_Limpar_Pesquisa.FlatStyle = FlatStyle.Popup;
+            btn_Limpar_Pesquisa.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Limpar_Pesquisa.ForeColor = Color.White;
+            btn_Limpar_Pesquisa.Location = new Point(1225, 194);
             btn_Limpar_Pesquisa.Name = "btn_Limpar_Pesquisa";
-            btn_Limpar_Pesquisa.Size = new Size(110, 29);
+            btn_Limpar_Pesquisa.Size = new Size(110, 23);
             btn_Limpar_Pesquisa.TabIndex = 31;
             btn_Limpar_Pesquisa.Text = "Limpar";
-            btn_Limpar_Pesquisa.UseVisualStyleBackColor = true;
+            btn_Limpar_Pesquisa.UseVisualStyleBackColor = false;
             btn_Limpar_Pesquisa.Click += btn_Limpar_Pesquisa_Click;
             // 
             // txt_Buscar
             // 
-            txt_Buscar.Location = new Point(683, 190);
+            txt_Buscar.Location = new Point(683, 194);
             txt_Buscar.MaxLength = 255;
             txt_Buscar.Name = "txt_Buscar";
             txt_Buscar.Size = new Size(416, 23);
@@ -311,12 +358,16 @@
             // 
             // btn_Pesquisar
             // 
-            btn_Pesquisar.Location = new Point(1119, 186);
+            btn_Pesquisar.BackColor = Color.RoyalBlue;
+            btn_Pesquisar.FlatStyle = FlatStyle.Popup;
+            btn_Pesquisar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Pesquisar.ForeColor = Color.White;
+            btn_Pesquisar.Location = new Point(1105, 194);
             btn_Pesquisar.Name = "btn_Pesquisar";
-            btn_Pesquisar.Size = new Size(123, 29);
+            btn_Pesquisar.Size = new Size(114, 23);
             btn_Pesquisar.TabIndex = 29;
             btn_Pesquisar.Text = "Pesquisar";
-            btn_Pesquisar.UseVisualStyleBackColor = true;
+            btn_Pesquisar.UseVisualStyleBackColor = false;
             btn_Pesquisar.Click += btn_Pesquisar_Click;
             // 
             // lstDados
@@ -353,7 +404,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "EquipRecebido";
-            Text = "Gestão de avarias - Formulário de Equipamentos";
+            Text = "Gestão de avarias - Equipamentos recebidos";
             WindowState = FormWindowState.Maximized;
             Load += EquipRecebido_Load;
             panel1.ResumeLayout(false);
@@ -390,5 +441,8 @@
         private TextBox txt_Buscar;
         private Button btn_Pesquisar;
         private ListView lstDados;
+        private Button btn_Envio;
+        private Button btn_Orcamento;
+        private Button btn_Devolucao;
     }
 }

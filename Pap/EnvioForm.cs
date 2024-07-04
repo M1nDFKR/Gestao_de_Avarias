@@ -277,5 +277,69 @@ namespace Pap
             }
         }
 
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txt_NSA_Queixa.Text) &&
+                   string.IsNullOrWhiteSpace(txt_NSA_Transporte.Text) &&
+                   string.IsNullOrWhiteSpace(txt_Referencia_Envio.Text))
+            {
+                home Home = new home();
+                Home.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, limpe todos os campos antes de mudar de página.");
+            }
+        }
+
+        private void btnPageBusca_Click(object sender, EventArgs e)
+        {
+            BuscarForm buscarForm = new BuscarForm();
+            buscarForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageQueixa_Click(object sender, EventArgs e)
+        {
+            QueixaForm queixaForm = new QueixaForm();
+            queixaForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageEquipamentos_Click(object sender, EventArgs e)
+        {
+            EquipRecebido equipamentorecebido = new EquipRecebido();
+            equipamentorecebido.Show();
+            this.Hide();
+        }
+
+        private void btn_Contato_Click(object sender, EventArgs e)
+        {
+            ContatoForm contatoForm = new ContatoForm();
+            contatoForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageInsercao_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void btn_Orcamento_Click(object sender, EventArgs e)
+        {
+            OrcamentoForm orcamentoForm = new OrcamentoForm();
+            orcamentoForm.Show();
+            this.Hide();
+        }
+
+        private void btn_Devolucao_Click(object sender, EventArgs e)
+        {
+            DevolucaoForm devolucaoForm = new DevolucaoForm();
+            devolucaoForm.Show();
+            this.Hide();
+        }
     }
 }

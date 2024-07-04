@@ -287,5 +287,61 @@ namespace Pap
                 MessageBox.Show("Erro ao carregar dados: " + ex.Message);
             }
         }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            home Home = new home();
+            Home.Show();
+            this.Hide();
+        }
+
+        private void btnPageInsercao_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void btnPageBusca_Click(object sender, EventArgs e)
+        {
+            BuscarForm buscarForm = new BuscarForm();
+            buscarForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageQueixa_Click(object sender, EventArgs e)
+        {
+            QueixaForm queixaForm = new QueixaForm();
+            queixaForm.Show();
+            this.Hide();
+        }
+
+        private void btnPageEquipamentos_Click(object sender, EventArgs e)
+        {
+            EquipRecebido equipamentorecebido = new EquipRecebido();
+            equipamentorecebido.Show();
+            this.Hide();
+        }
+
+        private void btn_Contato_Click(object sender, EventArgs e)
+        {
+            ContatoForm contatoForm = new ContatoForm();
+            contatoForm.Show();
+            this.Hide();
+        }
+
+        private void btn_Envio_Click(object sender, EventArgs e)
+        {
+            EnvioForm envioForm = new EnvioForm();
+            envioForm.Show();
+            this.Hide();
+        }
+
+        private void btn_Orcamento_Click(object sender, EventArgs e)
+        {
+            OrcamentoForm orcamentoForm = new OrcamentoForm();
+            orcamentoForm.Show();
+            this.Hide();
+        }
     }
 }
