@@ -270,7 +270,7 @@
             // 
             btn_home.FlatStyle = FlatStyle.Flat;
             btn_home.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_home.Location = new Point(1221, 13);
+            btn_home.Location = new Point(1221, 12);
             btn_home.Name = "btn_home";
             btn_home.Size = new Size(137, 32);
             btn_home.TabIndex = 8;
